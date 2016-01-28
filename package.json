@@ -1,0 +1,23 @@
+{
+  "name": "GoTo",
+  "version": "0.0.0",
+  "author": "Starfriends",
+
+  "repository": {
+    "type": "git",
+    "url": "https://agoldsht@bitbucket.org/cse170wi16/cse-170.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "express3-handlebars": "*",
+    "mongodb": "*",
+    "mongoose": "*"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }  
+}
