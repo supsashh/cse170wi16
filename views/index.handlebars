@@ -30,6 +30,31 @@
 		<!-- p means paragraph -->
 		<div class="jumbotron">
 		</div>
+
+		<h3>Today is Taco Tuesday</h3>
+		<div id="tacos">
+			<img data-src="images/taco1.jpg" />
+	        <img data-src="images/taco2.jpg" />
+	        <img data-src="images/taco3.jpg" />
+		</div>
+
+		<h3>Your GoTo list</h3>
+		<div id="favorites">
+		    <img data-src="images/acai.jpg" />
+	        <img data-src="images/coffee.jpg" />
+	        <img data-src="images/pastries.jpg" />
+		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="js/portfolio.pack.min.js"></script>
+	<script>
+    $(document).ready(function() {
+            var p = $("#tacos").portfolio();
+            p.init();
+            var p2 = $("#favorites").portfolio();
+            p2.init();
+    });
+</script>
 </body>
 </html>
