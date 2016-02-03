@@ -5,38 +5,38 @@
 
 exports.view = function(req, res){
   res.render('index', {
-    'projects': [
-      { 'name': 'Waiting in Line',
-        'image': 'lorempixel.people.1.jpeg',
-        'id': 'project1'
+    'portfolios': [
+      { 'title': 'Your GoTo List',
+        'image1': 'acai.jpg',
+        'image2': 'coffee.jpg',
+        'image3': 'pastries.jpg',
+        'image4': 'fries.jpg',
+        'image5': 'pancakes.jpg',
+        'id': 'goto'
       },
-      { 'name': 'Needfinding',
-        'image': 'lorempixel.city.1.jpeg',
-        'id': 'project2'
+      { 'title': 'Today is Taco Tuesday',
+        'image1': 'taco1.jpg',
+        'image2': 'taco2.jpg',
+        'image3': 'taco3.jpg',
+        'image4': 'taco4.jpg',
+        'image5': 'taco5.jpg',
+        'id': 'today'
       },
-      { 'name': 'Prototyping',
-        'image': 'lorempixel.technics.1.jpeg',
-        'id': 'project3'
+      { 'title': 'Recommended for you',
+        'image1': 'eggs.jpg',
+        'image2': 'sushi.jpg',
+        'image3': 'toffee.jpg',
+        'image4': 'macarons.jpg',
+        'image5': 'salad.jpg',
+        'id': 'recommended'
       },
-      { 'name': 'Heuristic Evaluation',
-        'image': 'lorempixel.abstract.1.jpeg',
-        'id': 'project4'
-      },
-      { 'name': 'Visualization',
-        'image': 'lorempixel.abstract.8.jpeg',
-        'id': 'project5'
-      },
-      { 'name': 'Social design',
-        'image': 'lorempixel.people.2.jpeg',
-        'id': 'project6'
-      },
-      { 'name': 'Gestural interaction',
-        'image': 'lorempixel.technics.2.jpeg',
-        'id': 'project7'
-      },
-      { 'name': 'Design tools',
-        'image': 'lorempixel.city.2.jpeg',
-        'id': 'project8'
+      { 'title': 'Your friends recommend',
+        'image1': 'pho.jpg',
+        'image2': 'donuts.jpg',
+        'image3': 'scallops.jpg',
+        'image4': 'ice-cream.jpg',
+        'image5': 'cookies.jpg',
+        'id': 'friend-recommended'
       }
     ]
   });

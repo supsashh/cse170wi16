@@ -1,3 +1,16 @@
 .top-title {
 	margin-top: 50px;
 }
+
+.bottom-nav a {
+	color: #5e5e5e;
+}
+
+.bottom-nav a:hover {
+	text-decoration: none;
+}
+
+.portfolio-container a:hover {
+	text-decoration: none;
+	color: #337ab7;
+}

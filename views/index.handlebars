@@ -9,15 +9,11 @@
 	<link href="/css/goto.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- this is a comment in HTML -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+    <script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/portfolio.pack.min.js"></script>
+	<script src="/js/goto.js"></script>   
 </head>
 
 <body>
@@ -27,49 +23,35 @@
 			<a class="navbar-brand" href="">GoTo</a>
 		</nav>
 	</div>
-	<div class="container top-title">
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-
-		<h3>Today is Taco Tuesday</h3>
-		<div id="tacos">
-			<img data-src="images/taco1.jpg" />
-	        <img data-src="images/taco2.jpg" />
-	        <img data-src="images/taco3.jpg" />
-		</div>
-
-		<h3>Your GoTo list</h3>
-		<div id="favorites">
-		    <img data-src="images/acai.jpg" />
-	        <img data-src="images/coffee.jpg" />
-	        <img data-src="images/pastries.jpg" />
-		</div>
+	<div class="container top-title portfolio-container">
+		{{#each portfolios}}
+			<h3><a href="#">{{title}}</a></h3>
+			<div id="{{id}}" class="portfolio">
+			    <img data-src="images/{{image1}}" />
+		        <img data-src="images/{{image2}}" />
+		        <img data-src="images/{{image3}}" />
+		        <img data-src="images/{{image4}}" />
+		        <img data-src="images/{{image5}}" />
+		        <img data-src="images/see-more.jpg" />
+			</div>
+		{{/each}}
 	</div>
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="js/portfolio.pack.min.js"></script>
-	<script>
-    $(document).ready(function() {
-            var p = $("#tacos").portfolio();
-            p.init();
-            var p2 = $("#favorites").portfolio();
-            p2.init();
-    });
-</script>
-<div id="footer">
-  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
-  <div class="row" id="bottomNav">
-    <div class="col-xs-4 text-center"><a href="#">
-    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
-    </div>
-    <div class="col-xs-4 text-center"><a href="#">
-    	<i class="glyphicon glyphicon-align-justify"></i><br>Newsfeed</a>
-    </div>
-    <div class="col-xs-4 text-center"><a href="#">
-    	<i class="glyphicon glyphicon-user"></i><br>Profile</a>
-    </div>
-  </div>
-  </div>
-</div>
+	
+	<div id="footer">
+	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+	  <div class="row bottom-nav" id="bottomNav">
+	    <div class="col-xs-4 text-center"><a href="#">
+	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="#">
+	    	<i class="glyphicon glyphicon-align-justify"></i><br>Newsfeed</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="#">
+	    	<i class="glyphicon glyphicon-user"></i><br>Profile</a>
+	    </div>
+	  </div>
+	  </div>
+	</div>
+
 </body>
 </html>
