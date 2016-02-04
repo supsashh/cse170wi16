@@ -27,11 +27,9 @@
 		{{#each portfolios}}
 			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
 			<div id="{{id}}" class="portfolio">
-			    <img data-src="images/{{image1}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image2}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image3}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image4}}" data-url="/restaurant" class="restaurant-image"/>
-		        <img data-src="images/{{image5}}" data-url="/restaurant" class="restaurant-image"/>
+				{{#each images}}
+			    <img data-src="images/{{this}}" data-url="/restaurant" class="restaurant-image" />
+		        {{/each}}
 		        <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
 			</div>
 		{{/each}}

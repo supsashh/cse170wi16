@@ -1,0 +1,38 @@
+{
+    "portfolios": [
+      { "title": "Your GoTo List",
+        "images": ["acai.jpg","coffee.jpg","pastries.jpg","fries.jpg","pancakes.jpg"],
+        "id": "goto"
+      },
+      { "title": "Today is Taco Tuesday",
+        "images": ["taco1.jpg","taco2.jpg","taco3.jpg","taco4.jpg","taco5.jpg"],
+        "id": "today"
+      },
+      { "title": "Recommended for you",
+        "images": ["eggs.jpg","sushi.jpg","toffee.jpg","macarons.jpg","salad.jpg"],
+        "id": "recommended"
+      },
+      { "title": "Your friends recommend",
+        "images": ["pho.jpg","donuts.jpg","scallops.jpg","ice-cream.jpg","cookies.jpg"],
+        "id": "friend-recommended"
+      }
+    ],
+    "cuisines": [
+      {
+        "id": "American",
+        "image": "americanbutton.png"
+      },
+      {
+        "id": "Mexican",
+        "image": "mexicanbutton.png"
+      },
+      {
+        "id": "Japanese",
+        "image": "japanesebutton.png"
+      },
+      {
+        "id": "Italian",
+        "image": "italianbutton.png"
+      }
+    ]
+}
