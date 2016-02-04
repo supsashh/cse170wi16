@@ -20,21 +20,34 @@
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a class="navbar-brand">GoTo</a>
+			<a href="/" class="navbar-brand"><img src="images/gotologo.png" id="logo"/></a>
+			<a class="navbar-text" id="mantra">Food. Personalized.</a>
 		</nav>
 	</div>
 	<div class="container top-title portfolio-container">
 		{{#each portfolios}}
 			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
 			<div id="{{id}}" class="portfolio">
-			    <img data-src="images/{{image1}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image2}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image3}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image4}}" data-url="/restaurant" class="restaurant-image"/>
-		        <img data-src="images/{{image5}}" data-url="/restaurant" class="restaurant-image"/>
+				{{#each images}}
+			    <img data-src="images/{{this}}" data-url="/restaurant" class="restaurant-image" />
+		        {{/each}}
 		        <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
 			</div>
 		{{/each}}
+	</div>
+	<div class="container">
+		<h3> Cuisines </h3>
+		<center>
+		<table>
+			{{#each cuisines}}
+			<tr>
+			<td>
+				<img src="images/{{image}}" data-url="/cuisine/{{id}}" class="cuisine-image img-rounded img-responsive" />
+			</td>
+			</tr>
+			{{/each}}
+		</table>
+	</center>
 	</div>
 	
 	<div id="footer">

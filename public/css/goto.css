@@ -32,10 +32,23 @@
 	color: #337ab7;
 }
 
+#mantra{
+	padding-top: 10px;
+}
+#logo{
+	height: auto; 
+    width: auto; 
+    max-width: 58px; 
+    max-height: 70px;
+    padding-bottom: 20px;
+}
+
 .profile-container {
 	margin-top: 70px;
 	padding-bottom: 75px;
 }
+
+table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 
 .profile-top {
 	margin-left: 20px;
@@ -62,4 +75,18 @@
 .friendButton {
 	margin-left: 30px;
 	font-size: small;
+}
+
+.newsfeed-container {
+	margin-top: 50px;
+}
+
+.social-button {
+	font-size: 1.3em;
+	margin-right: 7px;
+}
+
+.food-image {
+	padding-bottom: 10px;
+
 }

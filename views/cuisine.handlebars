@@ -10,49 +10,24 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+    <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
-	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>   
 </head>
 
 <body>
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a class="navbar-brand">GoTo</a>
+			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true"></a>
+			<a class="navbar-brand" href="">GoTo</a>
 		</nav>
 	</div>
 
-	<div class="container newsfeed-container">
-		<h4 class="center">Newsfeed</h4>
-		<hr>
-		{{#each posts}}
-			<div class="panel post">
-				<div class="media profile-top">
-					<div class="media-left">
-					<a href="#">
-					  <img class="media-object" src="/images/{{profile-image}}">
-					</a>
-					</div>
-					<div class="media-body">
-					<h4 class="media-heading">{{name}}</h4>
-					{{#if picture}}
-						<img class="food-image" src="/images/{{food-image}}">
-						<br>
-					{{/if}}
-					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
-					<br>
-					<a href="/restaurant">{{restaurant}}</a>
-					<br>
-					{{restaurant-description}}
-					</div>
-				</div>
-			</div>
-		{{/each}}
-	</div>
+	<div class="jumbotron">
+      <h1>{{cuisineId}}</h1>
+      <p>one-sentence description of cuisine</p>
+    </div>
 	
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">

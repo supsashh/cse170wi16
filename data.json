@@ -1,0 +1,85 @@
+{
+    "portfolios": [
+      { "title": "Your GoTo List",
+        "images": ["acai.jpg","coffee.jpg","pastries.jpg","fries.jpg","pancakes.jpg"],
+        "id": "goto"
+      },
+      { "title": "Today is Taco Tuesday",
+        "images": ["taco1.jpg","taco2.jpg","taco3.jpg","taco4.jpg","taco5.jpg"],
+        "id": "today"
+      },
+      { "title": "Recommended for you",
+        "images": ["eggs.jpg","sushi.jpg","toffee.jpg","macarons.jpg","salad.jpg"],
+        "id": "recommended"
+      },
+      { "title": "Your friends recommend",
+        "images": ["pho.jpg","donuts.jpg","scallops.jpg","ice-cream.jpg","cookies.jpg"],
+        "id": "friend-recommended"
+      }
+    ],
+    "cuisines": [
+      {
+        "id": "American",
+        "image": "americanbutton.png"
+      },
+      {
+        "id": "Mexican",
+        "image": "mexicanbutton.png"
+      },
+      {
+        "id": "Japanese",
+        "image": "japanesebutton.png"
+      },
+      {
+        "id": "Italian",
+        "image": "italianbutton.png"
+      }
+    ],
+    "profile-image": "profile-icon.png",
+    "profile-name": "James Clark",
+    "profile-posts": [
+      {
+        "picture": true,
+        "food-image": "jewel-roll.jpg",
+        "restaurant": "@ShikuSushi",
+        "restaurant-description": "The jewel roll was amazing!"
+      },
+      {
+        "picture": false,
+        "restaurant": "@BreakfastRepublic",
+        "restaurant-description": "Get the flight of pancakes!"
+      }
+    ],
+    "posts": [
+      {
+        "picture": true,
+        "food-image": "french-toast.jpg",
+        "name": "John Wilburn",
+        "profile-image": "profile-icon.png",
+        "restaurant": "@Snooze",
+        "restaurant-description": "Loved the OMG french toast!"
+      },
+      {
+        "picture": true,
+        "food-image": "gelato.jpg",
+        "name": "Jane Lee",
+        "profile-image": "profile-icon.png",
+        "restaurant": "@Pappalecco",
+        "restaurant-description": "Pappalecco has the best gelato!"
+      },
+      {
+        "picture": false,
+        "name": "Mary Murphy",
+        "profile-image": "profile-icon.png",
+        "restaurant": "@NomadDonuts",
+        "restaurant-description": "Nomad has the most unique donut flavors!"
+      },
+      {
+        "picture": false,
+        "name": "Alex Taylor",
+        "profile-image": "profile-icon.png",
+        "restaurant": "@AzukiSushi",
+        "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
+      }
+    ]
+}

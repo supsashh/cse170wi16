@@ -6,6 +6,10 @@ $(document).ready(function() {
 
     $('.restaurant-image').on('tap vclick click', function() {
     	window.location.href = $(this).data("url");
+    });
+
+    $('.cuisine-image').on('tap vclick click', function() {
+    	window.location.href = $(this).data("url");
     }); 
 
 });
