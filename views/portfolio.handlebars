@@ -10,9 +10,9 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>   
+    <script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
-	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>   
 </head>
 
@@ -23,24 +23,16 @@
 			<a class="navbar-brand" href="">GoTo</a>
 		</nav>
 	</div>
-	<div class="container top-title portfolio-container">
-		{{#each portfolios}}
-			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
-			<div id="{{id}}" class="portfolio">
-			    <img data-src="images/{{image1}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image2}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image3}}" data-url="/restaurant" class="restaurant-image" />
-		        <img data-src="images/{{image4}}" data-url="/restaurant" class="restaurant-image"/>
-		        <img data-src="images/{{image5}}" data-url="/restaurant" class="restaurant-image"/>
-		        <img data-src="images/see-more.png" data-url="/see-more" class="restaurant-image"/>
-			</div>
-		{{/each}}
-	</div>
+
+	<div class="jumbotron">
+      <h1>{{portfolioTitle}}</h1>
+      <p>one-sentence description of portfolio</p>
+    </div>
 	
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
+	    <div class="col-xs-4 text-center"><a href="#">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="#">
