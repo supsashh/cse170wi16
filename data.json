@@ -55,6 +55,7 @@
         "picture": true,
         "food-image": "french-toast.jpg",
         "name": "John Wilburn",
+        "profile-image": "profile-icon.png",
         "restaurant": "@Snooze",
         "restaurant-description": "Loved the OMG french toast!"
       },
@@ -62,18 +63,21 @@
         "picture": true,
         "food-image": "gelato.jpg",
         "name": "Jane Lee",
+        "profile-image": "profile-icon.png",
         "restaurant": "@Pappalecco",
         "restaurant-description": "Pappalecco has the best gelato!"
       },
       {
         "picture": false,
         "name": "Mary Murphy",
+        "profile-image": "profile-icon.png",
         "restaurant": "@NomadDonuts",
         "restaurant-description": "Nomad has the most unique donut flavors!"
       },
       {
         "picture": false,
         "name": "Alex Taylor",
+        "profile-image": "profile-icon.png",
         "restaurant": "@AzukiSushi",
         "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
       }

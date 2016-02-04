@@ -30,15 +30,17 @@
 		{{#each posts}}
 			<div class="panel post">
 				<div class="media profile-top">
-					{{#if picture}}
-						<div class="media-left">
-						<a href="#">
-						  <img class="media-object" src="/images/{{food-image}}">
-						</a>
-						</div>
-					{{/if}}
+					<div class="media-left">
+					<a href="#">
+					  <img class="media-object" src="/images/{{profile-image}}">
+					</a>
+					</div>
 					<div class="media-body">
 					<h4 class="media-heading">{{name}}</h4>
+					{{#if picture}}
+						<img class="food-image" src="/images/{{food-image}}">
+						<br>
+					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
 					<a href="#"><i class="glyphicon glyphicon-comment social-button"></i></a>
 					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
