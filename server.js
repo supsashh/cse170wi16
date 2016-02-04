@@ -13,6 +13,7 @@ var portfolio = require('./routes/portfolio');
 var restaurant = require('./routes/restaurant');
 var profile = require('./routes/profile');
 var newsfeed = require('./routes/newsfeed');
+var search = require('./routes/search');
 
 var server = express();
 
@@ -42,6 +43,8 @@ server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant', restaurant.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
+server.get('/search', search.view);
+
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
 });
