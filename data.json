@@ -34,5 +34,48 @@
         "id": "Italian",
         "image": "italianbutton.png"
       }
+    ],
+    "profile-image": "profile-icon.png",
+    "profile-name": "James Clark",
+    "profile-posts": [
+      {
+        "picture": true,
+        "food-image": "jewel-roll.jpg",
+        "restaurant": "@ShikuSushi",
+        "restaurant-description": "The jewel roll was amazing!"
+      },
+      {
+        "picture": false,
+        "restaurant": "@BreakfastRepublic",
+        "restaurant-description": "Get the flight of pancakes!"
+      }
+    ],
+    "posts": [
+      {
+        "picture": true,
+        "food-image": "french-toast.jpg",
+        "name": "John Wilburn",
+        "restaurant": "@Snooze",
+        "restaurant-description": "Loved the OMG french toast!"
+      },
+      {
+        "picture": true,
+        "food-image": "gelato.jpg",
+        "name": "Jane Lee",
+        "restaurant": "@Pappalecco",
+        "restaurant-description": "Pappalecco has the best gelato!"
+      },
+      {
+        "picture": false,
+        "name": "Mary Murphy",
+        "restaurant": "@NomadDonuts",
+        "restaurant-description": "Nomad has the most unique donut flavors!"
+      },
+      {
+        "picture": false,
+        "name": "Alex Taylor",
+        "restaurant": "@AzukiSushi",
+        "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
+      }
     ]
 }
