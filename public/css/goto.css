@@ -32,3 +32,13 @@
 	text-decoration: none;
 	color: #337ab7;
 }
+
+.profile-container {
+	margin-top: 70px;
+	padding-bottom: 500px;
+}
+
+.profile-top {
+	margin-left: 20px;
+	margin-top: 70px;
+}
