@@ -5,7 +5,6 @@
 /* Set the fixed height of the footer here */
 #footer {
   height: 60px;
-  background-color: #f5f5f5;
 }
 
 .navbar-header {
@@ -35,10 +34,27 @@
 
 .profile-container {
 	margin-top: 70px;
-	padding-bottom: 500px;
+	padding-bottom: 75px;
 }
 
 .profile-top {
 	margin-left: 20px;
 	margin-top: 70px;
+}
+
+.post a {
+	color:#B8B8B8;
+    text-decoration:none;
+}
+
+.center {
+	text-align: center;
+}
+
+.post-container {
+	margin-bottom: 50px;
+}
+
+.text-post {
+	margin-left: 20px;
 }
