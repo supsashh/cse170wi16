@@ -2,9 +2,6 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
@@ -23,20 +20,10 @@
 			<a class="navbar-brand" href="">GoTo</a>
 		</nav>
 	</div>
-	<div class="container top-title portfolio-container">
-		{{#each portfolios}}
-			<h3><a href="#">{{title}}</a></h3>
-			<div id="{{id}}" class="portfolio">
-			    <a href="/restaurant"><img data-src="images/{{image1}}" /></a>
-		        <a href="/restaurant"><img data-src="images/{{image2}}" /></a>
-		        <a href="/restaurant"><img data-src="images/{{image3}}" /></a>
-		        <a href="/restaurant"><img data-src="images/{{image4}}" /></a>
-		        <a href="/restaurant"><img data-src="images/{{image5}}" /></a>
-		        <a href="/{{see-more}}"><img data-src="images/see-more.png" /></a>
-			</div>
-		{{/each}}
+	<div class="container top-title">
+		<h2>Restaurant page</h2>
 	</div>
-	
+
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
@@ -52,6 +39,6 @@
 	  </div>
 	  </div>
 	</div>
-
 </body>
+
 </html>
