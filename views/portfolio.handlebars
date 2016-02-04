@@ -23,19 +23,11 @@
 			<a class="navbar-brand" href="">GoTo</a>
 		</nav>
 	</div>
-	<div class="container top-title portfolio-container">
-		{{#each portfolios}}
-			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
-			<div id="{{id}}" class="portfolio">
-			    <img data-src="images/{{image1}}" />
-		        <img data-src="images/{{image2}}" />
-		        <img data-src="images/{{image3}}" />
-		        <img data-src="images/{{image4}}" />
-		        <img data-src="images/{{image5}}" />
-		        <img data-src="images/see-more.png" />
-			</div>
-		{{/each}}
-	</div>
+
+	<div class="jumbotron">
+      <h1>{{portfolioTitle}}</h1>
+      <p>one-sentence description of portfolio</p>
+    </div>
 	
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">

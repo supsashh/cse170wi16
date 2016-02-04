@@ -9,6 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
+var portfolio = require('./routes/portfolio');
 // Example route
 // var user = require('./routes/user');
 
@@ -36,6 +37,7 @@ if ('development' == server.get('env')) {
 
 // Add routes here
 server.get('/', index.view);
+server.get('/portfolio/:title', portfolio.viewPortfolio);
 // Example route
 // server.get('/users', user.list);
 
