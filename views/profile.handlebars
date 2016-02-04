@@ -26,14 +26,25 @@
 
 	<div class="container profile-container">
 		<div class="media profile-top">
-		  <div class="media-left">
-		    <a href="#">
-		      <img class="media-object" src="/images/{{image}}">
-		    </a>
-		  </div>
-		  <div class="media-body">
-		    <h4 class="media-heading">{{name}}</h4>
-		  </div>
+		    <div class="media-left">
+		        <a href="#">
+		            <img class="media-object" src="/images/{{image}}">
+		        </a>
+		    </div>
+		    <div class="media-body">
+		        <h2 class="media-heading">{{name}}
+		        	<a href="#" class="friendButton">Friends</a>
+		        </h2>
+		        <button type="button" class="btn btn-primary-outline btn-xs btn-block">Edit Profile</button>
+		    </div>
+		    <p><strong>Bio</strong></p>
+		    <p>21 year old food enthusiast from San Diego. Let's go out to eat.</p>
+		    <p><strong>Food Taste: </strong>
+                <span class="label label-info tags">Mexican</span> 
+                <span class="label label-info tags">Italian</span>
+                <span class="label label-info tags">Steak</span>
+                <span class="label label-info tags">Breweries</span>
+            </p>
 		</div>
 	</div>
 
