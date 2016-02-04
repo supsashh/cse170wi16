@@ -14,6 +14,7 @@ var restaurant = require('./routes/restaurant');
 var profile = require('./routes/profile');
 var newsfeed = require('./routes/newsfeed');
 var search = require('./routes/search');
+var cuisine = require('./routes/cuisine');
 
 var server = express();
 
@@ -44,6 +45,7 @@ server.get('/restaurant', restaurant.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
 server.get('/search', search.view);
+server.get('/cuisine/:id', cuisine.viewCuisine);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

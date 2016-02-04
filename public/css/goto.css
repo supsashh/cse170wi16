@@ -37,6 +37,8 @@
 	padding-bottom: 75px;
 }
 
+table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
+
 .profile-top {
 	margin-left: 20px;
 	margin-top: 70px;

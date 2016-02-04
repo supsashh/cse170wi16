@@ -38,6 +38,24 @@ exports.view = function(req, res){
         'image5': 'cookies.jpg',
         'id': 'friend-recommended'
       }
+    ],
+    'cuisines': [
+      {
+        'id': 'American',
+        'image': 'americanbutton.png'
+      },
+      {
+        'id': 'Mexican',
+        'image': 'mexicanbutton.png'
+      },
+      {
+        'id': 'Japanese',
+        'image': 'japanesebutton.png'
+      },
+      {
+        'id': 'Italian',
+        'image': 'italianbutton.png'
+      }
     ]
   });
 };
