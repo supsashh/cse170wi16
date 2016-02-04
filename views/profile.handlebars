@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<div class="container newsfeed-container">
+	<div class="container post-container newsfeed-container">
 		<h4 class="center">Newsfeed</h4>
 		<hr>
 		{{#each profile-posts}}
@@ -51,10 +51,10 @@
 						</div>
 					{{/if}}
 					<div class="media-body">
-					<h4 class="media-heading">{{profile-name}}</h4>
-					<a href="#"><i class="glyphicon glyphicon-heart"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-comment"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt "></i></a>
+					<h4 class="media-heading">{{../profile-name}}</h4>
+					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+					<a href="#"><i class="glyphicon glyphicon-comment social-button"></i></a>
+					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
 					<br>
 					<a href="/restaurant">{{restaurant}}</a>
 					<br>

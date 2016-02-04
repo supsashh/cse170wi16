@@ -68,10 +68,11 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 	margin-bottom: 50px;
 }
 
-.text-post {
-	margin-left: 20px;
-}
-
 .newsfeed-container {
 	margin-top: 50px;
+}
+
+.social-button {
+	font-size: 1.3em;
+	margin-right: 7px;
 }
