@@ -2,8 +2,26 @@
 	margin-top: 50px;
 }
 
-.bottom-nav a {
-	color: #5e5e5e;
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.navbar-header {
+ 	float:none;
+    padding:10px;
+}
+
+#bottomNav {
+	padding:10px;
+}
+#bottomNav a {
+    color:#ddd;
+    text-decoration:none;
+}
+#bottomNav a:hover {
+    color:#fff;
 }
 
 .bottom-nav a:hover {
