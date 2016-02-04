@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var portfolio = require('./routes/portfolio');
 var restaurant = require('./routes/restaurant');
 var seeMore = require('./routes/see-more');
+var profile = require('./routes/profile');
 
 var server = express();
 
@@ -40,6 +41,7 @@ server.get('/', index.view);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant', restaurant.view);
 server.get('/see-more', seeMore.view);
+server.get('/profile', profile.view);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
