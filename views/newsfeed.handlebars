@@ -36,13 +36,15 @@
 					</a>
 					</div>
 					<div class="media-body">
-					<h4 class="media-heading">{{name}}</h4>
+					<h4 class="media-heading">
+						<a href="/profile">{{name}}</a>
+					</h4>
 					{{#if picture}}
 						<img class="food-image" src="/images/{{food-image}}">
 						<br>
 					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-comment social-button"></i></a>
+					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
 					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
 					<br>
 					<a href="/restaurant">{{restaurant}}</a>
