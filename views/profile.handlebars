@@ -27,19 +27,33 @@
 
 	<div class="container profile-container">
 		<div class="media profile-top">
-		  <div class="media-left">
-		    <a href="#">
-		      <img class="media-object" src="/images/{{profile-image}}">
-		    </a>
-		  </div>
-		  <div class="media-body">
-		    <h4 class="media-heading">{{profile-name}}</h4>
-		  </div>
+		    <div class="media-left">
+		        <a href="#">
+		            <img class="media-object" src="/images/{{profile-image}}">
+		        </a>
+		    </div>
+		    <div class="media-body">
+		        <h3 class="media-heading">{{profile-name}}
+		    	    <a href="/friendslist" class="friendButton">Friends</a>
+		        </h3>
+		        <a href="/editprofile" class="btn btn-primary btn-xs btn-block" role="button">Edit Profile
+		        </a>
+		    </div>
 		</div>
+		<div class="Bio">
+		    <p><strong>Bio</strong></p>
+		    <p>21 year old food enthusiast from San Diego. Let's go out to eat.</p>
+		    <p><strong>Food Taste: </strong>
+                <a href="/cuisine/Mexican" class="label label-info tags">Mexican</a> 
+                <a href="/cuisine/Italian" class="label label-info tags">Italian</a>
+                <a href="/cuisine/Japanese" class="label label-info tags">Japanese</a>
+                <a href="/cuisine/American" class="label label-info tags">American</a>
+            </p>
+        </div>
 	</div>
 
 	<div class="container post-container newsfeed-container">
-		<h4 class="center">Newsfeed</h4>
+		<h4 class="center">Your Posts</h4>
 		<hr>
 		{{#each profile-posts}}
 			<div class="panel post">
@@ -56,7 +70,7 @@
 						<br>
 					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-comment social-button"></i></a>
+					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
 					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
 					<br>
 					<a href="/restaurant">{{restaurant}}</a>
