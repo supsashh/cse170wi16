@@ -98,3 +98,16 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 	padding-bottom: 10px;
 
 }
+
+.add-taste {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.add-location {
+	margin-bottom: 120px;
+}
+
+.log-out-button {
+    left: 50%;
+}
