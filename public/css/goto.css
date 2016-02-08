@@ -111,3 +111,27 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 .log-out-button {
     left: 50%;
 }
+
+.taste {
+	width: 100px;
+	height: 30px;
+	background: #5bc0de;
+	margin-bottom: 10px;
+}
+
+.taste-delete {
+    display: block;
+    color: #FFF;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    float: right;
+    text-align: center;
+    line-height: 30px;
+}
+
+.taste-label {
+	line-height: 30px;
+}
