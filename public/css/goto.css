@@ -110,6 +110,7 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 
 .log-out-button {
     left: 50%;
+    margin-bottom: 30px;
 }
 
 .taste {

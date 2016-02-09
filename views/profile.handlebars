@@ -42,12 +42,11 @@
 		</div>
 		<div class="Bio">
 		    <p><strong>Bio</strong></p>
-		    <p>21 year old food enthusiast from San Diego. Let's go out to eat.</p>
-		    <p><strong>Food Taste: </strong>
-                <a href="/cuisine/Mexican" class="label label-info tags">Mexican</a> 
-                <a href="/cuisine/Italian" class="label label-info tags">Italian</a>
-                <a href="/cuisine/Japanese" class="label label-info tags">Japanese</a>
-                <a href="/cuisine/American" class="label label-info tags">American</a>
+		    <p>{{bio}}</p>
+		    <p><strong>Food Taste: </strong> <br>
+		    	{{#each tastes}}
+                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a> 
+                {{/each}}      
             </p>
         </div>
 	</div>

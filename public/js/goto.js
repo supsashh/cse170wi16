@@ -13,11 +13,9 @@ $(document).ready(function() {
     }); 
 
     $(document).on("tap vclick click", ".taste-delete", function(event) {
-      var $this;
       event.preventDefault();
       event.stopPropagation();
-      $this = $(this);
-      $this.closest('.taste').remove();
+      $(this).closest('.taste').remove();
     });
 
     $(document).on("tap vclick click", ".add-taste-button", function(event) {
@@ -28,7 +26,15 @@ $(document).ready(function() {
       taste = taste + text + "</span><a class='taste-delete' href='#'>×</a></div>";
       $('.tastes').append(taste);
       $('#add-taste-input').val("");
+      $('#add-taste-input').blur();
     });
 
-
+    $('.update-location-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var location = $('#update-location-input').val();
+      $('#location').text(location);
+      $('#update-location-input').val("");
+      $('#update-location-input').blur();
+    });
 });
