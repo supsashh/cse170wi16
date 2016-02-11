@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>GoTo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="/css/goto.css" rel="stylesheet">
+
+    <script src="/js/jquery-1.11.0.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/portfolio.pack.min.js"></script>
+	<script src="/js/jquery.mobile.custom.min.js"></script>
+	<script src="/js/goto.js"></script>
+</head>
+
+<body onload="apiCall()">
+	<script>
+	function statusChangeCallback(response) {
+		// The response object is returned with a status field that lets the
+		// app know the current login status of the person.
+		// Full docs on the response object can be found in the documentation
+		// for FB.getLoginStatus().
+		if (response.status === 'connected') {
+				// Logged into your app and Facebook.
+				apiCall();
+		} else if (response.status === 'not_authorized') {
+				// The person is logged into Facebook, but not your app.
+				window.location.href= "/login";
+		} else {
+				// The person is not logged into Facebook, so we're not sure if
+				// they are logged into this app or not.
+		}
+	}
+
+	// This function is called when someone finishes with the Login
+	// Button.  See the onlogin handler attached to it in the sample
+	// code below.
+	function checkLoginState() {
+		FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+		});
+	}
+
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1018516261547542',
+			cookie     : true,  // enable cookies to allow the server to access
+											 // the session
+			xfbml      : true,  // parse social plugins on this page
+			version    : 'v2.2' // use version 2.2
+		});
+
+		// Now that we've initialized the JavaScript SDK, we call
+		// FB.getLoginStatus().  This function gets the state of the
+		// person visiting this page and can return one of three states to
+		// the callback you provide.  They can be:
+		//
+		// 1. Logged into your app ('connected')
+		// 2. Logged into Facebook, but not your app ('not_authorized')
+		// 3. Not logged into Facebook and can't tell if they are logged into
+		//    your app or not.
+		//
+		// These three cases are handled in the callback function.
+
+		FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+		});
+
+		};
+
+  		// Load the SDK asynchronously
+  		(function(d, s, id) {
+    		var js, fjs = d.getElementsByTagName(s)[0];
+    		if (d.getElementById(id)) return;
+    		js = d.createElement(s); js.id = id;
+    		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.2";
+    		fjs.parentNode.insertBefore(js, fjs);
+  		}(document, 'script', 'facebook-jssdk'));
+
+  		function apiCall() {
+				FB.getAuthResponse();
+				FB.api('/{{fb_id}}', 'GET',  {"fields":"name,picture{url}"},  function(response) {
+					var pics = document.getElementsByClassName("profile-pic");
+					var names = document.getElementsByClassName("profile-name");
+					var i;
+					for (i = 0; i < pics.length; i++) {
+    				pics[i].src = response.picture.data.url;
+						names[i].innerHTML = response.name;
+					}
+  			}
+			);
+  		}
+	</script>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
+			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a class="navbar-brand glyphicon glyphicon-cog" aria-hidden="true" href="/settings"></a>
+		</nav>
+	</div>
+
+	<div class="container profile-container">
+		<div class="media profile-top">
+		    <div class="media-left">
+		        <a href="#">
+		            <img class="media-object profile-pic img-rounded" src="">
+		        </a>
+		    </div>
+		    <div class="media-body">
+		        <h3 class="media-heading profile-name">
+		    	    <a href="/friendslist" class="friendButton">Friends</a>
+		        </h3>
+		        <a href="/editprofile" class="btn btn-primary btn-xs btn-block" role="button">Edit Profile
+		        </a>
+		    </div>
+		</div>
+		<div class="Bio">
+		    <p><strong>Bio</strong></p>
+		    <p>{{bio}}</p>
+		    <p><strong>Food Taste: </strong> <br>
+		    	{{#each tastes}}
+                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a>
+                {{/each}}
+            </p>
+        </div>
+	</div>
+
+	<div class="container post-container your-posts-container">
+		<h4 class="center">Your Posts</h4>
+		<hr>
+		{{#each profile-posts}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+					<a href="#">
+					  <img class="media-object profile-pic img-rounded" src="">
+					</a>
+					</div>
+					<div class="media-body">
+					<h4 class="media-heading profile-name"></h4>
+					{{#if picture}}
+						<img class="food-image" src="/images/{{food-image}}">
+						<br>
+					{{/if}}
+					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
+					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
+					<br>
+					<a href="/restaurant">{{restaurant}}</a>
+					<br>
+					{{restaurant-description}}
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+
+	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+	  <div class="row bottom-nav" id="bottomNav">
+	    <div class="col-xs-4 text-center"><a href="/">
+	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="/newsfeed">
+	    	<i class="glyphicon glyphicon-align-justify"></i><br>Newsfeed</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="/profile">
+	    	<i class="glyphicon glyphicon-user"></i><br>Profile</a>
+	    </div>
+	  </div>
+	  </div>
+	</div>
+
+</body>
+</html>
