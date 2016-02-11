@@ -28,13 +28,11 @@
 	<div class="container top-title">
 		<h4 class="center">Review {{restaurant}}</h4>
     <div class="well review review-dish text-center">
-      <nav>
       <label for="review-dish">What dish did you get?</label>
       <input type="text" class="form-control" placeholder="Dish" id="review-dish-input">
       <ul class="pager">
         <li class="next review-continue-button" data-continue="review-rate-dish"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
-</nav>
     </div>
 
     <div class="well review review-rate-dish text-center">
@@ -51,6 +49,7 @@
 
     <div class="well review review-ambiance text-center">
       <label for="review-ambiance">Restaurant Ambience</label>
+      <input type="text" class="form-control" placeholder="Ambience" id="review-ambience-input">
       <ul class="pager">
         <li class="previous review-back-button" data-back="review-rate-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
          <li class="next review-continue-button" data-continue="review-return"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
