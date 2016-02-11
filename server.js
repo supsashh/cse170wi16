@@ -67,6 +67,7 @@ server.get('/friendslist', friendslist.view);
 server.get('/comments', comments.view);
 server.get('/login', login.view);
 server.get('/tastes', tastes.view);
+server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
 server.get('/review/:restaurant', review.view);
 server.get('/profile/:id', friendProfile.view);

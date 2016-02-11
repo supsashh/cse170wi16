@@ -92,4 +92,20 @@ $(document).ready(function() {
       event.stopPropagation();
       $(this).toggleClass("highlight");
     });
+
+    $('#intro-tastes-button').click(function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var tastes = [];
+      $('.mycuisine.highlight').each(function() {
+        console.log("Adding " + $(this).find('.taste-label').text());
+        tastes.push($(this).find('.taste-label').text());
+      });
+      console.log(tastes);
+
+      $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
+        window.location.href = "/";
+      });
+
+    });
 });
