@@ -5,7 +5,7 @@ exports.view = function(req, res) { 
 };
 
 exports.deleteTaste = function(req, res) {
-	var tastes = data.tastes;
+	var tastes = data.myCuisines;
 	var index = tastes.indexOf(req.body.taste);
 	if (index > -1) {
 		tastes.splice(index, 1);
@@ -14,7 +14,7 @@ exports.deleteTaste = function(req, res) {
 };
 
 exports.addTaste = function(req, res) {
-	data.tastes.push(req.body.taste);
+	data.myCuisines.push(req.body.taste);
 	res.send(200);
 };
 
