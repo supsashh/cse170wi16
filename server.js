@@ -20,7 +20,11 @@ var settings = require('./routes/settings');
 var friendslist = require('./routes/friendslist');
 var comments = require('./routes/comments');
 var login = require('./routes/login');
+var tastes = require('./routes/tastes');
+var tutorial = require('./routes/tutorial');
 var review = require('./routes/review');
+var friendProfile = require('./routes/friendprofile');
+
 
 var server = express();
 
@@ -62,7 +66,12 @@ server.post('/settings/updateLocation', settings.updateLocation);
 server.get('/friendslist', friendslist.view);
 server.get('/comments', comments.view);
 server.get('/login', login.view);
+server.get('/tastes', tastes.view);
+server.post('/tastes/addTastes', tastes.addTastes);
+server.get('/tutorial', tutorial.view);
 server.get('/review/:restaurant', review.view);
+server.get('/profile/:id', friendProfile.view);
+
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

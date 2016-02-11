@@ -33,12 +33,44 @@
       {
         "id": "Italian",
         "image": "italianbutton.png"
+      },
+      {
+        "id": "Chinese",
+        "image": " "
+      },
+      {
+        "id": "French",
+        "image": ""
+      },
+      {
+        "id": "Brewery",
+        "image": ""
+      },
+      {
+        "id": "Fast Food",
+        "image": ""
+      },
+      {
+        "id": "Brazilian",
+        "image": ""
+      },
+      {
+        "id": "Indian",
+        "image": ""
+      },
+      {
+        "id": "Ethiopian",
+        "image": ""
+      },
+      {
+        "id": "Dessert",
+        "image": ""
       }
     ],
     "profile-image": "profile-icon.png",
     "profile-name": "James Clark",
     "bio": "21 year old food enthusiast from San Diego. Let's go out to eat.",
-    "tastes": ["Mexican", "Italian", "Japanese", "American"],
+    "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
     "location": "San Diego",
     "profile-posts": [
       {

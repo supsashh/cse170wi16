@@ -48,7 +48,6 @@
 	margin-top: 70px;
 }
 
-table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 
 .profile-top {
 	margin-left: 20px;
@@ -137,6 +136,22 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 	line-height: 30px;
 }
 
+.mycuisine {
+	width: 80px;
+	height: 30px;
+	background: #5bc0de;
+	margin-bottom: 10px;
+	
+}
+
+.favCuisine-Container {
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+}
+
+.highlight { background-color: #0000ff; }​
+
 .edit-bio-button {
 	margin-top: 10px;
 }
@@ -156,4 +171,40 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 .friend a {
 	color:#B8B8B8;
     text-decoration:none;
+}
+
+.fb-login-button {
+	width: 300px;
+	height: 64px;
+	display: inline-block !important;
+}
+
+.fb_iframe_widget iframe {
+    opacity: 0;
+}
+
+.fb_iframe_widget {
+  background-image: url(/images/fb-login.png);
+  background-repeat: no-repeat; 
+}
+
+.login-body {
+	background-color: #6C7A89;
+}
+
+.login-container {
+	height: 270px;
+    background-color: #fff;
+    margin-top: 130px;
+}
+
+.goto-logo {
+	width: 250px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.logo-container {
+	background-color: #f0f1f3;
+    margin-bottom: 30px;
 }
