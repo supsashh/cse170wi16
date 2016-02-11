@@ -87,7 +87,7 @@
 					var i;
 					for (i = 0; i < pics.length; i++) {
     				pics[i].src = response.picture.data.url;
-						names[i].innerHTML = response.name;
+						names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
 					}
   			}
 			);
@@ -110,7 +110,7 @@
 		    </div>
 		    <div class="media-body">
 		        <h3 class="media-heading profile-name">
-		    	    <a href="/friendslist" class="friendButton">Friends</a>
+
 		        </h3>
 		        <a href="/editprofile" class="btn btn-primary btn-xs btn-block" role="button">Edit Profile
 		        </a>
