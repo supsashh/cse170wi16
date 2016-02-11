@@ -15,7 +15,12 @@ $(document).ready(function() {
     $(document).on("tap vclick click", ".taste-delete", function(event) {
       event.preventDefault();
       event.stopPropagation();
-      $(this).closest('.taste').remove();
+      var taste = $(this).closest('.taste');
+      var text = taste.find('.taste-label').text();
+
+      $.post("/settings/deleteTaste/", {"taste": text}, function() {
+        taste.remove();
+      });
     });
 
     $(document).on("tap vclick click", ".add-taste-button", function(event) {
@@ -24,17 +29,23 @@ $(document).ready(function() {
       var text = $('#add-taste-input').val();
       var taste = "<div class='taste'><span class='label taste-label'>";
       taste = taste + text + "</span><a class='taste-delete' href='#'>×</a></div>";
-      $('.tastes').append(taste);
-      $('#add-taste-input').val("");
-      $('#add-taste-input').blur();
+
+      $.post("/settings/addTaste/", {"taste": text}, function() {
+        $('.tastes').append(taste);
+        $('#add-taste-input').val("");
+        $('#add-taste-input').blur();
+      });
     });
 
     $('.update-location-button').on('tap vclick click', function(event) {
       event.preventDefault();
       event.stopPropagation();
       var location = $('#update-location-input').val();
-      $('#location').text(location);
-      $('#update-location-input').val("");
-      $('#update-location-input').blur();
+
+      $.post("/settings/updateLocation/", {"location": location}, function() {
+        $('#location').text(location);
+        $('#update-location-input').val("");
+        $('#update-location-input').blur();
+      });
     });
 });

@@ -13,7 +13,7 @@
 }
 
 .glyphicon-cog {
-	padding-left: 190px;
+	float: right;
 }
 
 #bottomNav {
@@ -105,7 +105,7 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 }
 
 .add-location {
-	margin-bottom: 120px;
+	margin-bottom: 100px;
 }
 
 .log-out-button {
