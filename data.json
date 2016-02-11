@@ -115,7 +115,7 @@
         "profile-image": "profile-icon.png",
         "restaurant": "@AzukiSushi",
         "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
-      },
+      }
     ],
       "restaurants":[
         {
@@ -172,7 +172,7 @@
               "profile-image": "profile-icon.png",
               "restaurant": "@vallarta-express",
               "restaurant-description": "oooo, there are fries in this!"
-            },
+            }
           ]
         },
         {
@@ -229,7 +229,7 @@
               "profile-image": "profile-icon.png",
               "restaurant": "@ki-sushi",
               "restaurant-description": "The salmon is pretty good."
-            },
+            }
           ]
         },
         {
@@ -286,7 +286,7 @@
               "profile-image": "profile-icon.png",
               "restaurant": "@smash-burger",
               "restaurant-description": "Perfect for vegetarians."
-            },
+            }
           ]
         }
       ]
