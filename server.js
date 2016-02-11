@@ -19,6 +19,7 @@ var editprofile = require('./routes/editprofile');
 var settings = require('./routes/settings');
 var friendslist = require('./routes/friendslist');
 var comments = require('./routes/comments');
+var login = require('./routes/login');
 
 var server = express();
 
@@ -55,6 +56,7 @@ server.get('/editprofile', editprofile.view);
 server.get('/settings', settings.view);
 server.get('/friendslist', friendslist.view);
 server.get('/comments', comments.view);
+server.get('/login', login.view);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
