@@ -148,3 +148,12 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 .review {
 	margin-top: 50px;
 }
+
+.friend-alert {
+	margin-top: 20px;
+}
+
+.friend a {
+	color:#B8B8B8;
+    text-decoration:none;
+}
