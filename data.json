@@ -126,14 +126,17 @@
           "cuisineId":"Mexican",
           "menu-items":[
             {
+              "item-id":"carne_asada_fries",
               "item-name":"Carne Asada Fries",
-              "item-image":"vallarta-carne_asada.jpg"
+              "item-image":"vallarta-carne_asada_fries.jpg"
             },
             {
+              "item-id":"cali_burrito",
               "item-name":"California Burrito",
               "item-image":"vallarta-cali_burrito.jpg"
             },
             {
+              "item-id":"shrimp_quesadilla",
               "item-name":"Shrimp Quesadilla",
               "item-image":"vallarta-shrimp_quesadilla.jpg"
             }
@@ -180,14 +183,17 @@
           "cuisineId":"Japanese",
           "menu-items":[
             {
+              "item-id":"chicken_katsu",
               "item-name":"Chicken Katsu Bento",
               "item-image":"ki-chicken_katsu.jpg"
             },
             {
+              "item-id":"sushi",
               "item-name":"Sushi Sampler",
               "item-image":"ki-sushi.jpg"
             },
             {
+              "item-id":"miso_salmon",
               "item-name":"Miso Salmon",
               "item-image":"ki-miso_salmon.jpg"
             }
@@ -234,14 +240,17 @@
           "cuisineId":"American",
           "menu-items":[
             {
+              "item-id":"chicken_sandwich",
               "item-name":"Classic Grilled Chicken Sandwich w/ Avocado",
               "item-image":"smash-chicken_sandwich.jpg"
             },
             {
+              "item-id":"bbq",
               "item-name":"BBQ Burger",
               "item-image":"smash-bbq.jpg"
             },
             {
+              "item-id":"black_bean",
               "item-name":"Black Bean Spicy Baja - Ultimate",
               "item-image":"smash-black_bean.jpg"
             }
