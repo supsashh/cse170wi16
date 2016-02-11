@@ -108,4 +108,26 @@ $(document).ready(function() {
       });
 
     });
+
+    $('.search-button').click(function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var searchTerm = $('#search-input').val();
+
+      $.get("/search/" + searchTerm, function(response) {
+        $('.results-container').empty();
+        console.log(response.length);
+        if (jQuery.isEmptyObject(response)) {
+          $('.results-container').append("<p>No results found</p>");
+        }
+        else {
+          console.log(response);
+          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object' src='";
+          result += "/images/" + response.picture + "'></a></div>";
+          result += "<div class='media-body'><h4><a href='/restaurant/" + response.id + "'>";
+          result += response.name + "</a></h4></div></div>"
+          $('.results-container').append(result);
+        }
+      });
+    });
 });

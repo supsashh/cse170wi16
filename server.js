@@ -56,6 +56,7 @@ server.get('/restaurant/:id', restaurant.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
 server.get('/search', search.view);
+server.get('/search/:term', search.search);
 server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/editprofile', editprofile.view);
 server.post('/editprofile/editBio', editprofile.editBio);
