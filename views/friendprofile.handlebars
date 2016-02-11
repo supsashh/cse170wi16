@@ -81,13 +81,13 @@
 
   		function apiCall() {
 				FB.getAuthResponse();
-				FB.api('/me', 'GET',  {"fields":"name,picture{url}"},  function(response) {
+				FB.api('/{{fb_id}}', 'GET',  {"fields":"name,picture{url}"},  function(response) {
 					var pics = document.getElementsByClassName("profile-pic");
 					var names = document.getElementsByClassName("profile-name");
 					var i;
 					for (i = 0; i < pics.length; i++) {
     				pics[i].src = response.picture.data.url;
-						names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
+						names[i].innerHTML = response.name;
 					}
   			}
 			);
@@ -110,7 +110,7 @@
 		    </div>
 		    <div class="media-body">
 		        <h3 class="media-heading profile-name">
-
+		    	    <a href="/friendslist" class="friendButton">Friends</a>
 		        </h3>
 		        <a href="/editprofile" class="btn btn-primary btn-xs btn-block" role="button">Edit Profile
 		        </a>
@@ -120,9 +120,9 @@
 		    <p><strong>Bio</strong></p>
 		    <p>{{bio}}</p>
 		    <p><strong>Food Taste: </strong> <br>
-		    	{{#each myCuisines}}
-                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a> 
-                {{/each}}      
+		    	{{#each tastes}}
+                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a>
+                {{/each}}
             </p>
         </div>
 	</div>
