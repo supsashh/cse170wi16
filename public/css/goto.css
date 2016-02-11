@@ -13,7 +13,7 @@
 }
 
 .glyphicon-cog {
-	padding-left: 190px;
+	float: right;
 }
 
 #bottomNav {
@@ -105,7 +105,7 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 }
 
 .add-location {
-	margin-bottom: 120px;
+	margin-bottom: 100px;
 }
 
 .log-out-button {
@@ -135,4 +135,25 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 
 .taste-label {
 	line-height: 30px;
+}
+
+.edit-bio-button {
+	margin-top: 10px;
+}
+
+.review-dish-button {
+	margin-top: 10px;
+}
+
+.review {
+	margin-top: 50px;
+}
+
+.friend-alert {
+	margin-top: 20px;
+}
+
+.friend a {
+	color:#B8B8B8;
+    text-decoration:none;
 }
