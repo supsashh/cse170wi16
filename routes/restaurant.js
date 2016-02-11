@@ -1,11 +1,11 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-  var id = req.params.id; 
+  var restaurantId = req.params.id; 
   var restaurants = data.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
-    if(id.localCompare(restaurants[i].id)){
+    if(restaurantId.localCompare(restaurants[i].id)){
       restaurant = restaurants[i];
     }
   }

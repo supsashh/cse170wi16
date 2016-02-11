@@ -2,17 +2,17 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
+	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
-    <script src="/js/jquery-1.11.0.js"></script> 
+    <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/goto.js"></script>    
+	<script src="/js/goto.js"></script>
 </head>
 
 <body onload="checkLoginState()">
@@ -27,7 +27,7 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-      		  testAPI();
+      		  //testAPI();
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
       		  window.location.href= "/login";
@@ -50,13 +50,13 @@
   		window.fbAsyncInit = function() {
   			FB.init({
     			appId      : '1018516261547542',
-    			cookie     : true,  // enable cookies to allow the server to access 
+    			cookie     : true,  // enable cookies to allow the server to access
      	  	                 // the session
     			xfbml      : true,  // parse social plugins on this page
     			version    : 'v2.2' // use version 2.2
   			});
 
-  			// Now that we've initialized the JavaScript SDK, we call 
+  			// Now that we've initialized the JavaScript SDK, we call
   			// FB.getLoginStatus().  This function gets the state of the
   			// person visiting this page and can return one of three states to
   			// the callback you provide.  They can be:
@@ -85,13 +85,13 @@
 
   		// Here we run a very simple test of the Graph API after login is
   		// successful.  See statusChangeCallback() for when this call is made.
-  		function testAPI() {
-    		console.log('Welcome!  Fetching your information.... ');
-    		/*FB.api('/me', function(response) {
-      			console.log('Successful login for: ' + response.name);
-      			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-    		});*/
-  		}
+  		// function testAPI() {
+    	// 	console.log('Welcome!  Fetching your information.... ');
+    	// 	/*FB.api('/me', function(response) {
+      // 			console.log('Successful login for: ' + response.name);
+      // 			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
+    	// 	});*/
+  		// }
 
   		function shareRestaurant() {
   			FB.ui({
@@ -108,9 +108,73 @@
 		</nav>
 	</div>
 
-	<div class="container top-title">
-		<h2>Restaurant page</h2>
-		<a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i></a>
+	<!-- <div class="container top-title">
+		<h2>{{name}}</h2>
+
+	</div> -->
+
+	<div class="container profile-container">
+		<div class="media profile-top">
+		    <div class="media-left">
+		        <a href="#">
+		            <img class="media-object img-rounded" src="/images/{{picture}}">
+		        </a>
+		    </div>
+		    <div class="media-body">
+		        <h3 class="media-heading profile-name">
+								{{name}}
+		        </h3>
+		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share with your friends</a>
+		        </a>
+		    </div>
+		</div>
+		<div class="Details">
+		    <p><strong>Details</strong></p>
+		    <p>{{address}}</p>
+		    <p><strong>Cuisine: </strong> <br>
+            <a href="/cuisine/{{cuisineId}}" class="label label-info tags">{{cuisineId}}</a>
+        </p>
+    </div>
+	</div>
+
+	<div class="container top-title portfolio-container">
+			<h3>Menu Items</h3>
+			<div id="menu-items" class="portfolio">
+				{{#each item-images}}
+			    <img data-src="images/{{item-image}}" class="restaurant-image" />
+		        {{/each}}
+		        <img data-src="images/see-more.png" data-url="/restaurant/{{id}}/menu-items" class="restaurant-image"/>
+			</div>
+	</div>
+
+	<div class="container post-container your-posts-container">
+		<h4 class="center">Your Posts</h4>
+		<hr>
+		{{#each profile-posts}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+					<a href="#">
+					  <img class="media-object profile-pic img-rounded" src="">
+					</a>
+					</div>
+					<div class="media-body">
+					<h4 class="media-heading profile-name"></h4>
+					{{#if picture}}
+						<img class="food-image" src="/images/{{food-image}}">
+						<br>
+					{{/if}}
+					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
+					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
+					<br>
+					<a href="/restaurant">{{restaurant}}</a>
+					<br>
+					{{restaurant-description}}
+					</div>
+				</div>
+			</div>
+		{{/each}}
 	</div>
 
 <div id="status">

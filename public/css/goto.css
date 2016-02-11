@@ -37,9 +37,9 @@
 }
 
 #logo{
-	height: auto; 
-    width: auto; 
-    max-width: 58px; 
+	height: auto;
+    width: auto;
+    max-width: 58px;
     max-height: 70px;
     padding-bottom: 20px;
 }
@@ -54,7 +54,7 @@
 	margin-top: 70px;
 }
 
-.Bio {
+.Bio, .Details {
 	margin-left: 20px;
 }
 
@@ -141,7 +141,7 @@
 	height: 30px;
 	background: #5bc0de;
 	margin-bottom: 10px;
-	
+
 }
 
 .favCuisine-Container {
@@ -185,7 +185,7 @@
 
 .fb_iframe_widget {
   background-image: url(/images/fb-login.png);
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 .login-body {
