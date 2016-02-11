@@ -48,4 +48,14 @@ $(document).ready(function() {
         $('#update-location-input').blur();
       });
     });
+
+    $('.edit-bio-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var bio = $('#edit-bio').val();
+
+      $.post("/editprofile/editBio/", {"bio": bio}, function() {
+        window.location.href = "/profile";
+      });
+    });
 });

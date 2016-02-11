@@ -136,3 +136,8 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 .taste-label {
 	line-height: 30px;
 }
+
+.edit-bio-button {
+	left: 50%;
+	margin-top: 10px;
+}

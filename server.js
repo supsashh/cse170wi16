@@ -53,6 +53,7 @@ server.get('/newsfeed', newsfeed.view);
 server.get('/search', search.view);
 server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/editprofile', editprofile.view);
+server.post('/editprofile/editBio', editprofile.editBio);
 server.get('/settings', settings.view);
 server.post('/settings/deleteTaste', settings.deleteTaste);
 server.post('/settings/addTaste', settings.addTaste);
