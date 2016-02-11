@@ -118,11 +118,11 @@ $(document).ready(function() {
         $('.results-container').empty();
         console.log(response.length);
         if (jQuery.isEmptyObject(response)) {
-          $('.results-container').append("<p>No results found</p>");
+          $('.results-container').append("<p class='text-center'>No results found</p>");
         }
         else {
           console.log(response);
-          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object' src='";
+          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
           result += "/images/" + response.picture + "'></a></div>";
           result += "<div class='media-body'><h4><a href='/restaurant/" + response.id + "'>";
           result += response.name + "</a></h4></div></div>"

@@ -212,3 +212,7 @@
 .results-container {
 	margin-top: 30px;
 }
+
+.search-result-pic {
+	height: 64px;
+}
