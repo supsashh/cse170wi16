@@ -138,6 +138,13 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 }
 
 .edit-bio-button {
-	left: 50%;
 	margin-top: 10px;
+}
+
+.review-dish-button {
+	margin-top: 10px;
+}
+
+.review {
+	margin-top: 50px;
 }

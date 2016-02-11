@@ -58,4 +58,32 @@ $(document).ready(function() {
         window.location.href = "/profile";
       });
     });
+
+    $('.review-rate-dish').hide();
+    $('.review-ambiance').hide();
+    $('.review-return').hide();
+    $('.review-done').hide();
+    $('.review-continue-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).closest('.review').hide();
+      var next = $(this).data("continue");
+      if (next) {
+        $('.' + next).show();  
+      }
+      else {
+        window.location.href = "/restaurant";
+      }  
+    });
+
+    $('.review-back-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $('.review-rate-dish').hide();
+      $(this).closest('.review').hide();
+      var back = $(this).data("back");
+      if (back) {
+        $('.' + back).show();  
+      }  
+    });
 });

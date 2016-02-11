@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>GoTo</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="/css/goto.css" rel="stylesheet">
+  <link href="/css/rateit.css" rel="stylesheet">
+
+  <script src="/js/jquery-1.11.0.js"></script> 
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/portfolio.pack.min.js"></script>
+	<script src="/js/jquery.mobile.custom.min.js"></script>
+  <script src="/js/jquery.rateit.min.js"></script>
+	<script src="/js/goto.js"></script>    
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
+			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+		</nav>
+	</div>
+
+	<div class="container top-title">
+		<h4 class="center">Review {{restaurant}}</h4>
+    <div class="well review review-dish text-center">
+      <nav>
+      <label for="review-dish">What dish did you get?</label>
+      <input type="text" class="form-control" placeholder="Dish" id="review-dish-input">
+      <ul class="pager">
+        <li class="next review-continue-button" data-continue="review-rate-dish"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+</nav>
+    </div>
+
+    <div class="well review review-rate-dish text-center">
+      <label for="review-rate-dish">Rate your dish</label>
+      <div class="text-center">
+        <div class="rateit">
+        </div>
+      <ul class="pager">
+        <li class="previous review-back-button" data-back="review-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
+         <li class="next review-continue-button" data-continue="review-ambiance"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="well review review-ambiance text-center">
+      <label for="review-ambiance">Restaurant Ambience</label>
+      <ul class="pager">
+        <li class="previous review-back-button" data-back="review-rate-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
+         <li class="next review-continue-button" data-continue="review-return"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+    </div>
+
+    <div class="well review review-return text-center">
+      <label for="review-return-input">Would you come back?</label>
+      <form id="review-return-input">
+        <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+        <label class="radio-inline"><input type="radio" name="optradio">No</label>
+        <ul class="pager">
+          <li class="previous review-back-button" data-back="review-ambiance"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
+           <li class="next review-continue-button" data-continue="review-done"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+      </form> 
+    </div>
+
+    <div class="well review review-done text-center">
+      <h3>Thanks!</h3>
+      <ul class="pager">
+        <li class="previous review-back-button" data-back="review-return"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
+         <li class="next review-continue-button" data-continue=""><a href="#">Done <span aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+    </div>
+
+
+	</div>
+
+<div id="status">
+</div>
+
+	<div id="footer">
+	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+	  <div class="row bottom-nav" id="bottomNav">
+	    <div class="col-xs-4 text-center"><a href="/">
+	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="/newsfeed">
+	    	<i class="glyphicon glyphicon-align-justify"></i><br>Newsfeed</a>
+	    </div>
+	    <div class="col-xs-4 text-center"><a href="/profile">
+	    	<i class="glyphicon glyphicon-user"></i><br>Profile</a>
+	    </div>
+	  </div>
+	  </div>
+	</div>
+</body>
+
+</html>
