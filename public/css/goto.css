@@ -48,7 +48,6 @@
 	margin-top: 70px;
 }
 
-table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 
 .profile-top {
 	margin-left: 20px;
@@ -136,3 +135,20 @@ table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
 .taste-label {
 	line-height: 30px;
 }
+
+.mycuisine {
+	width: 80px;
+	height: 30px;
+	background: #5bc0de;
+	margin-bottom: 10px;
+	
+}
+
+.favCuisine-Container {
+	padding-top: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+}
+
+.highlight { background-color: #0000ff; }​
+

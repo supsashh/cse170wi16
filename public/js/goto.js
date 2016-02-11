@@ -37,4 +37,10 @@ $(document).ready(function() {
       $('#update-location-input').val("");
       $('#update-location-input').blur();
     });
+
+    $(document).on("tap vclick click", ".mycuisine", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).toggleClass("highlight");
+    });
 });
