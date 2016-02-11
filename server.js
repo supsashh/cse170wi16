@@ -48,7 +48,7 @@ if ('development' == server.get('env')) {
 server.get('/', index.view);
 server.get('/login', index.viewLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
-server.get('/restaurant', restaurant.view);
+server.get('/restaurant/:id', restaurant.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
 server.get('/search', search.view);
