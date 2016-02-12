@@ -143,52 +143,64 @@
     ],
     "cuisines": [
       {
-        "id": "American",
-        "image": "americanbutton.png"
+        "id": "Mexican",
+        "image": "mexicanbutton.png",
+        "info":"Delicioso"
       },
       {
-        "id": "Mexican",
-        "image": "mexicanbutton.png"
+        "id": "American",
+        "image": "americanbutton.png",
+        "info":"'Murica"
       },
       {
         "id": "Japanese",
-        "image": "japanesebutton.png"
+        "image": "japanesebutton.png",
+        "info":"おいしい"
       },
       {
         "id": "Italian",
-        "image": "italianbutton.png"
+        "image": "italianbutton.png",
+        "info":"Delizioso"
       },
       {
         "id": "Chinese",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
         "id": "French",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
         "id": "Brewery",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
-        "id": "Fast Food",
-        "image": ""
+        "id": "Fast-Food",
+        "image": "",
+        "info":""
       },
       {
         "id": "Brazilian",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
         "id": "Indian",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
         "id": "Ethiopian",
-        "image": ""
+        "image": "",
+        "info":""
       },
       {
         "id": "Dessert",
-        "image": ""
+        "image": "",
+        "info":""
       }
     ],
     "profile-image": "profile-icon.png",

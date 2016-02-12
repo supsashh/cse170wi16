@@ -2,17 +2,17 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
+	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
-    <script src="/js/jquery-1.11.0.js"></script> 
+    <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/goto.js"></script>    
+	<script src="/js/goto.js"></script>
 </head>
 
 <body>
@@ -23,11 +23,28 @@
 		</nav>
 	</div>
 
-	<div class="jumbotron">
-      <h1>{{cuisineId}}</h1>
-      <p>one-sentence description of cuisine</p>
+	<div class="container portfolio-detail-container">
+      <h1 class="center">{{cuisine.id}}</h1>
+			<h2 class="center">{{cuisine.info}}, meaning <i>Delicious</i></h2>
+			{{#if cuisineRestaurants}}
+      {{#each cuisineRestaurants}}
+      	<div class='panel media'>
+      		<div class='media-left'>
+      			<a href='#'>
+      				<img class='media-object portfolio-detail-pic' src='/images/{{picture}}' />
+		        </a>
+		    </div>
+		    <div class='media-body'>
+		    	<h4 class='media-heading'>
+		    		<a href="/restaurant/{{id}}">{{name}}</a>
+		       	</h4>
+		    </div>
+		</div>
+	  {{/each}}
+		{{/if}}
+		  <h3>Nothing here :(</h3>
     </div>
-	
+
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
