@@ -117,9 +117,48 @@ $(document).ready(function() {
       $(this).toggleClass("highlight");
     });
 
+
     $(document).on("tap vclick click", ".glyphicon-heart", function(event) {
       event.preventDefault();
       event.stopPropagation();
       $(this).toggleClass($(this).css('color','red'));
+
+    $('#intro-tastes-button').click(function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var tastes = [];
+      $('.mycuisine.highlight').each(function() {
+        console.log("Adding " + $(this).find('.taste-label').text());
+        tastes.push($(this).find('.taste-label').text());
+      });
+      console.log(tastes);
+
+      $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
+        window.location.href = "/";
+      });
+
+    });
+
+    $('.search-button').click(function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var searchTerm = $('#search-input').val();
+
+      $.get("/search/" + searchTerm, function(response) {
+        $('.results-container').empty();
+        console.log(response.length);
+        if (jQuery.isEmptyObject(response)) {
+          $('.results-container').append("<p class='text-center'>No results found</p>");
+        }
+        else {
+          console.log(response);
+          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+          result += "/images/" + response.picture + "'></a></div>";
+          result += "<div class='media-body'><h4><a href='/restaurant/" + response.id + "'>";
+          result += response.name + "</a></h4></div></div>"
+          $('.results-container').append(result);
+        }
+      });
+
     });
 });

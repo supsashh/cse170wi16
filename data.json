@@ -116,5 +116,178 @@
         "restaurant": "@AzukiSushi",
         "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
       }
-    ]
+    ],
+      "restaurants":[
+        {
+          "id": "vallarta-express",
+          "name": "Vallarta Express",
+          "picture":"vallarta.jpg",
+          "address":"4277 Genesee Ave (at Mt Edna Dr), San Diego, CA 92117",
+          "cuisineId":"Mexican",
+          "menu-items":[
+            {
+              "item-id":"carne_asada_fries",
+              "item-name":"Carne Asada Fries",
+              "item-image":"vallarta-carne_asada_fries.jpg"
+            },
+            {
+              "item-id":"cali_burrito",
+              "item-name":"California Burrito",
+              "item-image":"vallarta-cali_burrito.jpg"
+            },
+            {
+              "item-id":"shrimp_quesadilla",
+              "item-name":"Shrimp Quesadilla",
+              "item-image":"vallarta-shrimp_quesadilla.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "vallarta-carne_asada.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@vallarta-express",
+              "restaurant-description": "Wow. #lit"
+            },
+            {
+              "picture": true,
+              "food-image": "vallarta-shrimp_quesadilla.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@vallarta-express",
+              "restaurant-description": "Shrimpalicious."
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@vallarta-express",
+              "restaurant-description": "The best 3am food."
+            },
+            {
+              "picture": true,
+              "food-image":"vallarta-cali_burrito.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@vallarta-express",
+              "restaurant-description": "oooo, there are fries in this!"
+            }
+          ]
+        },
+        {
+          "id": "ki-sushi",
+          "name": "Ki Sushi & Sake Bar",
+          "picture":"ki.jpg",
+          "address":"Costa Verde Shopping Ctr 8650 Genesee Ave, San Diego, CA 92122",
+          "cuisineId":"Japanese",
+          "menu-items":[
+            {
+              "item-id":"chicken_katsu",
+              "item-name":"Chicken Katsu Bento",
+              "item-image":"ki-chicken_katsu.jpg"
+            },
+            {
+              "item-id":"sushi",
+              "item-name":"Sushi Sampler",
+              "item-image":"ki-sushi.jpg"
+            },
+            {
+              "item-id":"miso_salmon",
+              "item-name":"Miso Salmon",
+              "item-image":"ki-miso_salmon.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "ki-chicken_katsu.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@ki-sushi",
+              "restaurant-description": "more like chicken wowtsu."
+            },
+            {
+              "picture": true,
+              "food-image": "ki-sushi.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@ki-sushi",
+              "restaurant-description": "sushisushisushi"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@ki-sushi",
+              "restaurant-description": "Good sake bombs."
+            },
+            {
+              "picture": true,
+              "food-image":"ki-miso_salmon.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@ki-sushi",
+              "restaurant-description": "The salmon is pretty good."
+            }
+          ]
+        },
+        {
+          "id": "smash-burger",
+          "name": "Smashburger",
+          "picture":"smash.jpg",
+          "address":"1555 Camino del Mar (at 15th St.), Del Mar, CA 92014, United States",
+          "cuisineId":"American",
+          "menu-items":[
+            {
+              "item-id":"chicken_sandwich",
+              "item-name":"Classic Grilled Chicken Sandwich w/ Avocado",
+              "item-image":"smash-chicken_sandwich.jpg"
+            },
+            {
+              "item-id":"bbq",
+              "item-name":"BBQ Burger",
+              "item-image":"smash-bbq.jpg"
+            },
+            {
+              "item-id":"black_bean",
+              "item-name":"Black Bean Spicy Baja - Ultimate",
+              "item-image":"smash-black_bean.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "smash-bbq.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@smash-burger",
+              "restaurant-description": "The sauce is really good!"
+            },
+            {
+              "picture": true,
+              "food-image": "smash-chicken_sandwich.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@smash-burger",
+              "restaurant-description": "so much food!"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@smash-burger",
+              "restaurant-description": "Staff is friendly."
+            },
+            {
+              "picture": true,
+              "food-image":"smash-black_bean.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@smash-burger",
+              "restaurant-description": "Perfect for vegetarians."
+            }
+          ]
+        }
+      ]
 }

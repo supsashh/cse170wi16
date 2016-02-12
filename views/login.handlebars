@@ -13,7 +13,7 @@
 	<script src="/js/goto.js"></script>
 </head>
 
-<body>
+<body class="login-body">
 	<script>
     	// This is called with the results from from FB.getLoginStatus().
   		function statusChangeCallback(response) {
@@ -90,11 +90,16 @@
     		});
   		}
 	</script>
-  <div class="container">
-    <img src="/images/gotologo.png" class="img-responive">
-  </div>
 
-  <fb:login-button size="xlarge" scope="public_profile,email,user_friends" onlogin="checkLoginState();">Frieeeends
-  </fb:login-button>
+
+  <div class="container text-center">
+    <div class="login-container img-rounded">
+      <div class="logo-container img-rounded">
+        <img src="/images/gotologo.png" class="goto-logo"/>
+      </div>
+      <fb:login-button size="xlarge" class="fb-login-button" scope="public_profile,email,user_friends" onlogin="checkLoginState();">
+      </fb:login-button>
+    </div>
+  </section>
 
 </body>
