@@ -140,17 +140,17 @@
 	<div class="container top-title portfolio-container">
 			<h3>Menu Items</h3>
 			<div id="menu-items" class="portfolio">
-				{{#each item-images}}
-			    <img data-src="images/{{item-image}}" class="restaurant-image" />
+				{{#each menu-items}}
+			    <img data-src="/images/{{item-image}}" class="restaurant-image" />
 		        {{/each}}
-		        <img data-src="images/see-more.png" data-url="/restaurant/{{id}}/menu-items" class="restaurant-image"/>
+		        <img data-src="/images/see-more.png" data-url="/restaurant/{{id}}/menu" class="restaurant-image"/>
 			</div>
 	</div>
 
 	<div class="container post-container your-posts-container">
-		<h4 class="center">Your Posts</h4>
+		<h4 class="center">Restaurant Newsfeed</h4>
 		<hr>
-		{{#each profile-posts}}
+		{{#each posts}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">

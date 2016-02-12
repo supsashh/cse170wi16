@@ -5,10 +5,9 @@ exports.view = function(req, res){
   var restaurants = data.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
-    if(restaurantId == restaurants[i].id){
+    if(restaurantId.localeCompare(restaurants[i].id)){
       restaurant = restaurants[i];
-      break;
     }
   }
-  res.render('restaurant', restaurant);
+  res.render('menu', restaurant);
 };

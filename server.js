@@ -24,6 +24,7 @@ var tastes = require('./routes/tastes');
 var tutorial = require('./routes/tutorial');
 var review = require('./routes/review');
 var friendProfile = require('./routes/friendprofile');
+var menu = require('./routes/menu');
 
 
 var server = express();
@@ -53,6 +54,7 @@ server.get('/', index.view);
 server.get('/login', index.viewLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);
+server.get('/restaurant/:id/menu', menu.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
 server.get('/search', search.view);
