@@ -235,5 +235,13 @@
 
 .search-result-pic {
 	height: 64px;
+}
 
+.portfolio-detail-pic {
+	width: 100px;
+	height: 67px;
+}
+
+.portfolio-detail-container {
+	margin-top: 60px;
 }

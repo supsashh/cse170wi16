@@ -23,9 +23,23 @@
 		</nav>
 	</div>
 
-	<div class="jumbotron">
-      <h1>{{portfolioTitle}}</h1>
-      <p>one-sentence description of portfolio</p>
+	<div class="container portfolio-detail-container">
+      <h4 class="center">{{portfolioTitle}}</h4>
+      {{#each portfolio.images}}
+      	<div class='panel media'>
+      		<div class='media-left'>
+      			<a href='#'>
+      				<img class='media-object portfolio-detail-pic' src='/images/{{image}}' />
+		        </a>
+		    </div>
+		    <div class='media-body'>
+		    	<h4 class='media-heading'>
+		    		<a href="/restaurant/{{restaurant-id}}">{{restaurant-name}}</a>
+		       	</h4>
+		       	{{dish-name}}
+		    </div>
+		</div>
+	  {{/each}}
     </div>
 	
 	<div id="footer">
