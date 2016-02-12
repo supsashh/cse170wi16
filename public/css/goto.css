@@ -16,6 +16,14 @@
 	float: right;
 }
 
+.glyphicon-pencil {
+	float: right;
+}
+
+.glyphicon-remove {
+	float: right;
+}
+
 #bottomNav {
 	padding:10px;
 }
@@ -150,7 +158,13 @@
 	padding-bottom: 40px;
 }
 
-.highlight { background-color: #0000ff; }​
+.highlight { 
+	background-color: #0000ff; 
+}
+​
+.highlight1 {
+	background-color: red;
+}
 
 .edit-bio-button {
 	margin-top: 10px;
@@ -171,4 +185,10 @@
 .friend a {
 	color:#B8B8B8;
     text-decoration:none;
+}
+
+.newpost-form {
+	padding-top: 50px;
+	padding-right: 20px;
+	padding-left: 20px;
 }

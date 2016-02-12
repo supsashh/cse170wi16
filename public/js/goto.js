@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
     $('.portfolio').each(function(index, obj) {
     	var p = $(this).portfolio();
@@ -30,7 +32,7 @@ $(document).ready(function() {
       var taste = "<div class='taste'><span class='label taste-label'>";
       taste = taste + text + "</span><a class='taste-delete' href='#'>×</a></div>";
 
-      $.post("/settings/addTaste/", {"taste": text}, function() {
+      $.post("/settings/addTaste/", {"myCuisines": text}, function() {
         $('.tastes').append(taste);
         $('#add-taste-input').val("");
         $('#add-taste-input').blur();
@@ -56,6 +58,28 @@ $(document).ready(function() {
 
       $.post("/editprofile/editBio/", {"bio": bio}, function() {
         window.location.href = "/profile";
+      });
+    });
+
+    $('#submitpost').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var post_tag = $('#restaurant_tag').val();
+      var restaurant_desc = $('#post_description').val();
+      var post_img = $('#pic').val();
+
+      if(post_img)
+        var is_pic = true;
+      else
+        var is_pic = false;
+
+      $.post("/newpost/addpost/", { "picture": is_pic,
+        "food-image": post_img,
+        "name": "John Johnson",
+        "profile-image": post_img,
+        "restaurant": post_tag,
+        "restaurant-description": restaurant_desc }, function() {
+          window.location.href= "/newsfeed";
       });
     });
 
@@ -91,5 +115,11 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       $(this).toggleClass("highlight");
+    });
+
+    $(document).on("tap vclick click", ".glyphicon-heart", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).toggleClass($(this).css('color','red'));
     });
 });
