@@ -1,7 +1,14 @@
 var data = require('../data.json');
 
 exports.view = function(req, res) {
-    res.render('restaurantreview', {
-	    'restaurant': req.params.restaurant
-	  });
+  var restaurantId = req.params.id; 
+  var restaurants = data.restaurants;
+  var restaurant;
+  for(var i = 0; i < restaurants.length; i++){
+    if(restaurantId == restaurants[i].id){
+      restaurant = restaurants[i];
+      break;
+    }
+  }
+  res.render('restaurantreview', restaurant);
 };

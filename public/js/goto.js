@@ -73,7 +73,7 @@ $(document).ready(function() {
       else
         var is_pic = false;
 
-      $.post("/newpost/addpost/", { "picture": is_pic,
+      $.post("/newpost/addpost/", { "picture": false,
         "food-image": post_img,
         "name": "John Johnson",
         "profile-image": post_img,
@@ -93,11 +93,14 @@ $(document).ready(function() {
       $(this).closest('.review').hide();
       var next = $(this).data("continue");
       if (next) {
-        $('.' + next).show();  
+        $('.' + next).show();
       }
       else {
-        window.location.href = "/restaurant";
-      }  
+        var pathname = window.location.pathname;
+        var strArray = pathname.split("/");
+        var restaurantId = strArray[strArray.length - 1];
+        window.location.href = "/restaurant/"+restaurantId;
+      }
     });
 
     $('.review-back-button').on('tap vclick click', function(event) {
@@ -107,8 +110,8 @@ $(document).ready(function() {
       $(this).closest('.review').hide();
       var back = $(this).data("back");
       if (back) {
-        $('.' + back).show();  
-      }  
+        $('.' + back).show();
+      }
     });
 
     $(document).on("tap vclick click", ".mycuisine", function(event) {
@@ -161,5 +164,4 @@ $(document).ready(function() {
         }
       });
     });
-
 });
