@@ -17,7 +17,5 @@ exports.viewCuisine = function(req, res) {
 			cuisineRestaurants.push(restaurants[j]);
 		}
 	}
-  res.render('cuisine', {
-    cuisine, cuisineRestaurants
-  });
+  res.render('cuisine', {"cuisine":cuisine, "cuisineRestaurants":cuisineRestaurants});
 };
