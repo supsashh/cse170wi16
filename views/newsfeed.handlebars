@@ -20,6 +20,7 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
 			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a class="navbar-brand glyphicon glyphicon-pencil" aria-hidden="true" href="/newpost"></a>
 		</nav>
 	</div>
 
@@ -30,25 +31,25 @@
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
-					<a href="#">
-					  <img class="media-object" src="/images/{{profile-image}}">
-					</a>
+						<a href="#">
+					  		<img class="media-object" src="/images/{{profile-image}}">
+						</a>
 					</div>
 					<div class="media-body">
-					<h4 class="media-heading">
-						<a href="/profile">{{name}}</a>
-					</h4>
-					{{#if picture}}
-						<img class="food-image" src="/images/{{food-image}}">
+						<h4 class="media-heading">
+							<a href="/profile">{{name}}</a>
+						</h4>
+						{{#if picture}}
+							<img class="food-image" src="/images/{{food-image}}">
+							<br>
+						{{/if}}
+						<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+						<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
+						<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
 						<br>
-					{{/if}}
-					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
-					<br>
-					<a href="/restaurant">{{restaurant}}</a>
-					<br>
-					{{restaurant-description}}
+						<a href="/restaurant">{{restaurant}}</a>
+						<br>
+						{{restaurant-description}}
 					</div>
 				</div>
 			</div>

@@ -25,6 +25,7 @@ var tutorial = require('./routes/tutorial');
 var review = require('./routes/review');
 var friendProfile = require('./routes/friendprofile');
 var menu = require('./routes/menu');
+var newpost = require('./routes/newpost');
 
 
 var server = express();
@@ -57,7 +58,9 @@ server.get('/restaurant/:id', restaurant.view);
 server.get('/restaurant/:id/menu', menu.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
+server.post('/newpost/addpost', newpost.addpost);
 server.get('/search', search.view);
+server.get('/search/:term', search.search);
 server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/editprofile', editprofile.view);
 server.post('/editprofile/editBio', editprofile.editBio);
@@ -73,7 +76,7 @@ server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
 server.get('/review/:restaurant', review.view);
 server.get('/profile/:id', friendProfile.view);
-
+server.get('/newpost', newpost.view);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

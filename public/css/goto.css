@@ -16,6 +16,14 @@
 	float: right;
 }
 
+.glyphicon-pencil {
+	float: right;
+}
+
+.glyphicon-remove {
+	float: right;
+}
+
 #bottomNav {
 	padding:10px;
 }
@@ -150,7 +158,13 @@
 	padding-bottom: 40px;
 }
 
-.highlight { background-color: #0000ff; }​
+.highlight { 
+	background-color: #0000ff; 
+}
+​
+.highlight1 {
+	background-color: red;
+}
 
 .edit-bio-button {
 	margin-top: 10px;
@@ -173,6 +187,12 @@
     text-decoration:none;
 }
 
+
+.newpost-form {
+	padding-top: 50px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
 .fb-login-button {
 	width: 300px;
 	height: 64px;
@@ -207,4 +227,13 @@
 .logo-container {
 	background-color: #f0f1f3;
     margin-bottom: 30px;
+}
+
+.results-container {
+	margin-top: 30px;
+}
+
+.search-result-pic {
+	height: 64px;
+
 }

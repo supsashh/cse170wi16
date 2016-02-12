@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>GoTo</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="/css/goto.css" rel="stylesheet">
+
+    <script src="/js/jquery-1.11.0.js"></script> 
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/portfolio.pack.min.js"></script>
+	<script src="/js/jquery.mobile.custom.min.js"></script>
+	<script src="/js/goto.js"></script>    
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<a class="navbar-brand glyphicon glyphicon-remove" aria-hidden="true" href="/newsfeed"></a>
+		</nav>
+	</div>
+	<form class="newpost-form" role= "form">
+		<fieldset class="form-group">
+    		<label for="restaurant_tag"></label>
+    		<input type="text" class="form-control" id="restaurant_tag" placeholder="@restaurant">
+    		<label for="post_description"></label>
+    		<textarea class="form-control" id="post_description" rows="10" placeholder="What's for lunch?"></textarea>
+  		</fieldset>
+  		<fieldset class="form-group">
+    		<label for="pic">Insert Picture</label>
+    		<input type="file" class="form-control-file" id="pic">
+  		</fieldset>
+	
+	    <div class="container submitpost" style="text-align: right;">
+    	    <input type="submit" id="submitpost" class="btn btn-primary btn-lg" value="Post"></input>
+        </div>
+    </form>
+</body>
+</html>
