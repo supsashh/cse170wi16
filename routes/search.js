@@ -10,7 +10,7 @@ exports.search = function(req, res) {
 
 	for(var i = 0 ; i < restaurants.length; i++) {
 		console.log(restaurants[i].name.toLowerCase() + " " + searchTerm.toLowerCase());
-	    if (restaurants[i].name.toLowerCase().includes(searchTerm.toLowerCase())) {
+	    if (restaurants[i].name.toLowerCase() == searchTerm.toLowerCase()) {
 	    	console.log(restaurants[i]);
 	        return res.json(restaurants[i]);
 	    }
