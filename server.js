@@ -74,7 +74,7 @@ server.get('/login', login.view);
 server.get('/tastes', tastes.view);
 server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
-server.get('/review/:restaurant', review.view);
+server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost', newpost.view);
 
