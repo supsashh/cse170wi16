@@ -152,7 +152,6 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
-    
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
@@ -169,6 +168,5 @@ $(document).ready(function() {
           $('.results-container').append(result);
         }
       });
-
     });
 });

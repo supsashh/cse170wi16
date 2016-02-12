@@ -1,19 +1,143 @@
 {
     "portfolios": [
       { "title": "Your GoTo List",
-        "images": ["acai.jpg","coffee.jpg","pastries.jpg","fries.jpg","pancakes.jpg"],
+        "images": [
+          {
+            "image": "amazona-tribal_bowl.jpg",
+            "restaurant-id": "amazona-acai-cafe",
+            "dish-name": "Tribal Bowl",
+            "restaurant-name": "Amazona Acai Cafe"
+          },
+          {
+            "image": "vallarta-carne_asada_fries.jpg",
+            "restaurant-id": "vallarta-express",
+            "dish-name": "Carne Asada Fries",
+            "restaurant-name": "Vallarta Express"
+          },
+          {
+            "image": "ki-chicken_katsu.jpg",
+            "restaurant-id": "ki-sushi",
+            "dish-name": "Chicken Katsu",
+            "restaurant-name": "Ki Sushi & Sake Bar"
+          },
+          {
+            "image": "smash-bbq.jpg",
+            "restaurant-id": "smash-burger",
+            "dish-name": "BBQ Burger",
+            "restaurant-name": "Smash Burger"
+          },
+          {
+            "image": "vallarta-cali_burrito.jpg",
+            "restaurant-id": "vallarta-express",
+            "dish-name": "California Burrito",
+            "restaurant-name": "Vallarta Express"
+          }
+        ],
         "id": "goto"
       },
       { "title": "Today is Taco Tuesday",
-        "images": ["taco1.jpg","taco2.jpg","taco3.jpg","taco4.jpg","taco5.jpg"],
+        "images": [
+          {
+            "image": "lucha-libre-flaco_taco.jpg",
+            "restaurant-id": "lucha-libre",
+            "dish-name": "Flaco Taco",
+            "restaurant-name": "Lucha Libre Gourmet Taco Shop"
+          },
+          {
+            "image": "oscars-grilled_shrimp_tacos.jpg",
+            "restaurant-id": "oscars",
+            "dish-name": "Grilled Shrimp Taco",
+            "restaurant-name": "Oscar's Mexican Seafood"
+          },
+          {
+            "image": "lolitas-rolled_taco.jpg",
+            "restaurant-id": "lolitas",
+            "dish-name": "Rolled Taco",
+            "restaurant-name": "Lolita's Taco Shop"
+          },
+          {
+            "image": "lucha-libre-sweet_potato_tacos.jpg",
+            "restaurant-id": "lucha-libre",
+            "dish-name": "Sweet Potato Tacos",
+            "restaurant-name": "Lucha Libre Gourmet Taco Shop"
+          },
+          {
+            "image": "oscars-battered_fish_tacos.jpg",
+            "restaurant-id": "oscars",
+            "dish-name": "Battered Fish Tacos",
+            "restaurant-name": "Oscar's Mexican Seafood"
+          }
+        ],
         "id": "today"
       },
       { "title": "Recommended for you",
-        "images": ["eggs.jpg","sushi.jpg","toffee.jpg","macarons.jpg","salad.jpg"],
+        "images": [
+          {
+            "image": "smash-chicken_sandwich.jpg",
+            "restaurant-id": "smash-burger",
+            "dish-name": "Classic Grilled Chicken Sandwich w/ Avocado",
+            "restaurant-name": "Smashburger"
+          },
+          {
+            "image": "vallarta-shrimp_quesadilla.jpg",
+            "restaurant-id": "vallarta-express",
+            "dish-name": "Shrimp Quesadilla",
+            "restaurant-name": "Vallarta Express"
+          },
+          {
+            "image": "lucha-libre-surfin_california.jpg",
+            "restaurant-id": "lucha-libre",
+            "dish-name": "Surfin California Burrito",
+            "restaurant-name": "Lucha Libre Gourmet Taco Shop"
+          },
+          {
+            "image": "oscars-torta.jpg",
+            "restaurant-id": "oscars",
+            "dish-name": "Torta",
+            "restaurant-name": "Oscar's Mexican Seafood"
+          },
+          {
+            "image": "lolitas-california_burrito.jpg",
+            "restaurant-id": "lolitas",
+            "dish-name": "California Burrito",
+            "restaurant-name": "Lolita's Taco Shop"
+          }
+        ],
         "id": "recommended"
       },
       { "title": "Your friends recommend",
-        "images": ["pho.jpg","donuts.jpg","scallops.jpg","ice-cream.jpg","cookies.jpg"],
+        "images": [
+          {
+            "image": "amazona-cheese_bread.jpg",
+            "restaurant-id": "amazona-acai-cafe",
+            "dish-name": "Cheese Bread",
+            "restaurant-name": "Amazona Acai Cafe"
+          },
+          {
+            "image": "ki-sushi.jpg",
+            "restaurant-id": "ki-sushi",
+            "dish-name": "Sushi Sampler",
+            "restaurant-name": "Ki Sushi & Sake Bar"
+          },
+          {
+            "image": "smash-black_bean.jpg",
+            "restaurant-id": "smash-burger",
+            "dish-name": "Black Bean Spicy Baja - Ultimate",
+            "restaurant-name": "Smashburger"
+          },
+          {
+            "image": "amazona-urbano_bowl.jpg",
+            "restaurant-id": "amazona-acai-cafe",
+            "dish-name": "Urbano Bowl",
+            "restaurant-name": "Amazona Acai Cafe"
+          },
+          {
+            "image": "ki-miso_salmon.jpg",
+            "restaurant-id": "ki-sushi",
+            "dish-name": "Miso Salmon",
+            "restaurant-name": "Ki Sushi & Sake Bar"
+          }
+        ],
         "id": "friend-recommended"
       }
     ],
@@ -36,7 +160,7 @@
       },
       {
         "id": "Chinese",
-        "image": " "
+        "image": ""
       },
       {
         "id": "French",
@@ -172,7 +296,7 @@
           "posts": [
             {
               "picture": true,
-              "food-image": "vallarta-carne_asada.jpg",
+              "food-image": "vallarta-carne_asada_fries.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
               "restaurant": "@vallarta-express",
@@ -314,6 +438,234 @@
               "profile-image": "profile-icon.png",
               "restaurant": "@smash-burger",
               "restaurant-description": "Perfect for vegetarians."
+            }
+          ]
+        },
+        {
+          "id": "amazona-acai-cafe",
+          "name": "Amazona Acai Cafe",
+          "picture":"amazona.jpg",
+          "address":"841 Turquoise St San Diego, CA 92109",
+          "cuisineId":"Dessert",
+          "menu-items":[
+            {
+              "item-id":"tribal_bowl",
+              "item-name":"Tribal Bowl",
+              "item-image":"amazona-tribal_bowl.jpg"
+            },
+            {
+              "item-id":"cheese_bread",
+              "item-name":"Cheese Bread",
+              "item-image":"amazona-cheese_bread.jpg"
+            },
+            {
+              "item-id":"urbano_bowl",
+              "item-name":"Urbano Bowl",
+              "item-image":"amazona-urbano_bowl.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "amazona-tribal_bowl.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@amazona-acai-cafe",
+              "restaurant-description": "The tribal bowl is amazing."
+            },
+            {
+              "picture": true,
+              "food-image": "amazona-cheese_bread.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@amazona-acai-cafe",
+              "restaurant-description": "Great gluten free cheese bread!"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@amazona-acai-cafe",
+              "restaurant-description": "They also have great cold brew!"
+            },
+            {
+              "picture": true,
+              "food-image":"amazona-urbano_bowl.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@amazona-acai-cafe",
+              "restaurant-description": "Lots of gluten free and nut free options."
+            }
+          ]
+        },
+        {
+          "id": "lucha-libre",
+          "name": "Lucha Libre Gourmet Taco Shop",
+          "picture":"lucha-libre.jpg",
+          "address":"1810 W Washington St San Diego, CA 92110",
+          "cuisineId":"Mexican",
+          "menu-items":[
+            {
+              "item-id":"flaco_taco",
+              "item-name":"Flaco Taco",
+              "item-image":"lucha-libre-flaco_taco.jpg"
+            },
+            {
+              "item-id":"surfin_california_burrito",
+              "item-name":"Surfin California Burrito",
+              "item-image":"lucha-libre-surfin_california.jpg"
+            },
+            {
+              "item-id":"sweet_potato_tacos",
+              "item-name":"Sweet Potato Tacos",
+              "item-image":"lucha-libre-sweet_potato_tacos.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "lucha-libre-flaco_taco.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lucha-libre",
+              "restaurant-description": "Love the blackened mahi in the flaco taco!"
+            },
+            {
+              "picture": true,
+              "food-image": "lucha-libre-surfin_california.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lucha-libre",
+              "restaurant-description": "Best burrito ever!"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lucha-libre",
+              "restaurant-description": "Super fresh ingredients!"
+            },
+            {
+              "picture": true,
+              "food-image":"lucha-libre-sweet_potato_tacos.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lucha-libre",
+              "restaurant-description": "Sweet potato tacos!!"
+            }
+          ]
+        },
+        {
+          "id": "oscars",
+          "name": "Oscar's Mexican Seafood",
+          "picture":"oscars.jpg",
+          "address":"703 Turquoise St San Diego, CA 92109",
+          "cuisineId":"Mexican",
+          "menu-items":[
+            {
+              "item-id":"torta",
+              "item-name":"Torta",
+              "item-image":"oscars-torta.jpg"
+            },
+            {
+              "item-id":"grilled_shrimp_tacos",
+              "item-name":"Grilled Shrimp Tacos",
+              "item-image":"oscars-grilled_shrimp_tacos.jpg"
+            },
+            {
+              "item-id":"battered_fish_tacos",
+              "item-name":"Battered fish Tacos",
+              "item-image":"oscars-battered_fish_tacos.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "oscars-torta.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@oscars",
+              "restaurant-description": "The torta is huge!"
+            },
+            {
+              "picture": true,
+              "food-image": "oscars-grilled_shrimp_tacos.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@oscars",
+              "restaurant-description": "Beautiful fresh shrimp tacos!"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@oscars",
+              "restaurant-description": "Really cheap!"
+            },
+            {
+              "picture": true,
+              "food-image":"oscars-battered_fish_tacos.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@oscars",
+              "restaurant-description": "Bomb fish tacos!!"
+            }
+          ]
+        },
+         {
+          "id": "lolitas",
+          "name": "Lolita's Taco Shop",
+          "picture":"lolitas.jpg",
+          "address":"7305 Clairemont Mesa Blvd Ste A San Diego, CA 92111",
+          "cuisineId":"Mexican",
+          "menu-items":[
+            {
+              "item-id":"rolled_taco",
+              "item-name":"Rolled Taco",
+              "item-image":"lolitas-rolled_taco.jpg"
+            },
+            {
+              "item-id":"carne_asada_fries",
+              "item-name":"Carne Asada Fries",
+              "item-image":"lolitas-carne_asada_fries.jpg"
+            },
+            {
+              "item-id":"california_burrito",
+              "item-name":"California Burrito",
+              "item-image":"lolitas-california_burrito.jpg"
+            }
+          ],
+          "posts": [
+            {
+              "picture": true,
+              "food-image": "lolitas-rolled_taco.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lolitas",
+              "restaurant-description": "Delicious rolled tacos."
+            },
+            {
+              "picture": true,
+              "food-image": "lolitas-carne_asada_fries.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lolitas",
+              "restaurant-description": "One of the best carne asada fries!"
+            },
+            {
+              "picture": false,
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lolitas",
+              "restaurant-description": "Convenient location."
+            },
+            {
+              "picture": true,
+              "food-image":"lolitas-california_burrito.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@lolitas",
+              "restaurant-description": "Fave!"
             }
           ]
         }
