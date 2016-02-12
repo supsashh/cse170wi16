@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $('.cuisine-image').on('tap vclick click', function() {
     	window.location.href = $(this).data("url");
-    }); 
+    });
 
     $(document).on("tap vclick click", ".taste-delete", function(event) {
       event.preventDefault();
@@ -122,6 +122,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       $(this).toggleClass($(this).css('color','red'));
+    });
 
     $('#intro-tastes-button').click(function() {
       event.preventDefault();
@@ -159,6 +160,6 @@ $(document).ready(function() {
           $('.results-container').append(result);
         }
       });
-
     });
+
 });
