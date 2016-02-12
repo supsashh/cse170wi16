@@ -125,6 +125,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       $(this).toggleClass($(this).css('color','red'));
+    });
 
     $('#intro-tastes-button').click(function() {
       event.preventDefault();
@@ -146,7 +147,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
-    });
+
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
         console.log(response.length);
@@ -162,6 +163,5 @@ $(document).ready(function() {
           $('.results-container').append(result);
         }
       });
-
     });
 });
