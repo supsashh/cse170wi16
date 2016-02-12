@@ -18,35 +18,48 @@
 <body>
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a class="navbar-brand glyphicon glyphicon-arrow-left" aria-hidden="true" href="/newsfeed"></a>
+			<a href="#" class="navbar-brand commentheader">Comments</a>
 		</nav>
 	</div>
 	
-    <div class"container commentbox">
+    <ul class="media-list commentbox">
     	{{#each comments}}
-    	    <div class="comment">
-    	    <h2>{{commenter}}
-    	    </h2>
-    	    </div>
+            <li class="media">
+                <a class="pull-left" href="#">
+                	<img class="media-object img-circle" src="/images/{{commenter-image}}" alt="profile">
+                </a>
+                <div class="media-body">
+                    <div class="well well-sm">
+                        <h4 class="media-heading reviews">{{commenter}} </h4>
+                        <p class="media-comment">
+                            {{text}}
+                        </p>
+                    </div>              
+                </div>
+            </li>
     	{{/each}}
-    </div>
+    </ul>
 
-	<div id="footer">
-	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
-	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
-	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
-	    </div>
-	    <div class="col-xs-4 text-center"><a href="/newsfeed">
-	    	<i class="glyphicon glyphicon-align-justify"></i><br>Newsfeed</a>
-	    </div>
-	    <div class="col-xs-4 text-center"><a href="/profile">
-	    	<i class="glyphicon glyphicon-user"></i><br>Profile</a>
-	    </div>
-	  </div>
-	  </div>
+<div id="footer">    
+	<div class="navbar-fixed-bottom">
+		<div class="row bottom-nav" id="bottomNav">
+    		<form class="addcomment-form">
+  				<div class="input-group commentform">
+    				<label for="addcomment"></label>
+    				<input type="text" class="form-control" id="addcomment" placeholder="Add a comment">
+    				<span class="input-group-btn commentsend">
+            			<button type="submit" class="btn btn-default">Send
+            			</button>                
+        			</span>
+  				</div>
+    		</form>
+		</div>
 	</div>
+</div>
+
+
+	
 </body>
 
 </html>

@@ -77,6 +77,7 @@ server.get('/tutorial', tutorial.view);
 server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
+server.post('/comments/newcomment/:id', comments.newcomment)
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

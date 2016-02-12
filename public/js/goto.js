@@ -88,6 +88,31 @@ $(document).ready(function() {
       });
     });
 
+    $('.commentsend').on('tap vclick click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var comment_text = $('#addcomment').val();
+        var postpath = window.location.pathname;
+        var strArr = postpath.split("/");
+        var postId = strArr[strArr.length - 1];
+        var code = "<li class='media'><a class='pull-left' href='#''>" +
+              "<img class='media-object img-circle' src='/images/profile-icon.png' alt='profile'>" +
+              "</a><div class='media-body'><div class='well well-sm'>" + 
+              "<h4 class='media-heading reviews'>John Johnson</h4>" +
+              "<p class='media-comment'>";
+        code = code + comment_text + "</p></div></div></li>";
+
+
+        $.post("/comments/newcomment/"+postId, { "commenter": "John Johnson",
+          "commenter-image": "profile-icon.png",
+          "text": comment_text
+          }, function() {
+            $('.media-list').append(code);
+            $('#addcomment').val("");
+            $('#addcomment').blur();
+          });
+    });
+
     $('.review-rate-dish').hide();
     $('.review-ambiance').hide();
     $('.review-return').hide();
