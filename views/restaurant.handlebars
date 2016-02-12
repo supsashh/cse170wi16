@@ -96,7 +96,7 @@
   		function shareRestaurant() {
   			FB.ui({
 			  method: 'share',
-			  href: 'https://goto-app.herokuapp.com/restaurant',
+			  href: 'https://goto-app.herokuapp.com/restaurant/{{id}}',
 			}, function(response){});
   		}
 	</script>
@@ -117,20 +117,20 @@
 		<div class="media profile-top">
 		    <div class="media-left">
 		        <a href="#">
-		            <img class="media-object img-rounded" src="/images/{{picture}}">
+		            <img class="media-object restaurant-pic img-rounded" src="/images/{{picture}}">
 		        </a>
 		    </div>
 		    <div class="media-body">
 		        <h3 class="media-heading profile-name">
 								{{name}}
 		        </h3>
-						<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Leave a review</a><br>
-		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share with your friends</a>
+						<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
+		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a>
 		        </a>
 		    </div>
 		</div>
 		<div class="Details">
-		    <p><strong>Details</strong></p>
+		    <h4><strong>Details</strong></h4>
 		    <p>{{address}}</p>
 		    <p><strong>Cuisine: </strong> <br>
             <a href="/cuisine/{{cuisineId}}" class="label label-info tags">{{cuisineId}}</a>
@@ -138,7 +138,7 @@
     </div>
 	</div>
 
-	<div class="container top-title portfolio-container">
+	<div class="container menu-container portfolio-container">
 			<h3>Menu Items</h3>
 			<div id="menu-items" class="portfolio">
 				{{#each menu-items}}
@@ -148,21 +148,21 @@
 			</div>
 	</div>
 
-	<div class="container post-container your-posts-container">
-		<h4 class="center">Restaurant Newsfeed</h4>
+	<div class="container post-container restaurant-posts-container">
+		<h3>Restaurant Newsfeed</h3>
 		<hr>
 		{{#each posts}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
 					<a href="#">
-					  <img class="media-object profile-pic img-rounded" src="">
+					  <img class="media-object profile-pic img-rounded" src="/images/profile-icon.png">
 					</a>
 					</div>
 					<div class="media-body">
 					<h4 class="media-heading profile-name"></h4>
 					{{#if picture}}
-						<img class="food-image" src="/images/{{food-image}}">
+						<img class="food-image scaled-image" src="/images/{{food-image}}">
 						<br>
 					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
