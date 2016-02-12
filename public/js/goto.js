@@ -73,10 +73,12 @@ $(document).ready(function() {
       else
         var is_pic = false;
 
-      $.post("/newpost/addpost/", { "picture": is_pic,
+      
+
+      $.post("/newpost/addpost/", { "id": 5,
         "food-image": post_img,
         "name": "John Johnson",
-        "profile-image": post_img,
+        "profile-image": "profile-icon.png",
         "restaurant": post_tag,
         "restaurant-description": restaurant_desc }, function() {
           window.location.href= "/newsfeed";
@@ -143,6 +145,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
+    });
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
