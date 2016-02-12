@@ -5,7 +5,7 @@ exports.view = function(req, res){
   var restaurants = data.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
-    if(restaurantId.localeCompare(restaurants[i].id)){
+    if(restaurantId == restaurants[i].id){
       restaurant = restaurants[i];
     }
   }
