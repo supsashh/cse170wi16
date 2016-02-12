@@ -2,17 +2,17 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
+	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
-    <script src="/js/jquery-1.11.0.js"></script> 
+    <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/goto.js"></script>     
+	<script src="/js/goto.js"></script>
 </head>
 
 <body>
@@ -22,15 +22,13 @@
 			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 		</nav>
 	</div>
-	
-    <div class"container commentbox">
-    	{{#each comments}}
-    	    <div class="comment">
-    	    <h2>{{commenter}}
-    	    </h2>
-    	    </div>
-    	{{/each}}
-    </div>
+
+	<div class="jumbotron">
+      <h1>{{name}}</h1>
+      <p>Menu</p>
+  </div>
+
+  <!-- Put the stuff here -->
 
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
@@ -47,6 +45,6 @@
 	  </div>
 	  </div>
 	</div>
-</body>
 
+</body>
 </html>

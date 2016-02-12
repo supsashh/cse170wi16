@@ -1,14 +1,13 @@
 var data = require('../data.json');
 
-exports.view = function(req, res) {
+exports.view = function(req, res){
   var restaurantId = req.params.id; 
   var restaurants = data.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
-    if(restaurantId == restaurants[i].id){
+    if(restaurantId.localeCompare(restaurants[i].id)){
       restaurant = restaurants[i];
-      break;
     }
   }
-  res.render('restaurantreview', restaurant);
+  res.render('menu', restaurant);
 };

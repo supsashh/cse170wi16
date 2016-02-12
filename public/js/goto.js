@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $('.cuisine-image').on('tap vclick click', function() {
     	window.location.href = $(this).data("url");
-    }); 
+    });
 
     $(document).on("tap vclick click", ".taste-delete", function(event) {
       event.preventDefault();
@@ -68,19 +68,22 @@ $(document).ready(function() {
       var restaurant_desc = $('#post_description').val();
       var post_img = $('#pic').val();
 
-      if(post_img)
-        var is_pic = true;
-      else
-        var is_pic = false;
+      var postpath = window.location.pathname;
+      var strArr = postpath.split("/");
+      var postId = parseInt(strArr[strArr.length - 1]);
+      postId = postId + 1;
 
-      
-
-      $.post("/newpost/addpost/", { "id": 5,
+      $.post("/newpost/addpost/", { "id": postId,
         "food-image": post_img,
         "name": "John Johnson",
         "profile-image": "profile-icon.png",
         "restaurant": post_tag,
-        "restaurant-description": restaurant_desc }, function() {
+        "restaurant-description": restaurant_desc,
+        "comments": [ { 
+          "commenter": "John Johnson",
+          "commenter-image": "profile-icon.png",
+          "text": restaurant_desc } ]
+         }, function() {
           window.location.href= "/newsfeed";
       });
     });
@@ -95,11 +98,14 @@ $(document).ready(function() {
       $(this).closest('.review').hide();
       var next = $(this).data("continue");
       if (next) {
-        $('.' + next).show();  
+        $('.' + next).show();
       }
       else {
-        window.location.href = "/restaurant";
-      }  
+        var pathname = window.location.pathname;
+        var strArray = pathname.split("/");
+        var restaurantId = strArray[strArray.length - 1];
+        window.location.href = "/restaurant/"+restaurantId;
+      }
     });
 
     $('.review-back-button').on('tap vclick click', function(event) {
@@ -109,8 +115,8 @@ $(document).ready(function() {
       $(this).closest('.review').hide();
       var back = $(this).data("back");
       if (back) {
-        $('.' + back).show();  
-      }  
+        $('.' + back).show();
+      }
     });
 
     $(document).on("tap vclick click", ".mycuisine", function(event) {
@@ -124,6 +130,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       $(this).toggleClass($(this).css('color','red'));
+    });
 
     $('#intro-tastes-button').click(function() {
       event.preventDefault();
@@ -145,7 +152,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
-    });
+    
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();

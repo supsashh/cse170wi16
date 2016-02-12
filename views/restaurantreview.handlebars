@@ -2,19 +2,19 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
+	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
   <link href="/css/rateit.css" rel="stylesheet">
 
-  <script src="/js/jquery-1.11.0.js"></script> 
+  <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
   <script src="/js/jquery.rateit.min.js"></script>
-	<script src="/js/goto.js"></script>    
+	<script src="/js/goto.js"></script>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="container top-title">
-		<h4 class="center">Review {{restaurant}}</h4>
+		<h4 class="center">Review {{name}}</h4>
     <div class="well review review-dish text-center">
       <label for="review-dish">What dish did you get?</label>
       <input type="text" class="form-control" placeholder="Dish" id="review-dish-input">
@@ -65,7 +65,7 @@
           <li class="previous review-back-button" data-back="review-ambiance"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
            <li class="next review-continue-button" data-continue="review-done"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
-      </form> 
+      </form>
     </div>
 
     <div class="well review review-done text-center">

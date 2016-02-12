@@ -87,34 +87,62 @@
     ],
     "posts": [
       {
-        "id": "4",
+        "id": 4,
         "food-image": "french-toast.jpg",
         "name": "John Wilburn",
         "profile-image": "profile-icon.png",
         "restaurant": "@Snooze",
-        "restaurant-description": "Loved the OMG french toast!"
+        "restaurant-description": "Loved the OMG french toast!",
+        "comments": [
+          {
+            "commenter": "John Wilburn",
+            "commenter-image": "profile-icon.png",
+            "text": "Loved the OMG french toast!"
+          }
+        ]
       },
       {
-        "id": "3",
+        "id": 3,
         "food-image": "gelato.jpg",
         "name": "Jane Lee",
         "profile-image": "profile-icon.png",
         "restaurant": "@Pappalecco",
-        "restaurant-description": "Pappalecco has the best gelato!"
+        "restaurant-description": "Pappalecco has the best gelato!",
+        "comments": [
+          {
+            "commenter": "Jane Lee",
+            "commenter-image": "profile-icon.png",
+            "text": "Pappalecco has the best gelato!"
+          }
+        ]
       },
       {
-        "id": "2",
+        "id": 2,
         "name": "Mary Murphy",
         "profile-image": "profile-icon.png",
         "restaurant": "@NomadDonuts",
-        "restaurant-description": "Nomad has the most unique donut flavors!"
+        "restaurant-description": "Nomad has the most unique donut flavors!",
+        "comments": [
+          {
+            "commenter": "Mary Murphy",
+            "commenter-image": "profile-icon.png",
+            "text": "Nomad has the most unique donut flavors!"
+          }
+        ]
       },
       {
-        "id": "1",
+        "id": 1,
         "name": "Alex Taylor",
         "profile-image": "profile-icon.png",
         "restaurant": "@AzukiSushi",
-        "restaurant-description": "The Kobe roll is my favorite roll in San Diego!"
+        "restaurant-description": "The Kobe roll is my favorite roll in San Diego!",
+        "comments": [
+          {
+            "commenter": "Alex Taylor",
+            "commenter-image": "profile-icon.png",
+            "text": "The Kobe roll is my favorite roll in San Diego!"
+          }
+        ] 
       }
     ],
       "restaurants":[

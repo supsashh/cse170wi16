@@ -24,6 +24,7 @@ var tastes = require('./routes/tastes');
 var tutorial = require('./routes/tutorial');
 var review = require('./routes/review');
 var friendProfile = require('./routes/friendprofile');
+var menu = require('./routes/menu');
 var newpost = require('./routes/newpost');
 
 
@@ -54,6 +55,7 @@ server.get('/', index.view);
 server.get('/login', index.viewLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);
+server.get('/restaurant/:id/menu', menu.view);
 server.get('/profile', profile.view);
 server.get('/newsfeed', newsfeed.view);
 server.post('/newpost/addpost', newpost.addpost);
@@ -72,7 +74,7 @@ server.get('/login', login.view);
 server.get('/tastes', tastes.view);
 server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
-server.get('/review/:restaurant', review.view);
+server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
 
