@@ -68,17 +68,22 @@ $(document).ready(function() {
       var restaurant_desc = $('#post_description').val();
       var post_img = $('#pic').val();
 
-      if(post_img)
-        var is_pic = true;
-      else
-        var is_pic = false;
+      var postpath = window.location.pathname;
+      var strArr = postpath.split("/");
+      var postId = parseInt(strArr[strArr.length - 1]);
+      postId = postId + 1;
 
-      $.post("/newpost/addpost/", { "picture": false,
+      $.post("/newpost/addpost/", { "id": postId,
         "food-image": post_img,
         "name": "John Johnson",
-        "profile-image": post_img,
+        "profile-image": "profile-icon.png",
         "restaurant": post_tag,
-        "restaurant-description": restaurant_desc }, function() {
+        "restaurant-description": restaurant_desc,
+        "comments": [ { 
+          "commenter": "John Johnson",
+          "commenter-image": "profile-icon.png",
+          "text": restaurant_desc } ]
+         }, function() {
           window.location.href= "/newsfeed";
       });
     });

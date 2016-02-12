@@ -23,9 +23,14 @@
 		</nav>
 	</div>
 	
-	<div class="container top-title">
-		<h2>Comments</h2>
-	</div>
+    <div class"container commentbox">
+    	{{#each comments}}
+    	    <div class="comment">
+    	    <h2>{{commenter}}
+    	    </h2>
+    	    </div>
+    	{{/each}}
+    </div>
 
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
