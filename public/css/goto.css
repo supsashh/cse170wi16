@@ -158,8 +158,8 @@
 	padding-bottom: 40px;
 }
 
-.highlight { 
-	background-color: #0000ff; 
+.highlight {
+	background-color: #0000ff;
 }
 ​
 .highlight1 {
@@ -244,4 +244,24 @@
 
 .portfolio-detail-container {
 	margin-top: 60px;
+}
+
+.scaled-image{
+	max-width: none;
+	height: 200px;
+	width: auto;
+}
+
+.restaurant-pic{
+	max-width: 160px;
+	max-height: 200px;
+}
+
+.restaurant-posts-container {
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.menu-container {
+	margin-left: 20px;
 }
