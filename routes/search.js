@@ -13,7 +13,6 @@ exports.search = function(req, res) {
 		var searchTerm = searchTerm.toLowerCase();
 	
 	    if (restaurant.indexOf(searchTerm) > -1) {
-	    	console.log(restaurants[i]);
 	        return res.json(restaurants[i]);
 	    }
 	}

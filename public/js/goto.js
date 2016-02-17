@@ -68,19 +68,49 @@ $(document).ready(function() {
       var restaurant_desc = $('#post_description').val();
       var post_img = $('#pic').val();
 
-      if(post_img)
-        var is_pic = true;
-      else
-        var is_pic = false;
+      var postpath = window.location.pathname;
+      var strArr = postpath.split("/");
+      var postId = parseInt(strArr[strArr.length - 1]);
+      postId = postId + 1;
 
-      $.post("/newpost/addpost/", { "picture": false,
+      $.post("/newpost/addpost/", { "id": postId,
         "food-image": post_img,
         "name": "John Johnson",
-        "profile-image": post_img,
+        "profile-image": "profile-icon.png",
         "restaurant": post_tag,
-        "restaurant-description": restaurant_desc }, function() {
+        "restaurant-description": restaurant_desc,
+        "comments": [ { 
+          "commenter": "John Johnson",
+          "commenter-image": "profile-icon.png",
+          "text": restaurant_desc } ]
+         }, function() {
           window.location.href= "/newsfeed";
       });
+    });
+
+    $('.commentsend').on('tap vclick click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var comment_text = $('#addcomment').val();
+        var postpath = window.location.pathname;
+        var strArr = postpath.split("/");
+        var postId = strArr[strArr.length - 1];
+        var code = "<li class='media'><a class='pull-left' href='#''>" +
+              "<img class='media-object img-circle' src='/images/profile-icon.png' alt='profile'>" +
+              "</a><div class='media-body'><div class='well well-sm'>" + 
+              "<h4 class='media-heading reviews'>John Johnson</h4>" +
+              "<p class='media-comment'>";
+        code = code + comment_text + "</p></div></div></li>";
+
+
+        $.post("/comments/newcomment/"+postId, { "commenter": "John Johnson",
+          "commenter-image": "profile-icon.png",
+          "text": comment_text
+          }, function() {
+            $('.media-list').append(code);
+            $('#addcomment').val("");
+            $('#addcomment').blur();
+          });
     });
 
     $('.review-rate-dish').hide();

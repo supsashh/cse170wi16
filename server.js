@@ -69,14 +69,15 @@ server.post('/settings/deleteTaste', settings.deleteTaste);
 server.post('/settings/addTaste', settings.addTaste);
 server.post('/settings/updateLocation', settings.updateLocation);
 server.get('/friendslist', friendslist.view);
-server.get('/comments', comments.view);
+server.get('/comments/:id', comments.view);
 server.get('/login', login.view);
 server.get('/tastes', tastes.view);
 server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
 server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
-server.get('/newpost', newpost.view);
+server.get('/newpost/:id', newpost.view);
+server.post('/comments/newcomment/:id', comments.newcomment)
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
