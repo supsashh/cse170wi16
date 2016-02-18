@@ -44,6 +44,10 @@
 	color: #337ab7;
 }
 
+.hearted {
+	color: red;
+}
+
 #logo{
 	height: auto;
     width: auto;

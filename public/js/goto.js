@@ -154,7 +154,14 @@ $(document).ready(function() {
     $(document).on("tap vclick click", ".glyphicon-heart", function(event) {
       event.preventDefault();
       event.stopPropagation();
-      $(this).toggleClass($(this).css('color','red'));
+      if($(this).hasClass('hearted'))
+      {
+        $(this).removeClass('hearted');
+      }
+      else
+      {
+        $(this).addClass('hearted');
+      }
     });
 
     $('#intro-tastes-button').click(function() {
