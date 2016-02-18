@@ -104,10 +104,15 @@
 		{{#each portfolios}}
 			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
 			<div id="{{id}}" class="portfolio">
-				{{#each images}}
-			    <img data-src="images/{{this.image}}" data-url="/restaurant/{{this.restaurant-id}}" class="restaurant-image" />
-		        {{/each}}
-		        <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
+        {{#if images}}
+  				{{#each images}}
+  			    <img data-src="images/{{this.image}}" data-url="/restaurant/{{this.restaurant-id}}" class="restaurant-image" />
+  		    {{/each}}
+          <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
+        {{else}}
+          <img data-src="images/no-goto-places.png"/>
+        {{/if}}
+		    
 			</div>
 		{{/each}}
 	</div>

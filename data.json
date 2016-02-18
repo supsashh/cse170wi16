@@ -1,38 +1,7 @@
 {
     "portfolios": [
       { "title": "Your GoTo List",
-        "images": [
-          {
-            "image": "amazona-tribal_bowl.jpg",
-            "restaurant-id": "amazona-acai-cafe",
-            "dish-name": "Tribal Bowl",
-            "restaurant-name": "Amazona Acai Cafe"
-          },
-          {
-            "image": "vallarta-carne_asada_fries.jpg",
-            "restaurant-id": "vallarta-express",
-            "dish-name": "Carne Asada Fries",
-            "restaurant-name": "Vallarta Express"
-          },
-          {
-            "image": "ki-chicken_katsu.jpg",
-            "restaurant-id": "ki-sushi",
-            "dish-name": "Chicken Katsu",
-            "restaurant-name": "Ki Sushi & Sake Bar"
-          },
-          {
-            "image": "smash-bbq.jpg",
-            "restaurant-id": "smash-burger",
-            "dish-name": "BBQ Burger",
-            "restaurant-name": "Smash Burger"
-          },
-          {
-            "image": "vallarta-cali_burrito.jpg",
-            "restaurant-id": "vallarta-express",
-            "dish-name": "California Burrito",
-            "restaurant-name": "Vallarta Express"
-          }
-        ],
+        "images": [],
         "id": "goto"
       },
       { "title": "Today is Taco Tuesday",
