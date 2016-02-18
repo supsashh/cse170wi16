@@ -194,4 +194,30 @@ $(document).ready(function() {
         }
       });
     });
+
+    $('#add-favorite').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
+
+      });
+    });
+
+    $('#remove-favorite').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
+
+      });
+    });
 });
