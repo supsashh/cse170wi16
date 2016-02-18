@@ -5,10 +5,10 @@
 	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:title" content={{name}}>
-	<meta property="og:type" content="website">
-	<meta property="og:image" content="{{picture}}">
-	<meta property="og:url" content="http:/goto-app.herokuapp.com/restaurant/{{id}}">
+	<meta name="og:url" content="http://goto-app.herokuapp.com/restaurant/{{id}}">
+	<meta name="og:title" content="{{name}}">
+	<meta name="og:image" content="http://goto-app.herokuapp.com/images/{{picture}}">
+	<meta name="og:type" content="restaurant">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
@@ -99,9 +99,12 @@
 
   		function shareRestaurant() {
   			FB.ui({
-			  method: 'share',
-			  href: 'https://goto-app.herokuapp.com/restaurant/{{id}}',
-			}, function(response){});
+			  method: 'share_open_graph', 
+			  action_type: 'goto--app:share',    // appNameSpace:myCustomAction
+			  action_properties: JSON.stringify({
+			    restaurant: 'http://goto-app.herokuapp.com/restaurant/{{id}}'
+			  })
+			});
   		}
 	</script>
 
