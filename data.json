@@ -241,6 +241,8 @@
           "name": "Vallarta Express",
           "picture":"vallarta.jpg",
           "address":"4277 Genesee Ave (at Mt Edna Dr), San Diego, CA 92117",
+          "latitude": "32.821655",
+          "longitude": "-117.182609",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -298,6 +300,8 @@
           "name": "Ki Sushi & Sake Bar",
           "picture":"ki.jpg",
           "address":"Costa Verde Shopping Ctr 8650 Genesee Ave, San Diego, CA 92122",
+          "latitude": "32.868289",
+          "longitude": "-117.215001",
           "cuisineId":"Japanese",
           "menu-items":[
             {
@@ -355,6 +359,8 @@
           "name": "Smashburger",
           "picture":"smash.jpg",
           "address":"1555 Camino del Mar (at 15th St.), Del Mar, CA 92014, United States",
+          "latitude": "32.959986",
+          "longitude": "-117.264934",
           "cuisineId":"American",
           "menu-items":[
             {
@@ -412,6 +418,8 @@
           "name": "Amazona Acai Cafe",
           "picture":"amazona.jpg",
           "address":"841 Turquoise St San Diego, CA 92109",
+          "latitude": "32.808828",
+          "longitude": "-117.258207",
           "cuisineId":"Dessert",
           "menu-items":[
             {
@@ -469,6 +477,8 @@
           "name": "Lucha Libre Gourmet Taco Shop",
           "picture":"lucha-libre.jpg",
           "address":"1810 W Washington St San Diego, CA 92110",
+          "latitude": "32.743599",
+          "longitude": "-117.181686",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -526,6 +536,8 @@
           "name": "Oscar's Mexican Seafood",
           "picture":"oscars.jpg",
           "address":"703 Turquoise St San Diego, CA 92109",
+          "latitude": "32.748978",
+          "longitude": "-117.159129",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -583,6 +595,8 @@
           "name": "Lolita's Taco Shop",
           "picture":"lolitas.jpg",
           "address":"7305 Clairemont Mesa Blvd Ste A San Diego, CA 92111",
+          "latitude": "32.832655",
+          "longitude": "-117.160459",
           "cuisineId":"Mexican",
           "menu-items":[
             {

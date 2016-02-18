@@ -9,6 +9,8 @@
 	<meta property="og:title" content="{{name}}" />
 	<meta property="og:image" content="http://goto-app.herokuapp.com/images/{{picture}}" />
 	<meta property="og:type" content="restaurant" />
+	<meta property="place:location:latitude"  content="{{latitude}}" />
+	<meta property="place:location:longitude" content="{{longitude}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
@@ -133,7 +135,6 @@
 		        </h3>
 						<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
 		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a>
-		        </a>
 		    </div>
 		</div>
 		<div class="Details">
