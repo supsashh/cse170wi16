@@ -20,7 +20,7 @@ $(document).ready(function() {
       var taste = $(this).closest('.taste');
       var text = taste.find('.taste-label').text();
 
-      $.post("/settings/deleteTaste/", {"taste": text}, function() {
+      $.post("/editprofile/deleteTaste/", {"taste": text}, function() {
         taste.remove();
       });
     });
@@ -32,7 +32,7 @@ $(document).ready(function() {
       var taste = "<div class='taste'><span class='label taste-label'>";
       taste = taste + text + "</span><a class='taste-delete' href='#'>×</a></div>";
 
-      $.post("/settings/addTaste/", {"myCuisines": text}, function() {
+      $.post("/editprofile/addTaste/", {"taste": text}, function() {
         $('.tastes').append(taste);
         $('#add-taste-input').val("");
         $('#add-taste-input').blur();
