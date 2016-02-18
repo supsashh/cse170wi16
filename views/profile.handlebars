@@ -118,7 +118,12 @@
 		</div>
 		<div class="Bio">
 		    <p><strong>Bio</strong></p>
-		    <p>{{bio}}</p>
+		    {{#if bio}}
+		    	<p>{{bio}}</p>
+		    {{else}}
+		    	<a href="/editprofile" class="btn btn-default btn-xs" role="button">Add Bio
+		        </a>
+		    {{/if}}
 		    <p><strong>Food Taste: </strong> <br>
 		    	{{#each myCuisines}}
                 	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a> 
