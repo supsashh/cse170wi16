@@ -5,6 +5,13 @@
 	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="fb:app_id" content="1018516261547542" />
+	<meta property="og:url" content="http://goto-app.herokuapp.com/restaurant/{{id}}" />
+	<meta property="og:title" content="{{name}}" />
+	<meta property="og:image" content="http://goto-app.herokuapp.com/images/{{picture}}" />
+	<meta property="og:type" content="restaurant.restaurant" />
+	<meta property="place:location:latitude"  content="{{latitude}}" />
+	<meta property="place:location:longitude" content="{{longitude}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
@@ -95,9 +102,12 @@
 
   		function shareRestaurant() {
   			FB.ui({
-			  method: 'share',
-			  href: 'https://goto-app.herokuapp.com/restaurant/{{id}}',
-			}, function(response){});
+			  method: 'share_open_graph', 
+			  action_type: 'goto--app:share',    // appNameSpace:myCustomAction
+			  action_properties: JSON.stringify({
+			    restaurant: 'http://goto-app.herokuapp.com/restaurant/{{id}}'
+			  })
+			});
   		}
 	</script>
 
@@ -124,9 +134,13 @@
 		        <h3 class="media-heading profile-name">
 								{{name}}
 		        </h3>
-						<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
-		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a>
-		        </a>
+				<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
+		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a><br>
+		        {{#if favorite}}
+		        	<a href="#" id="remove-favorite"><i class="glyphicon glyphicon-star social-button"></i>Remove from My GoTo Places</a>
+		        {{else}}
+		        	<a href="#" id="add-favorite"><i class="glyphicon glyphicon-star-empty social-button"></i>Add to My GoTo Places</a>
+		        {{/if}}
 		    </div>
 		</div>
 		<div class="Details">

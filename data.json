@@ -1,38 +1,7 @@
 {
     "portfolios": [
       { "title": "Your GoTo List",
-        "images": [
-          {
-            "image": "amazona-tribal_bowl.jpg",
-            "restaurant-id": "amazona-acai-cafe",
-            "dish-name": "Tribal Bowl",
-            "restaurant-name": "Amazona Acai Cafe"
-          },
-          {
-            "image": "vallarta-carne_asada_fries.jpg",
-            "restaurant-id": "vallarta-express",
-            "dish-name": "Carne Asada Fries",
-            "restaurant-name": "Vallarta Express"
-          },
-          {
-            "image": "ki-chicken_katsu.jpg",
-            "restaurant-id": "ki-sushi",
-            "dish-name": "Chicken Katsu",
-            "restaurant-name": "Ki Sushi & Sake Bar"
-          },
-          {
-            "image": "smash-bbq.jpg",
-            "restaurant-id": "smash-burger",
-            "dish-name": "BBQ Burger",
-            "restaurant-name": "Smash Burger"
-          },
-          {
-            "image": "vallarta-cali_burrito.jpg",
-            "restaurant-id": "vallarta-express",
-            "dish-name": "California Burrito",
-            "restaurant-name": "Vallarta Express"
-          }
-        ],
+        "images": [],
         "id": "goto"
       },
       { "title": "Today is Taco Tuesday",
@@ -204,23 +173,8 @@
       }
     ],
     "profile-image": "profile-icon.png",
-    "profile-name": "James Clark",
-    "bio": "21 year old food enthusiast from San Diego. Let's go out to eat.",
     "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
     "location": "San Diego",
-    "profile-posts": [
-      {
-        "picture": true,
-        "food-image": "jewel-roll.jpg",
-        "restaurant": "@ShikuSushi",
-        "restaurant-description": "The jewel roll was amazing!"
-      },
-      {
-        "picture": false,
-        "restaurant": "@BreakfastRepublic",
-        "restaurant-description": "Get the flight of pancakes!"
-      }
-    ],
     "posts": [
       {
         "id": 4,
@@ -287,6 +241,8 @@
           "name": "Vallarta Express",
           "picture":"vallarta.jpg",
           "address":"4277 Genesee Ave (at Mt Edna Dr), San Diego, CA 92117",
+          "latitude": "32.821655",
+          "longitude": "-117.182609",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -344,6 +300,8 @@
           "name": "Ki Sushi & Sake Bar",
           "picture":"ki.jpg",
           "address":"Costa Verde Shopping Ctr 8650 Genesee Ave, San Diego, CA 92122",
+          "latitude": "32.868289",
+          "longitude": "-117.215001",
           "cuisineId":"Japanese",
           "menu-items":[
             {
@@ -401,6 +359,8 @@
           "name": "Smashburger",
           "picture":"smash.jpg",
           "address":"1555 Camino del Mar (at 15th St.), Del Mar, CA 92014, United States",
+          "latitude": "32.959986",
+          "longitude": "-117.264934",
           "cuisineId":"American",
           "menu-items":[
             {
@@ -458,6 +418,8 @@
           "name": "Amazona Acai Cafe",
           "picture":"amazona.jpg",
           "address":"841 Turquoise St San Diego, CA 92109",
+          "latitude": "32.808828",
+          "longitude": "-117.258207",
           "cuisineId":"Dessert",
           "menu-items":[
             {
@@ -515,6 +477,8 @@
           "name": "Lucha Libre Gourmet Taco Shop",
           "picture":"lucha-libre.jpg",
           "address":"1810 W Washington St San Diego, CA 92110",
+          "latitude": "32.743599",
+          "longitude": "-117.181686",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -572,6 +536,8 @@
           "name": "Oscar's Mexican Seafood",
           "picture":"oscars.jpg",
           "address":"703 Turquoise St San Diego, CA 92109",
+          "latitude": "32.748978",
+          "longitude": "-117.159129",
           "cuisineId":"Mexican",
           "menu-items":[
             {
@@ -629,6 +595,8 @@
           "name": "Lolita's Taco Shop",
           "picture":"lolitas.jpg",
           "address":"7305 Clairemont Mesa Blvd Ste A San Diego, CA 92111",
+          "latitude": "32.832655",
+          "longitude": "-117.160459",
           "cuisineId":"Mexican",
           "menu-items":[
             {

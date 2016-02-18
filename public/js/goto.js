@@ -20,7 +20,7 @@ $(document).ready(function() {
       var taste = $(this).closest('.taste');
       var text = taste.find('.taste-label').text();
 
-      $.post("/settings/deleteTaste/", {"taste": text}, function() {
+      $.post("/editprofile/deleteTaste/", {"taste": text}, function() {
         taste.remove();
       });
     });
@@ -32,7 +32,7 @@ $(document).ready(function() {
       var taste = "<div class='taste'><span class='label taste-label'>";
       taste = taste + text + "</span><a class='taste-delete' href='#'>×</a></div>";
 
-      $.post("/settings/addTaste/", {"myCuisines": text}, function() {
+      $.post("/editprofile/addTaste/", {"taste": text}, function() {
         $('.tastes').append(taste);
         $('#add-taste-input').val("");
         $('#add-taste-input').blur();
@@ -199,6 +199,32 @@ $(document).ready(function() {
           result += response.name + "</a></h4></div></div>"
           $('.results-container').append(result);
         }
+      });
+    });
+
+    $('#add-favorite').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
+
+      });
+    });
+
+    $('#remove-favorite').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
+
       });
     });
 });

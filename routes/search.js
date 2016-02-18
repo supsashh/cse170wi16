@@ -9,9 +9,10 @@ exports.search = function(req, res) {
 	var searchTerm = req.params.term;
 
 	for(var i = 0 ; i < restaurants.length; i++) {
-		console.log(restaurants[i].name.toLowerCase() + " " + searchTerm.toLowerCase());
-	    if (restaurants[i].name.toLowerCase() == searchTerm.toLowerCase()) {
-	    	console.log(restaurants[i]);
+		var restaurant = restaurants[i].name.toLowerCase();
+		var searchTerm = searchTerm.toLowerCase();
+	
+	    if (restaurant.indexOf(searchTerm) > -1) {
 	        return res.json(restaurants[i]);
 	    }
 	}

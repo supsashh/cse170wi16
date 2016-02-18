@@ -32,6 +32,24 @@
 	        <button class="btn btn-default edit-bio-button" type="button">Save</button>
 	      </div>
 		</div>
+
+		<label>Edit Tastes:</label>
+		<div class="tastes">
+			{{#each myCuisines}}
+		  		<div class="taste"><span class="label taste-label">{{this}}</span><a class="taste-delete" href="#">×</a></div>
+		  	{{/each}}
+		</div>
+
+        <div class="row add-taste">
+		  <div class="col-lg-6">
+		    <div class="input-group">
+		      <input type="text" class="form-control" placeholder="Add Taste" id="add-taste-input">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default add-taste-button" type="button">Add</button>
+		      </span>
+		    </div><!-- /input-group -->
+		  </div><!-- /.col-lg-6 -->
+		</div><!-- /.row -->
 	</div>
 
 	<div id="footer">
