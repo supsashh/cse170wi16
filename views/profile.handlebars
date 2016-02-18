@@ -140,7 +140,7 @@
 					</div>
 					<div class="media-body">
 					<h4 class="media-heading profile-name"></h4>
-					{{#if picture}}
+					{{#if food-image}}
 						<img class="food-image" src="/images/{{food-image}}">
 						<br>
 					{{/if}}
@@ -153,6 +153,10 @@
 					{{restaurant-description}}
 					</div>
 				</div>
+			</div>
+		{{else}}
+			<div class="text-center">
+				You haven't added any posts yet.
 			</div>
 		{{/each}}
 	</div>

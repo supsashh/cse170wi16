@@ -208,19 +208,6 @@
     "bio": "21 year old food enthusiast from San Diego. Let's go out to eat.",
     "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
     "location": "San Diego",
-    "profile-posts": [
-      {
-        "picture": true,
-        "food-image": "jewel-roll.jpg",
-        "restaurant": "@ShikuSushi",
-        "restaurant-description": "The jewel roll was amazing!"
-      },
-      {
-        "picture": false,
-        "restaurant": "@BreakfastRepublic",
-        "restaurant-description": "Get the flight of pancakes!"
-      }
-    ],
     "posts": [
       {
         "id": 4,
