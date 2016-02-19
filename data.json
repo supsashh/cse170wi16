@@ -176,64 +176,427 @@
     "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
     "location": "San Diego",
     "posts": [
+        {
+              "id": 27,
+              "food-image": "vallarta-carne_asada_fries.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "vallarta-express",
+              "restaurant-description": "These carne asada fries are #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "These carne asada fries are #1!"
+                }
+              ]
+            },
+            {
+              "id": 26,
+              "food-image": "vallarta-shrimp_quesadilla.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "vallarta-express",
+              "restaurant-description": "Shrimpalicious.",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Shrimpalicious."
+                }
+              ]
+            },
+            {
+              "id": 25,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "vallarta-express",
+              "restaurant-description": "The best 3am food.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The best 3am food."
+                }
+              ]
+            },
+            {
+              "id": 24,
+              "food-image":"vallarta-cali_burrito.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "vallarta-express",
+              "restaurant-description": "oooo, there are fries in this!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "oooo, there are fries in this!"
+                }
+              ]
+            },
+        {
+              "id": 23,
+              "food-image": "ki-chicken_katsu.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "ki-sushi",
+              "restaurant-description": "The sake bombs were #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The sake bombs were #1!"
+                }
+              ]
+            },
+            {
+              "id": 22,
+              "food-image": "ki-sushi.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "ki-sushi",
+              "restaurant-description": "sushisushisushi",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "sushisushisushi"
+                }
+              ]
+            },
+            {
+              "id": 21,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "ki-sushi",
+              "restaurant-description": "more like chicken wowtsu.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "more like chicken wowtsu."
+                }
+              ]
+            },
+            {
+              "id": 20,
+              "food-image":"ki-miso_salmon.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "ki-sushi",
+              "restaurant-description": "The salmon is pretty good.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The salmon is pretty good."
+                }
+              ]
+            },
+        {
+              "id": 19,
+              "food-image": "smash-bbq.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "@smash-burger",
+              "restaurant-description": "The sauce is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The sauce is #1!"
+                }
+              ]
+            },
+            {
+              "id": 18,
+              "food-image": "smash-chicken_sandwich.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "smash-burger",
+              "restaurant-description": "so much food!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "so much food!"
+                }
+              ]
+            },
+            {
+              "id": 17,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "smash-burger",
+              "restaurant-description": "Staff is friendly.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Staff is friendly."
+                }
+              ]
+            },
+            {
+              "id": 16,
+              "food-image":"smash-black_bean.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "smash-burger",
+              "restaurant-description": "Perfect for vegetarians.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Perfect for vegetarians."
+                }
+              ]
+            },
+        {
+              "id": 15,
+              "food-image": "amazona-tribal_bowl.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "The tribal bowl is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The tribal bowl is #1!"
+                }
+              ]
+            },
+            {
+              "id": 14,
+              "food-image": "amazona-cheese_bread.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "Great gluten free cheese bread!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Great gluten free cheese bread!"
+                }
+              ]
+            },
+            {
+              "id": 13,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "They also have great cold brew!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "They also have great cold brew!"
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "food-image":"amazona-urbano_bowl.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "Lots of gluten free and nut free options.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Lots of gluten free and nut free options."
+                }
+              ]
+            },
+        {
+              "id": 11,
+              "food-image": "lucha-libre-flaco_taco.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lucha-libre",
+              "restaurant-description": "The blackened mahi in the flaco taco is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The blackened mahi in the flaco taco is #1!"
+                }
+              ]
+            },
+            {
+              "id": 10,
+              "food-image": "lucha-libre-surfin_california.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Best burrito ever!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Best burrito ever!"
+                }
+              ]
+            },
+            {
+              "id": 9,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Super fresh ingredients!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Super fresh ingredients!"
+                }
+              ]
+            },
+            {
+              "id": 8,
+              "food-image":"lucha-libre-sweet_potato_tacos.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Sweet potato tacos!!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Sweet potato tacos!!"
+                }
+              ]
+            },
+       {
+              "id": 7,
+              "food-image": "oscars-torta.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "oscars",
+              "restaurant-description": "The torta was #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The torta was #1!"
+                }
+              ]
+            },
+            {
+              "id": 6,
+              "food-image": "oscars-grilled_shrimp_tacos.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "oscars",
+              "restaurant-description": "Beautiful fresh shrimp tacos!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Beautiful fresh shrimp tacos!"
+                }
+              ]
+            },
+            {
+              "id": 5,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "oscars",
+              "restaurant-description": "Really cheap!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Really cheap!"
+                }
+              ]
+            },
+            {
+              "id": 4,
+              "food-image":"oscars-battered_fish_tacos.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "oscars",
+              "restaurant-description": "Bomb fish tacos!!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Bomb fish tacos!!"
+                }
+              ]
+            },
       {
-        "id": 4,
-        "food-image": "french-toast.jpg",
-        "name": "John Wilburn",
-        "profile-image": "profile-icon.png",
-        "restaurant": "@Snooze",
-        "restaurant-description": "Loved the OMG french toast!",
-        "comments": [
-          {
-            "commenter": "John Wilburn",
-            "commenter-image": "profile-icon.png",
-            "text": "Loved the OMG french toast!"
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "food-image": "gelato.jpg",
-        "name": "Jane Lee",
-        "profile-image": "profile-icon.png",
-        "restaurant": "@Pappalecco",
-        "restaurant-description": "Pappalecco has the best gelato!",
-        "comments": [
-          {
-            "commenter": "Jane Lee",
-            "commenter-image": "profile-icon.png",
-            "text": "Pappalecco has the best gelato!"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Mary Murphy",
-        "profile-image": "profile-icon.png",
-        "restaurant": "@NomadDonuts",
-        "restaurant-description": "Nomad has the most unique donut flavors!",
-        "comments": [
-          {
-            "commenter": "Mary Murphy",
-            "commenter-image": "profile-icon.png",
-            "text": "Nomad has the most unique donut flavors!"
-          }
-        ]
-      },
-      {
-        "id": 1,
-        "name": "Alex Taylor",
-        "profile-image": "profile-icon.png",
-        "restaurant": "@AzukiSushi",
-        "restaurant-description": "The Kobe roll is my favorite roll in San Diego!",
-        "comments": [
-          {
-            "commenter": "Alex Taylor",
-            "commenter-image": "profile-icon.png",
-            "text": "The Kobe roll is my favorite roll in San Diego!"
-          }
-        ] 
-      }
+              "id": 3,
+              "food-image": "lolitas-rolled_taco.jpg",
+              "name": "Smitty Werbenjagermanjensen",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lolitas",
+              "restaurant-description": "It was #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "It was #1!"
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "food-image": "lolitas-carne_asada_fries.jpg",
+              "name": "Jane Lee",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lolitas",
+              "restaurant-description": "One of the best carne asada fries!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "One of the best carne asada fries!"
+                }
+              ]
+            },
+            {
+              "id": 1,
+              "food-image": "",
+              "name": "Mary Murphy",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lolitas",
+              "restaurant-description": "Convenient location.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Convenient location."
+                }
+              ]
+            },
+            {
+              "id": 0,
+              "food-image":"lolitas-california_burrito.jpg",
+              "name": "Alex Taylor",
+              "profile-image": "profile-icon.png",
+              "restaurant": "lolitas",
+              "restaurant-description": "Fave!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Fave!"
+                }
+              ]
+            }
+
     ],
       "restaurants":[
         {
@@ -263,35 +626,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 27,
               "food-image": "vallarta-carne_asada_fries.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@vallarta-express",
-              "restaurant-description": "Wow. #lit"
+              "restaurant": "vallarta-express",
+              "restaurant-description": "These carne asada fries are #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "These carne asada fries are #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 26,
               "food-image": "vallarta-shrimp_quesadilla.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@vallarta-express",
-              "restaurant-description": "Shrimpalicious."
+              "restaurant": "vallarta-express",
+              "restaurant-description": "Shrimpalicious.",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Shrimpalicious."
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 25,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@vallarta-express",
-              "restaurant-description": "The best 3am food."
+              "restaurant": "vallarta-express",
+              "restaurant-description": "The best 3am food.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The best 3am food."
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 24,
               "food-image":"vallarta-cali_burrito.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@vallarta-express",
-              "restaurant-description": "oooo, there are fries in this!"
+              "restaurant": "vallarta-express",
+              "restaurant-description": "oooo, there are fries in this!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "oooo, there are fries in this!"
+                }
+              ]
             }
           ]
         },
@@ -322,35 +714,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 23,
               "food-image": "ki-chicken_katsu.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@ki-sushi",
-              "restaurant-description": "more like chicken wowtsu."
+              "restaurant": "ki-sushi",
+              "restaurant-description": "The sake bombs were #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The sake bombs were #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 22,
               "food-image": "ki-sushi.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@ki-sushi",
-              "restaurant-description": "sushisushisushi"
+              "restaurant": "ki-sushi",
+              "restaurant-description": "sushisushisushi",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "sushisushisushi"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 21,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@ki-sushi",
-              "restaurant-description": "Good sake bombs."
+              "restaurant": "ki-sushi",
+              "restaurant-description": "more like chicken wowtsu.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "more like chicken wowtsu."
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 20,
               "food-image":"ki-miso_salmon.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@ki-sushi",
-              "restaurant-description": "The salmon is pretty good."
+              "restaurant": "ki-sushi",
+              "restaurant-description": "The salmon is pretty good.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The salmon is pretty good."
+                }
+              ]
             }
           ]
         },
@@ -381,35 +802,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 19,
               "food-image": "smash-bbq.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
               "restaurant": "@smash-burger",
-              "restaurant-description": "The sauce is really good!"
+              "restaurant-description": "The sauce is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The sauce is #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 18,
               "food-image": "smash-chicken_sandwich.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@smash-burger",
-              "restaurant-description": "so much food!"
+              "restaurant": "smash-burger",
+              "restaurant-description": "so much food!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "so much food!"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 17,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@smash-burger",
-              "restaurant-description": "Staff is friendly."
+              "restaurant": "smash-burger",
+              "restaurant-description": "Staff is friendly.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Staff is friendly."
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 16,
               "food-image":"smash-black_bean.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@smash-burger",
-              "restaurant-description": "Perfect for vegetarians."
+              "restaurant": "smash-burger",
+              "restaurant-description": "Perfect for vegetarians.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Perfect for vegetarians."
+                }
+              ]
             }
           ]
         },
@@ -440,35 +890,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 15,
               "food-image": "amazona-tribal_bowl.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@amazona-acai-cafe",
-              "restaurant-description": "The tribal bowl is amazing."
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "The tribal bowl is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The tribal bowl is #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 14,
               "food-image": "amazona-cheese_bread.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@amazona-acai-cafe",
-              "restaurant-description": "Great gluten free cheese bread!"
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "Great gluten free cheese bread!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Great gluten free cheese bread!"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 13,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@amazona-acai-cafe",
-              "restaurant-description": "They also have great cold brew!"
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "They also have great cold brew!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "They also have great cold brew!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 12,
               "food-image":"amazona-urbano_bowl.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@amazona-acai-cafe",
-              "restaurant-description": "Lots of gluten free and nut free options."
+              "restaurant": "amazona-acai-cafe",
+              "restaurant-description": "Lots of gluten free and nut free options.",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Lots of gluten free and nut free options."
+                }
+              ]
             }
           ]
         },
@@ -499,35 +978,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 11,
               "food-image": "lucha-libre-flaco_taco.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lucha-libre",
-              "restaurant-description": "Love the blackened mahi in the flaco taco!"
+              "restaurant": "lucha-libre",
+              "restaurant-description": "The blackened mahi in the flaco taco is #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The blackened mahi in the flaco taco is #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 10,
               "food-image": "lucha-libre-surfin_california.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lucha-libre",
-              "restaurant-description": "Best burrito ever!"
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Best burrito ever!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Best burrito ever!"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 9,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lucha-libre",
-              "restaurant-description": "Super fresh ingredients!"
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Super fresh ingredients!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Super fresh ingredients!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 8,
               "food-image":"lucha-libre-sweet_potato_tacos.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lucha-libre",
-              "restaurant-description": "Sweet potato tacos!!"
+              "restaurant": "lucha-libre",
+              "restaurant-description": "Sweet potato tacos!!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Sweet potato tacos!!"
+                }
+              ]
             }
           ]
         },
@@ -558,35 +1066,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 7,
               "food-image": "oscars-torta.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@oscars",
-              "restaurant-description": "The torta is huge!"
+              "restaurant": "oscars",
+              "restaurant-description": "The torta was #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "The torta was #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 6,
               "food-image": "oscars-grilled_shrimp_tacos.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@oscars",
-              "restaurant-description": "Beautiful fresh shrimp tacos!"
+              "restaurant": "oscars",
+              "restaurant-description": "Beautiful fresh shrimp tacos!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Beautiful fresh shrimp tacos!"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 5,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@oscars",
-              "restaurant-description": "Really cheap!"
+              "restaurant": "oscars",
+              "restaurant-description": "Really cheap!",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Really cheap!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 4,
               "food-image":"oscars-battered_fish_tacos.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@oscars",
-              "restaurant-description": "Bomb fish tacos!!"
+              "restaurant": "oscars",
+              "restaurant-description": "Bomb fish tacos!!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Bomb fish tacos!!"
+                }
+              ]
             }
           ]
         },
@@ -617,35 +1154,64 @@
           ],
           "posts": [
             {
-              "picture": true,
+              "id": 3,
               "food-image": "lolitas-rolled_taco.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lolitas",
-              "restaurant-description": "Delicious rolled tacos."
+              "restaurant": "lolitas",
+              "restaurant-description": "It was #1!",
+              "comments": [
+                {
+                  "commenter": "Smitty Werbenjagermanjensen",
+                  "commenter-image": "profile-icon.png",
+                  "text": "It was #1!"
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 2,
               "food-image": "lolitas-carne_asada_fries.jpg",
               "name": "Jane Lee",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lolitas",
-              "restaurant-description": "One of the best carne asada fries!"
+              "restaurant": "lolitas",
+              "restaurant-description": "One of the best carne asada fries!",
+              "comments": [
+                {
+                  "commenter": "Jane Lee",
+                  "commenter-image": "profile-icon.png",
+                  "text": "One of the best carne asada fries!"
+                }
+              ]
             },
             {
-              "picture": false,
+              "id": 1,
+              "food-image": "",
               "name": "Mary Murphy",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lolitas",
-              "restaurant-description": "Convenient location."
+              "restaurant": "lolitas",
+              "restaurant-description": "Convenient location.",
+              "comments": [
+                {
+                  "commenter": "Mary Murphy",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Convenient location."
+                }
+              ]
             },
             {
-              "picture": true,
+              "id": 0,
               "food-image":"lolitas-california_burrito.jpg",
               "name": "Alex Taylor",
               "profile-image": "profile-icon.png",
-              "restaurant": "@lolitas",
-              "restaurant-description": "Fave!"
+              "restaurant": "lolitas",
+              "restaurant-description": "Fave!",
+              "comments": [
+                {
+                  "commenter": "Alex Taylor",
+                  "commenter-image": "profile-icon.png",
+                  "text": "Fave!"
+                }
+              ]
             }
           ]
         }

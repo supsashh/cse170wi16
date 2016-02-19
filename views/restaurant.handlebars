@@ -34,7 +34,7 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-      		  //testAPI();
+      		  apiCall();
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
       		  window.location.href= "/login";
@@ -109,6 +109,20 @@
 			  })
 			});
   		}
+
+  		function apiCall() {
+				FB.getAuthResponse();
+				FB.api('/me', 'GET',  {"fields":"name,picture{url}"},  function(response) {
+					var pics = document.getElementsByClassName("profile-pic");
+					var names = document.getElementsByClassName("profile-name");
+					var i;
+					for (i = 0; i < pics.length; i++) {
+    				pics[i].src = response.picture.data.url;
+						names[i].innerHTML = response.name;
+					}
+  			}
+			);
+  		}
 	</script>
 
 	<div class="container">
@@ -131,7 +145,7 @@
 		        </a>
 		    </div>
 		    <div class="media-body">
-		        <h3 class="media-heading profile-name">
+		        <h3 class="media-heading">
 								{{name}}
 		        </h3>
 				<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
@@ -166,26 +180,39 @@
 		<h3>Restaurant Newsfeed</h3>
 		<hr>
 		{{#each posts}}
+			{{#if profile-image}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
-					<a href="#">
-					  <img class="media-object profile-pic img-rounded" src="/images/profile-icon.png">
-					</a>
+						<a href="#">
+					  		<img class="media-object img-circle scaled-pic" src="/images/{{profile-image}}">
+						</a>
 					</div>
 					<div class="media-body">
-					<h4 class="media-heading profile-name"></h4>
-					{{#if picture}}
-						<img class="food-image scaled-image" src="/images/{{food-image}}">
+						<h4 class="media-heading">{{name}}</h4>
+			{{else}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+						<a href="#">
+					  		<img class="media-object img-circle profile-pic" src="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading profile-name">
+							farts
+						</h4>
+						{{/if}}
+						{{#if food-image}}
+							<img class="food-image scaled-image" src="/images/{{food-image}}">
+							<br>
+						{{/if}}
+						<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+						<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
 						<br>
-					{{/if}}
-					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
-					<br>
-					<a href="/restaurant">{{restaurant}}</a>
-					<br>
-					{{restaurant-description}}
+						<a href="/restaurant/{{restaurant}}">@{{restaurant}}</a>
+						<br>
+						{{restaurant-description}}
 					</div>
 				</div>
 			</div>

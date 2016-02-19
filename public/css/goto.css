@@ -256,6 +256,11 @@
 	width: auto;
 }
 
+.scaled-pic{
+	height: 50px;
+	width: 50px;
+}
+
 .restaurant-pic{
 	max-width: 160px;
 	max-height: 200px;

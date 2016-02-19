@@ -85,9 +85,18 @@
 					var pics = document.getElementsByClassName("profile-pic");
 					var names = document.getElementsByClassName("profile-name");
 					var i;
+
 					for (i = 0; i < pics.length; i++) {
     				pics[i].src = response.picture.data.url;
-						names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
+    				  if(i == 0)
+    				  {
+    				  	names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
+    				  }
+    				  else
+    				  {
+						names[i].innerHTML = response.name;
+					  }
+						
 					}
   			}
 			);
@@ -105,7 +114,7 @@
 		<div class="media profile-top">
 		    <div class="media-left">
 		        <a href="#">
-		            <img class="media-object profile-pic img-rounded" src="">
+		            <img class="media-object profile-pic img-circle" src="">
 		        </a>
 		    </div>
 		    <div class="media-body">
@@ -140,18 +149,18 @@
 				<div class="media profile-top">
 					<div class="media-left">
 					<a href="#">
-					  <img class="media-object profile-pic img-rounded" src="">
+					  <img class="media-object img-circle profile-pic" src="">
 					</a>
 					</div>
 					<div class="media-body">
-					<h4 class="media-heading profile-name"></h4>
+					<h4 class="media-heading profile-name">
+					</h4>
 					{{#if food-image}}
 						<img class="food-image" src="/images/{{food-image}}">
 						<br>
 					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
+					<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
 					<br>
 					<a href="/restaurant">{{restaurant}}</a>
 					<br>
