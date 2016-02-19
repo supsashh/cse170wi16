@@ -80,6 +80,7 @@ server.get('/tutorial', tutorial.view);
 server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
+server.get('/newpost/r/r/r', newpost.restaurants);
 server.post('/comments/newcomment/:id', comments.newcomment)
 
 http.createServer(server).listen(server.get('port'), function(){

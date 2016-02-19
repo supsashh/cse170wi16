@@ -262,4 +262,19 @@ $(document).ready(function() {
       googleURL = "https://google.com/maps/search/"+address;
       window.open(googleURL,"_blank");
     });
+
+    $("#restaurant_tag").focus(function(){
+      $.get("/newpost/r/r/r", function(response){
+        $("#restaurant_tag").autocomplete({
+          source: response
+        });
+      });
+    });
+
+    $('#restaurant-handle').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(window).scrollTop($("#dummy").position().top - 40);
+			$("#rest_newsfeed").focus();
+    });
 });

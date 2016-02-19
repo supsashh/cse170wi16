@@ -148,6 +148,7 @@
 		        <h3 class="media-heading">
 								{{name}}
 		        </h3>
+						<a href="#" id="restaurant-handle">@{{id}}</a><br>
 				<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
 		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a><br>
 		        {{#if favorite}}
@@ -175,8 +176,9 @@
 		        <img data-src="/images/see-more.png" data-url="/restaurant/{{../id}}/menu#0" class="restaurant-image"/>
 			</div>
 	</div>
+	<div id="dummy"></div>
 
-	<div class="container post-container restaurant-posts-container">
+	<div class="container post-container restaurant-posts-container" id="rest_newsfeed">
 		<h3>Restaurant Newsfeed</h3>
 		<hr>
 		{{#each posts}}
