@@ -260,4 +260,13 @@ $(document).ready(function() {
 
       });
     });
+
+    $('#address').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var address = this.innerHTML;
+      address = address.replace(/ /g, "+");
+      googleURL = "https://google.com/maps/search/"+address;
+      window.open(googleURL,"_blank");
+    });
 });
