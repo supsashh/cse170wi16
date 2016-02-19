@@ -73,6 +73,7 @@
 		var itemId = window.location.hash;
 		if(itemId && itemId != "0"){
 			$(itemId).css("background-color","#C0C0C0");
+			$(window).scrollTop($(itemId).offset());
 			$(itemId).focus();
 		}
 	</script>
