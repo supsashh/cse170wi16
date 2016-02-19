@@ -79,7 +79,7 @@ $(document).ready(function() {
         "profile-image": "profile-icon.png",
         "restaurant": post_tag,
         "restaurant-description": restaurant_desc,
-        "comments": [ { 
+        "comments": [ {
           "commenter": "John Johnson",
           "commenter-image": "profile-icon.png",
           "text": restaurant_desc } ]
@@ -97,7 +97,7 @@ $(document).ready(function() {
         var postId = strArr[strArr.length - 1];
         var code = "<li class='media'><a class='pull-left' href='#''>" +
               "<img class='media-object img-circle' src='/images/profile-icon.png' alt='profile'>" +
-              "</a><div class='media-body'><div class='well well-sm'>" + 
+              "</a><div class='media-body'><div class='well well-sm'>" +
               "<h4 class='media-heading reviews'>John Johnson</h4>" +
               "<p class='media-comment'>";
         code = code + comment_text + "</p></div></div></li>";
@@ -193,11 +193,44 @@ $(document).ready(function() {
         }
         else {
           console.log(response);
-          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
-          result += "/images/" + response.picture + "'></a></div>";
-          result += "<div class='media-body'><h4><a href='/restaurant/" + response.id + "'>";
-          result += response.name + "</a></h4></div></div>"
-          $('.results-container').append(result);
+          if(response.restaurants.length > 0){
+            var result = "<h3>Restaurants</h3>";
+            for(var i = 0; i < response.restaurants.length; i++){
+              result += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+              result += "/images/" + response.restaurants[i].picture + "'></a></div>";
+              result += "<div class='media-body'><h4><a href='/restaurant/" + response.restaurants[i].id + "'>";
+              result += response.restaurants[i].name + "</a></h4></div></div>"
+            }
+            $('.results-container').append(result);
+          }
+
+          if(response.menuItems.length > 0){
+            var result2 = "<h3>Menu Items</h3>";
+            for(var j = 0; j < response.menuItems.length; j++){
+              result2 += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+              result2 += "/images/" + response.menuItems[j]["item-image"] + "'></a></div>";
+              result2 += "<div class='media-body'><h4><a href='/restaurant/" + response.menuItemsRestaurants[j].id + "/menu#" + response.menuItems[j]["item-id"]+ "'>";
+              result2 += response.menuItems[j]["item-name"] + " (" + response.menuItemsRestaurants[j].name + ")</a></h4></div></div>"
+            }
+            $('.results-container').append(result2);
+          }
+
+          if(response.cuisines.length > 0){
+            var result3 = "<h3>Cuisines</h3>";
+            for(var k = 0; k < response.cuisines.length; k++){
+              if(response.cuisines[k].image.length > 0){
+                result3 += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+                result3 += "/images/" + response.cuisines[k].image + "'></a></div>";
+                result3 += "<div class='media-body'><h4><a href='/cuisine/" + response.cuisines[k].id + "'>";
+                result3 += response.cuisines[k].id + "</a></h4></div></div>"
+              }else{
+                result3 += "<div class='panel media'>";
+                result3 += "<div class='media-body'><h4><a href='/cuisine/" + response.cuisines[k].id + "'>";
+                result3 += response.cuisines[k].id + "</a></h4></div></div>"
+              }
+            }
+            $('.results-container').append(result3);
+          }
         }
       });
     });
