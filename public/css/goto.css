@@ -250,6 +250,11 @@
 	margin-top: 60px;
 }
 
+.friend-rec {
+	font-size: x-small;
+	font-weight: bold;
+}
+
 .scaled-image{
 	max-width: none;
 	height: 200px;
