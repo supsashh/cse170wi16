@@ -40,6 +40,13 @@
 						<h3 class='media-heading'>
 							{{price}}
 						</h3>
+						<h3 class='media-heading'>
+							{{#if rating}}
+								{{rating}} /5
+							{{else}}
+								No reviews yet!
+							{{/if}}
+						</h3>
 		    </div>
 		</div>
 	  {{/each}}
