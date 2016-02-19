@@ -56,6 +56,7 @@ server.get('/login', index.viewLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);
 server.get('/restaurant/:id/menu', menu.view);
+server.get('/restaurant/:id/menu#:item-id', menu.view);
 server.post('/restaurant/addFavorite', restaurant.addFavorite);
 server.post('/restaurant/removeFavorite', restaurant.removeFavorite);
 server.get('/profile', profile.view);

@@ -134,42 +134,42 @@
       {
         "id": "Chinese",
         "image": "",
-        "info":""
+        "info":"美味"
       },
       {
         "id": "French",
         "image": "",
-        "info":""
+        "info":"Délicieux"
       },
       {
         "id": "Brewery",
         "image": "",
-        "info":""
+        "info":"Gulp-gulp-gulp"
       },
       {
         "id": "Fast-Food",
         "image": "",
-        "info":""
+        "info":"#4 with Cheese"
       },
       {
         "id": "Brazilian",
         "image": "",
-        "info":""
+        "info":"Delicioso"
       },
       {
         "id": "Indian",
         "image": "",
-        "info":""
+        "info":"स्वादिष्ट"
       },
       {
         "id": "Ethiopian",
         "image": "",
-        "info":""
+        "info":"ጣፉጭ"
       },
       {
         "id": "Dessert",
         "image": "",
-        "info":""
+        "info":"Sweeeeeeet"
       }
     ],
     "profile-image": "profile-icon.png",
@@ -596,7 +596,6 @@
                 }
               ]
             }
-
     ],
       "restaurants":[
         {
@@ -611,17 +610,23 @@
             {
               "item-id":"carne_asada_fries",
               "item-name":"Carne Asada Fries",
-              "item-image":"vallarta-carne_asada_fries.jpg"
+              "item-image":"vallarta-carne_asada_fries.jpg",
+              "price": "$8.00",
+              "rating": "4.7"
             },
             {
               "item-id":"cali_burrito",
               "item-name":"California Burrito",
-              "item-image":"vallarta-cali_burrito.jpg"
+              "item-image":"vallarta-cali_burrito.jpg",
+              "price": "$7.00",
+              "rating": "4.8"
             },
             {
               "item-id":"shrimp_quesadilla",
               "item-name":"Shrimp Quesadilla",
-              "item-image":"vallarta-shrimp_quesadilla.jpg"
+              "item-image":"vallarta-shrimp_quesadilla.jpg",
+              "price": "$7.00",
+              "rating": ""
             }
           ],
           "posts": [
@@ -699,17 +704,23 @@
             {
               "item-id":"chicken_katsu",
               "item-name":"Chicken Katsu Bento",
-              "item-image":"ki-chicken_katsu.jpg"
+              "item-image":"ki-chicken_katsu.jpg",
+              "price": "$12.00",
+              "rating": "5"
             },
             {
               "item-id":"sushi",
               "item-name":"Sushi Sampler",
-              "item-image":"ki-sushi.jpg"
+              "item-image":"ki-sushi.jpg",
+              "price": "$10.00",
+              "rating": "4"
             },
             {
               "item-id":"miso_salmon",
               "item-name":"Miso Salmon",
-              "item-image":"ki-miso_salmon.jpg"
+              "item-image":"ki-miso_salmon.jpg",
+              "price": "$14.00",
+              "rating": "3"
             }
           ],
           "posts": [
@@ -787,17 +798,23 @@
             {
               "item-id":"chicken_sandwich",
               "item-name":"Classic Grilled Chicken Sandwich w/ Avocado",
-              "item-image":"smash-chicken_sandwich.jpg"
+              "item-image":"smash-chicken_sandwich.jpg",
+              "price": "$6.50",
+              "rating": "4"
             },
             {
               "item-id":"bbq",
               "item-name":"BBQ Burger",
-              "item-image":"smash-bbq.jpg"
+              "item-image":"smash-bbq.jpg",
+              "price": "$7.00",
+              "rating": "5"
             },
             {
               "item-id":"black_bean",
               "item-name":"Black Bean Spicy Baja - Ultimate",
-              "item-image":"smash-black_bean.jpg"
+              "item-image":"smash-black_bean.jpg",
+              "price": "$6.00",
+              "rating": "4"
             }
           ],
           "posts": [
@@ -875,17 +892,23 @@
             {
               "item-id":"tribal_bowl",
               "item-name":"Tribal Bowl",
-              "item-image":"amazona-tribal_bowl.jpg"
+              "item-image":"amazona-tribal_bowl.jpg",
+              "price": "$6.00",
+              "rating": "3.5"
             },
             {
               "item-id":"cheese_bread",
               "item-name":"Cheese Bread",
-              "item-image":"amazona-cheese_bread.jpg"
+              "item-image":"amazona-cheese_bread.jpg",
+              "price": "$6.00",
+              "rating": ""
             },
             {
               "item-id":"urbano_bowl",
               "item-name":"Urbano Bowl",
-              "item-image":"amazona-urbano_bowl.jpg"
+              "item-image":"amazona-urbano_bowl.jpg",
+              "price": "$8.00",
+              "rating": "5"
             }
           ],
           "posts": [
@@ -963,17 +986,23 @@
             {
               "item-id":"flaco_taco",
               "item-name":"Flaco Taco",
-              "item-image":"lucha-libre-flaco_taco.jpg"
+              "item-image":"lucha-libre-flaco_taco.jpg",
+              "price": "$5.00",
+              "rating": ""
             },
             {
               "item-id":"surfin_california_burrito",
               "item-name":"Surfin California Burrito",
-              "item-image":"lucha-libre-surfin_california.jpg"
+              "item-image":"lucha-libre-surfin_california.jpg",
+              "price": "$8.00",
+              "rating": "4.3"
             },
             {
               "item-id":"sweet_potato_tacos",
               "item-name":"Sweet Potato Tacos",
-              "item-image":"lucha-libre-sweet_potato_tacos.jpg"
+              "item-image":"lucha-libre-sweet_potato_tacos.jpg",
+              "price": "$6.00",
+              "rating": "5"
             }
           ],
           "posts": [
@@ -1051,17 +1080,23 @@
             {
               "item-id":"torta",
               "item-name":"Torta",
-              "item-image":"oscars-torta.jpg"
+              "item-image":"oscars-torta.jpg",
+              "price": "$8.00",
+              "rating": "3.7"
             },
             {
               "item-id":"grilled_shrimp_tacos",
               "item-name":"Grilled Shrimp Tacos",
-              "item-image":"oscars-grilled_shrimp_tacos.jpg"
+              "item-image":"oscars-grilled_shrimp_tacos.jpg",
+              "price": "$4.00",
+              "rating": "5"
             },
             {
               "item-id":"battered_fish_tacos",
               "item-name":"Battered fish Tacos",
-              "item-image":"oscars-battered_fish_tacos.jpg"
+              "item-image":"oscars-battered_fish_tacos.jpg",
+              "price": "$5.00",
+              "rating": "4.8"
             }
           ],
           "posts": [
@@ -1139,17 +1174,23 @@
             {
               "item-id":"rolled_taco",
               "item-name":"Rolled Taco",
-              "item-image":"lolitas-rolled_taco.jpg"
+              "item-image":"lolitas-rolled_taco.jpg",
+              "price": "$4.00",
+              "rating": "4.6"
             },
             {
               "item-id":"carne_asada_fries",
               "item-name":"Carne Asada Fries",
-              "item-image":"lolitas-carne_asada_fries.jpg"
+              "item-image":"lolitas-carne_asada_fries.jpg",
+              "price": "$8.00",
+              "rating": "5"
             },
             {
               "item-id":"california_burrito",
               "item-name":"California Burrito",
-              "item-image":"lolitas-california_burrito.jpg"
+              "item-image":"lolitas-california_burrito.jpg",
+              "price": "$8.00",
+              "rating": "5"
             }
           ],
           "posts": [

@@ -60,9 +60,8 @@ exports.addFavorite = function(req, res) {
 
   // Get the first menu item image and add it to the images in Your GoTo List portfolio
   var image = {};
-  image["image"] = restaurant["menu-items"][0]["item-image"];
+  image["image"] = restaurant["picture"];
   image["restaurant-id"] = restaurantId;
-  image["dish-name"] = restaurant["menu-items"][0]["item-name"];
   image["restaurant-name"] = restaurant["name"];
   yourGoToList.images.push(image);
 

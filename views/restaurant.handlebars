@@ -102,7 +102,7 @@
 
   		function shareRestaurant() {
   			FB.ui({
-			  method: 'share_open_graph', 
+			  method: 'share_open_graph',
 			  action_type: 'goto--app:share',    // appNameSpace:myCustomAction
 			  action_properties: JSON.stringify({
 			    restaurant: 'http://goto-app.herokuapp.com/restaurant/{{id}}'
@@ -151,15 +151,15 @@
 				<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
 		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a><br>
 		        {{#if favorite}}
-		        	<a href="#" id="remove-favorite"><i class="glyphicon glyphicon-star social-button"></i>Remove from My GoTo Places</a>
+		        	<a href="#" id="remove-favorite"><i class="glyphicon glyphicon-star social-button"></i>Remove from Your GoTo List</a>
 		        {{else}}
-		        	<a href="#" id="add-favorite"><i class="glyphicon glyphicon-star-empty social-button"></i>Add to My GoTo Places</a>
+		        	<a href="#" id="add-favorite"><i class="glyphicon glyphicon-star-empty social-button"></i>Add to Your GoTo List</a>
 		        {{/if}}
 		    </div>
 		</div>
 		<div class="Details">
 		    <h4><strong>Details</strong></h4>
-		    <p>{{address}}</p>
+		    <p id="address">{{address}}</p>
 		    <p><strong>Cuisine: </strong> <br>
             <a href="/cuisine/{{cuisineId}}" class="label label-info tags">{{cuisineId}}</a>
         </p>
@@ -170,9 +170,9 @@
 			<h3>Menu Items</h3>
 			<div id="menu-items" class="portfolio">
 				{{#each menu-items}}
-			    <img data-src="/images/{{item-image}}" class="restaurant-image" />
+			    <img data-src="/images/{{item-image}}" data-url="/restaurant/{{../id}}/menu#{{item-id}}"class="restaurant-image" />
 		        {{/each}}
-		        <img data-src="/images/see-more.png" data-url="/restaurant/{{id}}/menu" class="restaurant-image"/>
+		        <img data-src="/images/see-more.png" data-url="/restaurant/{{../id}}/menu#0" class="restaurant-image"/>
 			</div>
 	</div>
 

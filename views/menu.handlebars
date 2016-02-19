@@ -24,10 +24,11 @@
 	</div>
 
 	<div class="container portfolio-detail-container">
-			<h4 class="center"><a href="/restaurant/{{id}}" class="glyphicon glyphicon-menu-left"></a>{{name}}</h4>
+			<h4 class="center"><a href="/restaurant/{{id}}" class="glyphicon glyphicon-menu-left"></a>
+				<a href="/restaurant/{{id}}">{{name}}</a></h4>
 			<hr>
       {{#each menu-items}}
-      	<div class='panel media'>
+      	<div class='panel media' id={{item-id}}>
       		<div class='media-left'>
       			<a href='#'>
       				<img class='media-object portfolio-detail-pic' src='/images/{{item-image}}' />
@@ -37,6 +38,16 @@
 		    	<h4 class='media-heading'>
 						{{item-name}}
 		       	</h4>
+						<h3 class='media-heading'>
+							{{price}}
+						</h3>
+						<h3 class='media-heading'>
+							{{#if rating}}
+								{{rating}} /5
+							{{else}}
+								No reviews yet!
+							{{/if}}
+						</h3>
 		    </div>
 		</div>
 	  {{/each}}
@@ -58,5 +69,12 @@
 	  </div>
 	</div>
 
+	<script>
+		var itemId = window.location.hash;
+		if(itemId && itemId != "0"){
+			$(itemId).css("background-color","#C0C0C0");
+			$(itemId).focus();
+		}
+	</script>
 </body>
 </html>

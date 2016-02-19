@@ -95,14 +95,11 @@ $(document).ready(function() {
         var postpath = window.location.pathname;
         var strArr = postpath.split("/");
         var postId = strArr[strArr.length - 1];
-        
-
 
         $.post("/comments/newcomment/"+postId, { "commenter": "",
           "commenter-image": "",
           "text": comment_text
           }, function() {
-            
             $('#addcomment').val("");
             $('#addcomment').blur();
             window.location.href = "/comments/" + postId;
@@ -189,11 +186,44 @@ $(document).ready(function() {
         }
         else {
           console.log(response);
-          var result = "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
-          result += "/images/" + response.picture + "'></a></div>";
-          result += "<div class='media-body'><h4><a href='/restaurant/" + response.id + "'>";
-          result += response.name + "</a></h4></div></div>"
-          $('.results-container').append(result);
+          if(response.restaurants.length > 0){
+            var result = "<h3>Restaurants</h3>";
+            for(var i = 0; i < response.restaurants.length; i++){
+              result += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+              result += "/images/" + response.restaurants[i].picture + "'></a></div>";
+              result += "<div class='media-body'><h4><a href='/restaurant/" + response.restaurants[i].id + "'>";
+              result += response.restaurants[i].name + "</a></h4></div></div>"
+            }
+            $('.results-container').append(result);
+          }
+
+          if(response.menuItems.length > 0){
+            var result2 = "<h3>Menu Items</h3>";
+            for(var j = 0; j < response.menuItems.length; j++){
+              result2 += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+              result2 += "/images/" + response.menuItems[j]["item-image"] + "'></a></div>";
+              result2 += "<div class='media-body'><h4><a href='/restaurant/" + response.menuItemsRestaurants[j].id + "/menu#" + response.menuItems[j]["item-id"]+ "'>";
+              result2 += response.menuItems[j]["item-name"] + " (" + response.menuItemsRestaurants[j].name + ")</a></h4></div></div>"
+            }
+            $('.results-container').append(result2);
+          }
+
+          if(response.cuisines.length > 0){
+            var result3 = "<h3>Cuisines</h3>";
+            for(var k = 0; k < response.cuisines.length; k++){
+              if(response.cuisines[k].image.length > 0){
+                result3 += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
+                result3 += "/images/" + response.cuisines[k].image + "'></a></div>";
+                result3 += "<div class='media-body'><h4><a href='/cuisine/" + response.cuisines[k].id + "'>";
+                result3 += response.cuisines[k].id + "</a></h4></div></div>"
+              }else{
+                result3 += "<div class='panel media'>";
+                result3 += "<div class='media-body'><h4><a href='/cuisine/" + response.cuisines[k].id + "'>";
+                result3 += response.cuisines[k].id + "</a></h4></div></div>"
+              }
+            }
+            $('.results-container').append(result3);
+          }
         }
       });
     });
@@ -222,5 +252,14 @@ $(document).ready(function() {
       $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
 
       });
+    });
+
+    $('#address').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var address = this.innerHTML;
+      address = address.replace(/ /g, "+");
+      googleURL = "https://google.com/maps/search/"+address;
+      window.open(googleURL,"_blank");
     });
 });
