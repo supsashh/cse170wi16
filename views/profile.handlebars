@@ -87,8 +87,9 @@
 					var i;
 					for (i = 0; i < pics.length; i++) {
     				pics[i].src = response.picture.data.url;
-						names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
+						names[i].innerHTML = response.name;
 					}
+					names[0].innerHTML = response.name  + "<a href='/friendslist' class='friendButton'>Friends</a>"; //for the friends link at the beginning of the profile
   			}
 			);
   		}
@@ -126,8 +127,8 @@
 		    {{/if}}
 		    <p><strong>Food Taste: </strong> <br>
 		    	{{#each myCuisines}}
-                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a> 
-                {{/each}}      
+                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a>
+                {{/each}}
             </p>
         </div>
 	</div>
