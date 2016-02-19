@@ -36,9 +36,15 @@
 		    	<h4 class='media-heading'>
 		    		<a href="/restaurant/{{restaurant-id}}">{{restaurant-name}}</a>
 		       	</h4>
-		       	{{dish-name}}
+		       	{{#if dish-name}}
+		       		{{dish-name}}
+		       	{{/if}}
 		    </div>
 		</div>
+	  {{else}}
+	  	<div class="text-center">
+	  		You haven't added any GoTo Places yet.
+	  	</div>
 	  {{/each}}
     </div>
 	
