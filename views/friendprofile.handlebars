@@ -103,17 +103,27 @@
 
 	<div class="container profile-container">
 		<div class="media profile-top">
+			{{#if profile-image}}
+			<div class="media-left">
+		        <a href="#">
+		            <img class="media-object scaled-pic img-circle" src="/images/{{profile-image}}">
+		        </a>
+		    </div>
+		    <div class="media-body">
+		        <h3 class="media-heading">{{name}}
+		        </h3>
+			{{else}}
 		    <div class="media-left">
 		        <a href="#">
-		            <img class="media-object profile-pic img-rounded" src="">
+		            <img class="media-object profile-pic img-circle" src="">
 		        </a>
 		    </div>
 		    <div class="media-body">
 		        <h3 class="media-heading profile-name">
-		    	    <a href="/friendslist" class="friendButton">Friends</a>
+		    	    
 		        </h3>
-		        <a href="/editprofile" class="btn btn-primary btn-xs btn-block" role="button">Edit Profile
-		        </a>
+		        {{/if}}
+		        
 		    </div>
 		</div>
 		<div class="Bio">
@@ -131,24 +141,35 @@
 		<h4 class="center">Your Posts</h4>
 		<hr>
 		{{#each profile-posts}}
+		{{#if profile-image}}
+		<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+					<a href="#">
+					  <img class="media-object scaled-pic img-circle" src="/images/{{profile-image}}">
+					</a>
+					</div>
+					<div class="media-body">
+					<h4 class="media-heading">{{name}}</h4>
+		{{else}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
 					<a href="#">
-					  <img class="media-object profile-pic img-rounded" src="">
+					  <img class="media-object scaled-pic profile-pic img-circle" src="">
 					</a>
 					</div>
 					<div class="media-body">
 					<h4 class="media-heading profile-name"></h4>
-					{{#if picture}}
-						<img class="food-image" src="/images/{{food-image}}">
+					{{/if}}
+					{{#if food-image}}
+						<img class="food-image scaled-image" src="/images/{{food-image}}">
 						<br>
 					{{/if}}
 					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
+					<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
 					<br>
-					<a href="/restaurant">{{restaurant}}</a>
+					<a href="/restaurant/{{restuarant}}">{{restaurant}}</a>
 					<br>
 					{{restaurant-description}}
 					</div>

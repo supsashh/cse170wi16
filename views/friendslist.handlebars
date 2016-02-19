@@ -115,6 +115,21 @@
 	<div class="container top-title friends">
 		<h4 class="center">Friends using Goto</h4>
 		<hr>
+    {{#each friends}}
+    <div class='panel media friend'>
+      <div class='media-left'>
+        <a href='#'>
+          <img class='media-object scaled-pic' src='/images/{{profile-image}}'>
+        </a>
+      </div>
+      <div class='media-body'>
+        <h4>
+          <a href='/profile/{{name}}'>{{name}}
+          </a>
+        </h4>
+      </div>
+    </div>
+    {{/each}}
 
 	</div>
 
