@@ -2,7 +2,9 @@
 
 $(document).ready(function() {
     $('.portfolio').each(function(index, obj) {
-    	var p = $(this).portfolio();
+    	var p = $(this).portfolio({
+        showArrows: false
+      });
     	p.init();
     });
 
@@ -228,30 +230,38 @@ $(document).ready(function() {
       });
     });
 
-    $('#add-favorite').on("tap vclick click", function() {
+    $('#goto-list-button').on("tap vclick click", function() {
       event.preventDefault();
       event.stopPropagation();
-      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+      var action;
+      if ($(this).text() === "Add to Your GoTo List") {
+        action = "addFavorite";
+      }
+      else {
+        action = "removeFavorite";
+      }
 
       var pathname = window.location.pathname;
       var strArray = pathname.split("/");
       var restaurantId = strArray[strArray.length - 1];
-      $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
 
-      });
-    });
+      if (action === "addFavorite") {
+        $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
+          console.log("image is " + $(this).find('i'));
+          $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+          $('#goto-list-button').contents().last().replaceWith("Remove from Your GoTo List");
+        });
+      }
+      else {
+        $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
+           console.log("image is " + $(this).find('i'));
+          $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+          $('#goto-list-button').contents().last().replaceWith("Add to Your GoTo List");
+        });
+      }
 
-    $('#remove-favorite').on("tap vclick click", function() {
-      event.preventDefault();
-      event.stopPropagation();
-      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
-
-      var pathname = window.location.pathname;
-      var strArray = pathname.split("/");
-      var restaurantId = strArray[strArray.length - 1];
-      $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
-
-      });
+      // Prevent click from being triggered twice
+      return false;
     });
 
     $('#address').on("tap vclick click", function() {
