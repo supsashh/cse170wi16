@@ -1,10 +1,15 @@
-<!doctype html>
-
 <html>
 <head>
 	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="fb:app_id" content="1018516261547542" />
+	<meta property="og:url" content="http://goto-app.herokuapp.com/restaurant/{{id}}" />
+	<meta property="og:title" content="{{name}}" />
+	<meta property="og:image" content="http://goto-app.herokuapp.com/images/{{picture}}" />
+	<meta property="og:type" content="restaurant.restaurant" />
+	<meta property="place:location:latitude"  content="{{latitude}}" />
+	<meta property="place:location:longitude" content="{{longitude}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
@@ -16,34 +21,22 @@
 </head>
 
 <body>
-	<div class="container">
+  <div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 		</nav>
 	</div>
-
-	<div class="container top-title search-container">
-		<h2 class="center">Search</h2>
-      	<div class="row">
-		  <div class="col-lg-6">
-		    <div class="input-group">
-		      <input type="text" class="form-control" placeholder="Search" id="search-input">
-		      <span class="input-group-btn">
-		        <button class="btn btn-default search-button" type="button">Go!</button>
-		      </span>
-		    </div><!-- /input-group -->
-		  </div><!-- /.col-lg-6 -->
-		</div><!-- /.row -->
-	</div>
-
-	<div class="results-container">
-	</div>
-
-	<div id="footer">
+  <div class="jumbotron">
+    <h2>
+      Restaurant not found. :(
+    </h2>
+    <a onclick="history.back(-1)"> Go back to previous page!</a>
+  </div>
+  <div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/index">
+	    <div class="col-xs-4 text-center"><a href="/">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="/newsfeed">
@@ -56,5 +49,3 @@
 	  </div>
 	</div>
 </body>
-
-</html>

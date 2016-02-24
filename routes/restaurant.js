@@ -11,6 +11,11 @@ exports.view = function(req, res){
     }
   }
 
+  if(!restaurant){
+    res.status(404).render('norestaurant', {title: "Sorry, page not found"});
+    return;
+  }
+
   // Search for Your GoTo List portfolio
   var portfolios = data.portfolios;
   var yourGoToList;
