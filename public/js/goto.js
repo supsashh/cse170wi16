@@ -8,6 +8,14 @@ $(document).ready(function() {
     	p.init();
     });
 
+    if (window.location.hash === "#review-done") {
+      toastr.options = {
+        "positionClass": "toast-top-full-width",
+        "timeOut": "2000"
+      }
+      toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
+    }
+
     $('.restaurant-image').on('tap vclick click', function() {
     	window.location.href = $(this).data("url");
     });
@@ -117,15 +125,7 @@ $(document).ready(function() {
       event.stopPropagation();
       $(this).closest('.review').hide();
       var next = $(this).data("continue");
-      if (next) {
-        $('.' + next).show();
-      }
-      else {
-        var pathname = window.location.pathname;
-        var strArray = pathname.split("/");
-        var restaurantId = strArray[strArray.length - 1];
-        window.location.href = "/restaurant/"+restaurantId;
-      }
+      $('.' + next).show();
     });
 
     $('.review-back-button').on('tap vclick click', function(event) {
@@ -137,6 +137,15 @@ $(document).ready(function() {
       if (back) {
         $('.' + back).show();
       }
+    });
+
+    $('.review-done-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      window.location.href = "/restaurant/" + restaurantId + "#review-done";
     });
 
     $(document).on("tap vclick click", ".mycuisine", function(event) {
