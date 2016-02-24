@@ -120,7 +120,9 @@
 }
 
 .log-out-button {
-    left: 50%;
+    position: absolute;
+    margin-left: -37px;
+    bottom: 10%;
     margin-bottom: 30px;
 }
 
