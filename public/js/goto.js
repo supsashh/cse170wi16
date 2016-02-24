@@ -231,6 +231,11 @@ $(document).ready(function() {
     });
 
     $('#goto-list-button').on("tap vclick click", function() {
+      toastr.options = {
+        "positionClass": "toast-top-full-width",
+        "timeOut": "2000"
+      }
+
       event.preventDefault();
       event.stopPropagation();
       var action;
@@ -250,12 +255,14 @@ $(document).ready(function() {
         $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
           $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
           $('#goto-list-button').contents().last().replaceWith("Remove from Your GoTo List");
+          toastr.success($('#restaurant-name').text() + " was added to Your GoTo List!");
         });
       }
       else {
         $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
           $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
           $('#goto-list-button').contents().last().replaceWith("Add to Your GoTo List");
+          toastr.success($('#restaurant-name').text() + " was removed from Your GoTo List.");
         });
       }
 

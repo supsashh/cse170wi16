@@ -13,12 +13,14 @@
 	<meta property="place:location:latitude"  content="{{latitude}}" />
 	<meta property="place:location:longitude" content="{{longitude}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
 	<link href="/css/goto.css" rel="stylesheet">
 
     <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="/js/goto.js"></script>
 </head>
 
@@ -90,16 +92,6 @@
     		fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
 
-  		// Here we run a very simple test of the Graph API after login is
-  		// successful.  See statusChangeCallback() for when this call is made.
-  		// function testAPI() {
-    	// 	console.log('Welcome!  Fetching your information.... ');
-    	// 	/*FB.api('/me', function(response) {
-      // 			console.log('Successful login for: ' + response.name);
-      // 			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-    	// 	});*/
-  		// }
-
   		function shareRestaurant() {
   			FB.ui({
 			  method: 'share_open_graph',
@@ -132,11 +124,6 @@
 		</nav>
 	</div>
 
-	<!-- <div class="container top-title">
-		<h2>{{name}}</h2>
-
-	</div> -->
-
 	<div class="container profile-container">
 		<div class="media profile-top">
 		    <div class="media-left">
@@ -145,7 +132,7 @@
 		        </a>
 		    </div>
 		    <div class="media-body">
-		        <h3 class="media-heading">
+		        <h3 class="media-heading" id="restaurant-name">
 								{{name}}
 		        </h3>
 						<a href="#" id="restaurant-handle">@{{id}}</a><br>
