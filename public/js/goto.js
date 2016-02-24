@@ -234,6 +234,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var action;
+
       if ($(this).text() === "Add to Your GoTo List") {
         action = "addFavorite";
       }
@@ -247,14 +248,12 @@ $(document).ready(function() {
 
       if (action === "addFavorite") {
         $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
-          console.log("image is " + $(this).find('i'));
           $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
           $('#goto-list-button').contents().last().replaceWith("Remove from Your GoTo List");
         });
       }
       else {
         $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
-           console.log("image is " + $(this).find('i'));
           $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
           $('#goto-list-button').contents().last().replaceWith("Add to Your GoTo List");
         });
