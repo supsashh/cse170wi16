@@ -52,12 +52,12 @@ $(document).ready(function() {
     $('.update-location-button').on('tap vclick click', function(event) {
       event.preventDefault();
       event.stopPropagation();
-      var location = $('#update-location-input').val();
+      var location = $('#autocomplete-location').val();
 
       $.post("/settings/updateLocation/", {"location": location}, function() {
         $('#location').text(location);
-        $('#update-location-input').val("");
-        $('#update-location-input').blur();
+        $('#autocomplete-location').val("");
+        $('#autocomplete-location').blur();
       });
     });
 

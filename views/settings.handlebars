@@ -117,16 +117,17 @@
 			{{else}}
 				<p id="location">Location has not been added.</p>
 			{{/if}}
-			<div class="row add-location">
-			  <div class="col-lg-6">
-			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="Update Location" id="update-location-input">
-			      <span class="input-group-btn">
-			        <button class="btn btn-default update-location-button" type="button">Submit</button>
-			      </span>
-			    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-			</div><!-- /.row -->
+      <div class="row add-location">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter your city or zip code" id="autocomplete-location"
+              onFocus="geolocate()"></input>
+            <span class="input-group-btn">
+              <button class="btn btn-default update-location-button" type="button">Submit</button>
+            </span>
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
 
 			<div class="center">
 				<button type="button" class="btn btn-danger log-out-button" onclick="logout()">Log Out</button>
@@ -149,6 +150,9 @@
 	  </div>
 	  </div>
 	</div>
+
+  {{> googleMaps}}
+  <script src="/js/googleMaps.js"></script>
 </body>
 
 </html>
