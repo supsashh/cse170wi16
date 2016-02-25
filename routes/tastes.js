@@ -9,3 +9,7 @@ exports.addTastes = function(req, res) {
 	data.myCuisines = req.body.tastes;
 	res.send(200);
 };
+
+exports.viewAlt = function(req, res) {
+	res.render('alttastes', data);
+};

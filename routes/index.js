@@ -10,3 +10,7 @@ exports.view = function(req, res){
 exports.viewLogin = function(req, res){
   res.render('login');
 };
+
+exports.viewAltLogin = function(req, res){
+  res.render('altlogin');
+};
