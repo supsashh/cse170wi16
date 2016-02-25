@@ -61,6 +61,16 @@ $(document).ready(function() {
       });
     });
 
+    $('.add-bio-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var bio = $('#add-bio').val();
+
+      $.post("/addbio/addbio/", {"bio": bio}, function() {
+        window.location.href = "/profile";
+      });
+    });
+
     $('#submitpost').on('tap vclick click', function(event) {
       event.preventDefault();
       event.stopPropagation();
