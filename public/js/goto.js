@@ -89,7 +89,7 @@ $(document).ready(function() {
         "profile-image": "",
         "restaurant": post_tag,
         "restaurant-description": restaurant_desc,
-        "comments": [ { 
+        "comments": [ {
           "commenter": "",
           "commenter-image": "",
           "text": restaurant_desc } ]
@@ -298,7 +298,7 @@ $(document).ready(function() {
     $('#address').on("tap vclick click", function() {
       event.preventDefault();
       event.stopPropagation();
-      var address = this.innerHTML;
+      var address = $('#address').data("address");
       address = address.replace(/ /g, "+");
       googleURL = "https://google.com/maps/search/"+address;
       window.open(googleURL,"_blank");

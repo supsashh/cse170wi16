@@ -147,7 +147,9 @@
 		</div>
 		<div class="Details">
 		    <h4><strong>Details</strong></h4>
-		    <p id="address">{{address}}</p>
+		    <div>{{address}}<br>
+					<a data-address="{{address}}" id="address" >Open in Google Maps!</a>
+				</div><br>
 		    <p><strong>Cuisine: </strong> <br>
             <a href="/cuisine/{{cuisineId}}" class="label label-info tags">{{cuisineId}}</a>
         </p>
