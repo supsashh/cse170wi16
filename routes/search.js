@@ -18,14 +18,14 @@ exports.search = function(req, res) {
 		var restaurant = restaurants[i].name.toLowerCase();
 
 
-	  if (restaurant.indexOf(searchTerm) > -1) {
+	  if (restaurant.indexOf(searchTerm) > -1 || searchTerm.indexOf(restaurant) > -1) {
 	      foundRestaurants.push(restaurants[i]);
 	  }
     var menuItems = restaurants[i]["menu-items"];
     for(var j = 0; j < menuItems.length; j++){
       var menuItem = menuItems[j]["item-name"].toLowerCase();
 
-      if (menuItem.indexOf(searchTerm) > -1) {
+      if (menuItem.indexOf(searchTerm) > -1 || searchTerm.indexOf(menuItem) > -1) {
   	      foundMenuItems.push(menuItems[j]);
           foundMenuItemsRestaurants.push(restaurants[i]);
   	  }
@@ -35,7 +35,7 @@ exports.search = function(req, res) {
   for(var k = 0; k < cuisines.length; k++){
     var cuisine = cuisines[k].id.toLowerCase();
 
-	  if (cuisine.indexOf(searchTerm) > -1) {
+	  if (cuisine.indexOf(searchTerm) > -1 || searchTerm.indexOf(cuisine) > -1) {
 	      foundCuisines.push(cuisines[k]);
 	  }
   }

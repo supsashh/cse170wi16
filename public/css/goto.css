@@ -53,6 +53,7 @@
     width: auto;
     max-width: 58px;
     max-height: 70px;
+		margin-left: 15px;
     padding-bottom: 20px;
 }
 
@@ -120,7 +121,9 @@
 }
 
 .log-out-button {
-    left: 50%;
+    position: absolute;
+    margin-left: -37px;
+    bottom: 10%;
     margin-bottom: 30px;
 }
 
@@ -197,41 +200,6 @@
 	padding-right: 20px;
 	padding-left: 20px;
 }
-.fb-login-button {
-	width: 300px;
-	height: 64px;
-	display: inline-block !important;
-}
-
-.fb_iframe_widget iframe {
-    opacity: 0;
-}
-
-.fb_iframe_widget {
-  background-image: url(/images/fb-login.png);
-  background-repeat: no-repeat;
-}
-
-.login-body {
-	background-color: #6C7A89;
-}
-
-.login-container {
-	height: 270px;
-    background-color: #fff;
-    margin-top: 130px;
-}
-
-.goto-logo {
-	width: 250px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.logo-container {
-	background-color: #f0f1f3;
-    margin-bottom: 30px;
-}
 
 .results-container {
 	margin-top: 30px;
@@ -250,10 +218,20 @@
 	margin-top: 60px;
 }
 
+.friend-rec {
+	font-size: x-small;
+	font-weight: bold;
+}
+
 .scaled-image{
 	max-width: none;
 	height: 200px;
 	width: auto;
+}
+
+.scaled-pic{
+	height: 50px;
+	width: 50px;
 }
 
 .restaurant-pic{

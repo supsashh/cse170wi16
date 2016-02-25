@@ -52,8 +52,9 @@ if ('development' == server.get('env')) {
 }
 
 // Add routes here
-server.get('/', index.view);
-server.get('/login', index.viewLogin);
+server.get('/', index.viewLogin);
+server.get('/index', index.view);
+server.get('/altlogin', index.viewAltLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);
 server.get('/restaurant/:id/menu', menu.view);
@@ -78,11 +79,13 @@ server.get('/friendslist', friendslist.view);
 server.get('/comments/:id', comments.view);
 server.get('/login', login.view);
 server.get('/tastes', tastes.view);
+server.get('/alttastes',tastes.viewAlt);
 server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
 server.get('/review/:id', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
+server.get('/newpost/r/r/r', newpost.restaurants);
 server.post('/comments/newcomment/:id', comments.newcomment)
 
 http.createServer(server).listen(server.get('port'), function(){

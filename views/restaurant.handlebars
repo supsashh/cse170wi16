@@ -13,12 +13,14 @@
 	<meta property="place:location:latitude"  content="{{latitude}}" />
 	<meta property="place:location:longitude" content="{{longitude}}" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
 	<link href="/css/goto.css" rel="stylesheet">
 
     <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="/js/goto.js"></script>
 </head>
 
@@ -34,14 +36,14 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-      		  //testAPI();
+      		  apiCall();
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
-      		  window.location.href= "/login";
+      		  window.location.href= "/";
     		} else {
       		  // The person is not logged into Facebook, so we're not sure if
       		  // they are logged into this app or not.
-      		  window.location.href= "/login";
+      		  window.location.href= "/";
     		}
   		}
 
@@ -90,16 +92,6 @@
     		fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
 
-  		// Here we run a very simple test of the Graph API after login is
-  		// successful.  See statusChangeCallback() for when this call is made.
-  		// function testAPI() {
-    	// 	console.log('Welcome!  Fetching your information.... ');
-    	// 	/*FB.api('/me', function(response) {
-      // 			console.log('Successful login for: ' + response.name);
-      // 			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-    	// 	});*/
-  		// }
-
   		function shareRestaurant() {
   			FB.ui({
 			  method: 'share_open_graph',
@@ -109,19 +101,28 @@
 			  })
 			});
   		}
+
+  		function apiCall() {
+				FB.getAuthResponse();
+				FB.api('/me', 'GET',  {"fields":"name,picture{url}"},  function(response) {
+					var pics = document.getElementsByClassName("profile-pic");
+					var names = document.getElementsByClassName("profile-name");
+					var i;
+					for (i = 0; i < pics.length; i++) {
+    				pics[i].src = response.picture.data.url;
+						names[i].innerHTML = response.name;
+					}
+  			}
+			);
+  		}
 	</script>
 
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 		</nav>
 	</div>
-
-	<!-- <div class="container top-title">
-		<h2>{{name}}</h2>
-
-	</div> -->
 
 	<div class="container profile-container">
 		<div class="media profile-top">
@@ -131,21 +132,24 @@
 		        </a>
 		    </div>
 		    <div class="media-body">
-		        <h3 class="media-heading profile-name">
+		        <h3 class="media-heading" id="restaurant-name">
 								{{name}}
 		        </h3>
+						<a href="#" id="restaurant-handle">@{{id}}</a><br>
 				<a href="/review/{{id}}"><i class="glyphicon glyphicon-plus social-button"></i> Add Review</a><br>
 		        <a href="#" onclick="shareRestaurant()"><i class="glyphicon glyphicon-share social-button"></i> Share on FB</a><br>
 		        {{#if favorite}}
-		        	<a href="#" id="remove-favorite"><i class="glyphicon glyphicon-star social-button"></i>Remove from Your GoTo List</a>
+		        	<a href="#" id="goto-list-button"><i class="glyphicon glyphicon-star social-button"></i>Remove from Your GoTo List</a>
 		        {{else}}
-		        	<a href="#" id="add-favorite"><i class="glyphicon glyphicon-star-empty social-button"></i>Add to Your GoTo List</a>
+		        	<a href="#" id="goto-list-button"><i class="glyphicon glyphicon-star-empty social-button"></i>Add to Your GoTo List</a>
 		        {{/if}}
 		    </div>
 		</div>
 		<div class="Details">
 		    <h4><strong>Details</strong></h4>
-		    <p id="address">{{address}}</p>
+		    <div>{{address}}<br>
+					<a data-address="{{address}}" id="address" >Open in Google Maps!</a>
+				</div><br>
 		    <p><strong>Cuisine: </strong> <br>
             <a href="/cuisine/{{cuisineId}}" class="label label-info tags">{{cuisineId}}</a>
         </p>
@@ -158,34 +162,48 @@
 				{{#each menu-items}}
 			    <img data-src="/images/{{item-image}}" data-url="/restaurant/{{../id}}/menu#{{item-id}}"class="restaurant-image" />
 		        {{/each}}
-		        <img data-src="/images/see-more.png" data-url="/restaurant/{{../id}}/menu#0" class="restaurant-image"/>
+		        <img data-src="/images/see-more.png" data-url="/restaurant/{{id}}/menu#0" class="restaurant-image"/>
 			</div>
 	</div>
+	<div id="dummy"></div>
 
-	<div class="container post-container restaurant-posts-container">
+	<div class="container post-container restaurant-posts-container" id="rest_newsfeed">
 		<h3>Restaurant Newsfeed</h3>
 		<hr>
 		{{#each posts}}
+			{{#if profile-image}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
-					<a href="#">
-					  <img class="media-object profile-pic img-rounded" src="/images/profile-icon.png">
-					</a>
+						<a href="#">
+					  		<img class="media-object img-circle scaled-pic" src="/images/{{profile-image}}">
+						</a>
 					</div>
 					<div class="media-body">
-					<h4 class="media-heading profile-name"></h4>
-					{{#if picture}}
-						<img class="food-image scaled-image" src="/images/{{food-image}}">
+						<h4 class="media-heading">{{name}}</h4>
+			{{else}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+						<a href="#">
+					  		<img class="media-object img-circle profile-pic" src="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading profile-name">
+							farts
+						</h4>
+						{{/if}}
+						{{#if food-image}}
+							<img class="food-image scaled-image" src="/images/{{food-image}}">
+							<br>
+						{{/if}}
+						<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+						<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
 						<br>
-					{{/if}}
-					<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
-					<a href="/comments"><i class="glyphicon glyphicon-comment social-button"></i></a>
-					<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
-					<br>
-					<a href="/restaurant">{{restaurant}}</a>
-					<br>
-					{{restaurant-description}}
+						<a href="/restaurant/{{restaurant}}">@{{restaurant}}</a>
+						<br>
+						{{restaurant-description}}
 					</div>
 				</div>
 			</div>
@@ -198,7 +216,7 @@
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
+	    <div class="col-xs-4 text-center"><a href="/index">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="/newsfeed">

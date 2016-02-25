@@ -2,9 +2,19 @@
 
 $(document).ready(function() {
     $('.portfolio').each(function(index, obj) {
-    	var p = $(this).portfolio();
+    	var p = $(this).portfolio({
+        showArrows: false
+      });
     	p.init();
     });
+
+    if (window.location.hash === "#review-done") {
+      toastr.options = {
+        "positionClass": "toast-top-full-width",
+        "timeOut": "2000"
+      }
+      toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
+    }
 
     $('.restaurant-image').on('tap vclick click', function() {
     	window.location.href = $(this).data("url");
@@ -85,13 +95,13 @@ $(document).ready(function() {
 
       $.post("/newpost/addpost/", { "id": postId,
         "food-image": post_img,
-        "name": "John Johnson",
-        "profile-image": "profile-icon.png",
+        "name": "",
+        "profile-image": "",
         "restaurant": post_tag,
         "restaurant-description": restaurant_desc,
         "comments": [ {
-          "commenter": "John Johnson",
-          "commenter-image": "profile-icon.png",
+          "commenter": "",
+          "commenter-image": "",
           "text": restaurant_desc } ]
          }, function() {
           window.location.href= "/newsfeed";
@@ -105,21 +115,14 @@ $(document).ready(function() {
         var postpath = window.location.pathname;
         var strArr = postpath.split("/");
         var postId = strArr[strArr.length - 1];
-        var code = "<li class='media'><a class='pull-left' href='#''>" +
-              "<img class='media-object img-circle' src='/images/profile-icon.png' alt='profile'>" +
-              "</a><div class='media-body'><div class='well well-sm'>" +
-              "<h4 class='media-heading reviews'>John Johnson</h4>" +
-              "<p class='media-comment'>";
-        code = code + comment_text + "</p></div></div></li>";
 
-
-        $.post("/comments/newcomment/"+postId, { "commenter": "John Johnson",
-          "commenter-image": "profile-icon.png",
+        $.post("/comments/newcomment/"+postId, { "commenter": "",
+          "commenter-image": "",
           "text": comment_text
           }, function() {
-            $('.media-list').append(code);
             $('#addcomment').val("");
             $('#addcomment').blur();
+            window.location.href = "/comments/" + postId;
           });
     });
 
@@ -132,15 +135,7 @@ $(document).ready(function() {
       event.stopPropagation();
       $(this).closest('.review').hide();
       var next = $(this).data("continue");
-      if (next) {
-        $('.' + next).show();
-      }
-      else {
-        var pathname = window.location.pathname;
-        var strArray = pathname.split("/");
-        var restaurantId = strArray[strArray.length - 1];
-        window.location.href = "/restaurant/"+restaurantId;
-      }
+      $('.' + next).show();
     });
 
     $('.review-back-button').on('tap vclick click', function(event) {
@@ -152,6 +147,15 @@ $(document).ready(function() {
       if (back) {
         $('.' + back).show();
       }
+    });
+
+    $('.review-done-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var pathname = window.location.pathname;
+      var strArray = pathname.split("/");
+      var restaurantId = strArray[strArray.length - 1];
+      window.location.href = "/restaurant/" + restaurantId + "#review-done";
     });
 
     $(document).on("tap vclick click", ".mycuisine", function(event) {
@@ -185,7 +189,23 @@ $(document).ready(function() {
       console.log(tastes);
 
       $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
-        window.location.href = "/";
+        window.location.href = "/index";
+      });
+
+    });
+
+    $('#alt-intro-tastes-button').click(function() {
+      event.preventDefault();
+      event.stopPropagation();
+      var tastes = [];
+      $('.mycuisine.highlight').each(function() {
+        console.log("Adding " + $(this).find('.taste-label').text());
+        tastes.push($(this).find('.taste-label').text());
+      });
+      console.log(tastes);
+
+      $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
+        window.location.href = "/newsfeed";
       });
 
     });
@@ -245,38 +265,67 @@ $(document).ready(function() {
       });
     });
 
-    $('#add-favorite').on("tap vclick click", function() {
+    $('#goto-list-button').on("tap vclick click", function() {
+      toastr.options = {
+        "positionClass": "toast-top-full-width",
+        "timeOut": "2000"
+      }
+
       event.preventDefault();
       event.stopPropagation();
-      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+      var action;
+
+      if ($(this).text() === "Add to Your GoTo List") {
+        action = "addFavorite";
+      }
+      else {
+        action = "removeFavorite";
+      }
 
       var pathname = window.location.pathname;
       var strArray = pathname.split("/");
       var restaurantId = strArray[strArray.length - 1];
-      $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
 
-      });
-    });
+      if (action === "addFavorite") {
+        $.post("/restaurant/addFavorite", {"restaurantId": restaurantId}, function() {
+          $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+          $('#goto-list-button').contents().last().replaceWith("Remove from Your GoTo List");
+          toastr.success($('#restaurant-name').text() + " was added to Your GoTo List!");
+        });
+      }
+      else {
+        $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
+          $('#goto-list-button').find('i').toggleClass("glyphicon-star-empty glyphicon-star");
+          $('#goto-list-button').contents().last().replaceWith("Add to Your GoTo List");
+          toastr.success($('#restaurant-name').text() + " was removed from Your GoTo List.");
+        });
+      }
 
-    $('#remove-favorite').on("tap vclick click", function() {
-      event.preventDefault();
-      event.stopPropagation();
-      $(this).find('i').toggleClass("glyphicon-star-empty glyphicon-star");
-
-      var pathname = window.location.pathname;
-      var strArray = pathname.split("/");
-      var restaurantId = strArray[strArray.length - 1];
-      $.post("/restaurant/removeFavorite", {"restaurantId": restaurantId}, function() {
-
-      });
+      // Prevent click from being triggered twice
+      return false;
     });
 
     $('#address').on("tap vclick click", function() {
       event.preventDefault();
       event.stopPropagation();
-      var address = this.innerHTML;
+      var address = $('#address').data("address");
       address = address.replace(/ /g, "+");
       googleURL = "https://google.com/maps/search/"+address;
       window.open(googleURL,"_blank");
+    });
+
+    $("#restaurant_tag").focus(function(){
+      $.get("/newpost/r/r/r", function(response){
+        $("#restaurant_tag").autocomplete({
+          source: response
+        });
+      });
+    });
+
+    $('#restaurant-handle').on("tap vclick click", function() {
+      event.preventDefault();
+      event.stopPropagation();
+      $(window).scrollTop($("#dummy").position().top - 40);
+			$("#rest_newsfeed").focus();
     });
 });

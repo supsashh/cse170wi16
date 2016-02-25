@@ -30,11 +30,11 @@
       		  getFriends();
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
-      		  window.location.href= "/login";
+      		  window.location.href= "/";
     		} else {
       		  // The person is not logged into Facebook, so we're not sure if
       		  // they are logged into this app or not.
-      		  window.location.href= "/login";
+      		  window.location.href= "/";
     		}
   		}
 
@@ -108,20 +108,35 @@
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 		</nav>
 	</div>
 	
 	<div class="container top-title friends">
 		<h4 class="center">Friends using Goto</h4>
 		<hr>
+    {{#each friends}}
+    <div class='panel media friend'>
+      <div class='media-left'>
+        <a href='#'>
+          <img class='media-object scaled-pic' src='/images/{{profile-image}}'>
+        </a>
+      </div>
+      <div class='media-body'>
+        <h4>
+          <a href='/profile/{{name}}'>{{name}}
+          </a>
+        </h4>
+      </div>
+    </div>
+    {{/each}}
 
 	</div>
 
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
+	    <div class="col-xs-4 text-center"><a href="/index">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="/newsfeed">

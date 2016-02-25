@@ -11,6 +11,11 @@ exports.view = function(req, res){
     }
   }
 
+  if(!restaurant){
+    res.status(404).render('norestaurant', {title: "Sorry, page not found"});
+    return;
+  }
+
   // Search for Your GoTo List portfolio
   var portfolios = data.portfolios;
   var yourGoToList;
@@ -58,14 +63,23 @@ exports.addFavorite = function(req, res) {
     }
   }
 
-  // Get the first menu item image and add it to the images in Your GoTo List portfolio
-  var image = {};
-  image["image"] = restaurant["picture"];
-  image["restaurant-id"] = restaurantId;
-  image["restaurant-name"] = restaurant["name"];
-  yourGoToList.images.push(image);
+  // Check if the restaurant is in Your GoTo List already
+  var added;
+  for (var i = 0; i < yourGoToList.images.length; i++) {
+    if (yourGoToList.images[i]["restaurant-id"] == restaurantId) {
+      added = true;
+      break;
+    }
+  }
 
-  console.log(data);
+  // If the restauraunt is not in Your Goto List, get the restaurant image and add it to Your GoTo List
+  if (!added) {
+    var image = {};
+    image["image"] = restaurant["picture"];
+    image["restaurant-id"] = restaurantId;
+    image["restaurant-name"] = restaurant["name"];
+    yourGoToList.images.push(image);
+  }
 
   res.send(200);
 };

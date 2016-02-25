@@ -27,10 +27,11 @@
 				apiCall();
 		} else if (response.status === 'not_authorized') {
 				// The person is logged into Facebook, but not your app.
-				window.location.href= "/login";
+				window.location.href= "/";
 		} else {
 				// The person is not logged into Facebook, so we're not sure if
 				// they are logged into this app or not.
+				window.location.href= "/";
 		}
 	}
 
@@ -87,7 +88,7 @@
 					var i;
 					for (i = 0; i < pics.length; i++) {
     				pics[i].src = response.picture.data.url;
-						names[i].innerHTML = response.name + "<a href='/friendslist' class='friendButton'>Friends</a>";
+						names[i].innerHTML = response.name;
 					}
   			}
 			);
@@ -96,7 +97,7 @@
 		<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 			<a class="navbar-brand glyphicon glyphicon-pencil" aria-hidden="true" href="/newpost/{{posts.0.id}}"></a>
 		</nav>
 	</div>
@@ -105,26 +106,37 @@
 		<h4 class="center">Newsfeed</h4>
 		<hr>
 		{{#each posts}}
+			{{#if profile-image}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
 						<a href="#">
-					  		<img class="media-object" src="/images/{{profile-image}}">
+					  		<img class="media-object img-circle scaled-pic" src="/images/{{profile-image}}">
 						</a>
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading">
-							<a href="/profile">{{name}}</a>
+						<h4 class="media-heading">{{name}}</h4>
+			{{else}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+						<a href="#">
+					  		<img class="media-object img-circle profile-pic" src="">
+						</a>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading profile-name">
+							
 						</h4>
+						{{/if}}
 						{{#if food-image}}
-							<img class="food-image" src="/images/{{food-image}}">
+							<img class="food-image scaled-image" src="/images/{{food-image}}">
 							<br>
 						{{/if}}
 						<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
 						<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
-						<a href="#"><i class="glyphicon glyphicon-share-alt social-button"></i></a>
 						<br>
-						<a href="/restaurant">{{restaurant}}</a>
+						<a href="/restaurant/{{restaurant}}">@{{restaurant}}</a>
 						<br>
 						{{restaurant-description}}
 					</div>
@@ -136,7 +148,7 @@
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
+	    <div class="col-xs-4 text-center"><a href="/index">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="/newsfeed">
