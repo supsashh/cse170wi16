@@ -19,7 +19,13 @@ exports.deleteTaste = function(req, res) {
 };
 
 exports.addTaste = function(req, res) {
-	data.myCuisines.push(req.body.taste);
+	if (data.myCuisines) {
+		data.myCuisines.push(req.body.taste);
+	}
+	else {
+		data.myCuisines = [];
+		data.myCuisines.push(req.body.taste);
+	}	
 	console.log(data.myCuisines);
 	res.send(200);
 };

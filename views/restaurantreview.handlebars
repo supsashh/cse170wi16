@@ -14,14 +14,27 @@
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
   <script src="/js/jquery.rateit.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="/js/goto.js"></script>
+  <script>
+    function reviewToast() {
+      console.log("i am here" + window.location.hash);
+      if (window.location.hash === "#review-done") {
+        toastr.options = {
+          "positionClass": "toast-top-full-width",
+          "timeOut": "2000"
+        }
+        toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
+      }
+    }
+  </script>
 </head>
 
 <body>
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
-			<a href="/" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
+			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
 		</nav>
 	</div>
 
@@ -72,7 +85,7 @@
       <h3>Thanks!</h3>
       <ul class="pager">
         <li class="previous review-back-button" data-back="review-return"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
-         <li class="next review-continue-button" data-continue=""><a href="#">Done <span aria-hidden="true">&rarr;</span></a></li>
+         <li class="next review-done-button"><a href="#">Done <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
     </div>
 
@@ -85,7 +98,7 @@
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">
-	    <div class="col-xs-4 text-center"><a href="/">
+	    <div class="col-xs-4 text-center"><a href="/index">
 	    	<i class="glyphicon glyphicon-home"></i><br>Home</a>
 	    </div>
 	    <div class="col-xs-4 text-center"><a href="/newsfeed">

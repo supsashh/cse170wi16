@@ -221,7 +221,7 @@
               "food-image": "smash-bbq.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "Smitty.jpg",
-              "restaurant": "@smash-burger",
+              "restaurant": "smash-burger",
               "restaurant-description": "The sauce is #1!",
               "comments": [
                 {
@@ -757,7 +757,7 @@
               "food-image": "smash-bbq.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "Smitty.jpg",
-              "restaurant": "@smash-burger",
+              "restaurant": "smash-burger",
               "restaurant-description": "The sauce is #1!",
               "comments": [
                 {
@@ -1279,7 +1279,7 @@
               "food-image": "smash-bbq.jpg",
               "name": "Smitty Werbenjagermanjensen",
               "profile-image": "Smitty.jpg",
-              "restaurant": "@smash-burger",
+              "restaurant": "smash-burger",
               "restaurant-description": "The sauce is #1!",
               "comments": [
                 {
