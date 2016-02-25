@@ -52,12 +52,12 @@ $(document).ready(function() {
     $('.update-location-button').on('tap vclick click', function(event) {
       event.preventDefault();
       event.stopPropagation();
-      var location = $('#update-location-input').val();
+      var location = $('#autocomplete-location').val();
 
       $.post("/settings/updateLocation/", {"location": location}, function() {
         $('#location').text(location);
-        $('#update-location-input').val("");
-        $('#update-location-input').blur();
+        $('#autocomplete-location').val("");
+        $('#autocomplete-location').blur();
       });
     });
 
@@ -67,6 +67,16 @@ $(document).ready(function() {
       var bio = $('#edit-bio').val();
 
       $.post("/editprofile/editBio/", {"bio": bio}, function() {
+        window.location.href = "/profile";
+      });
+    });
+
+    $('.add-bio-button').on('tap vclick click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var bio = $('#add-bio').val();
+
+      $.post("/addbio/addbio/", {"bio": bio}, function() {
         window.location.href = "/profile";
       });
     });

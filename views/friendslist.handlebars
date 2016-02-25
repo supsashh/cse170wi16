@@ -15,7 +15,7 @@
 	<script src="/js/goto.js"></script>       
 </head>
 
-<body onload="checkLoginState()">
+<body>
 	<script>
     	// This is called with the results from from FB.getLoginStatus().
   		function statusChangeCallback(response) {
@@ -88,6 +88,7 @@
 			    "/me/friends",
 			    function (response) {
 			      if (response && !response.error) {
+              console.log(response);
 			        $.each(response.data, function(index,friend) {
 		                var friendDiv = "<div class='panel media friend'><div class='media-left'><a href='#'><img class='media-object' src='";
 		                friendDiv += "http://graph.facebook.com/" + friend.id + "/picture'></a></div>";
@@ -102,6 +103,7 @@
 			      }
 			    }
 			);
+        return false;
   		}
 	</script>
 
