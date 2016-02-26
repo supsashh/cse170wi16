@@ -105,22 +105,22 @@
     	{{#each comments}}
             {{#if commenter-image}}
             <li class="media">
-                <a class="pull-left" href="#">
+                <a class="pull-left" href="/profile/{{commenter}}">
                     <img class="media-object scaled-pic img-circle" src="/images/{{commenter-image}}" alt="profile">
                 </a>
                 <div class="media-body">
                     <div class="well well-sm">
-                        <h4 class="media-heading reviews">{{commenter}}
-                        </h4>
+                        <a class="media-heading reviews" href="/profile/{{commenter}}">{{commenter}}
+                        </a>
             {{else}}
             <li class="media">
-                <a class="pull-left" href="#">
+                <a class="pull-left" href="/profile">
                 	<img class="media-object profile-pic img-circle" src="" alt="profile">
                 </a>
                 <div class="media-body">
                     <div class="well well-sm">
-                        <h4 class="media-heading reviews profile-name">
-                        </h4>
+                        <a class="media-heading reviews profile-name" href="/profile">
+                        </a>
                         {{/if}}
                         <p class="media-comment">
                             {{text}}

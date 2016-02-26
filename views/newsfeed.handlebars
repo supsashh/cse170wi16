@@ -110,24 +110,28 @@
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
-						<a href="#">
+						<a href="/profile/{{name}}">
 					  		<img class="media-object img-circle scaled-pic" src="/images/{{profile-image}}">
 						</a>
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading">{{name}}</h4>
+						<a href="/profile/{{name}}">
+							<h4 class="media-heading" href="/profile/{{name}}">{{name}}</h4>
+						</a>
 			{{else}}
 			<div class="panel post">
 				<div class="media profile-top">
 					<div class="media-left">
-						<a href="#">
+						<a href="/profile">
 					  		<img class="media-object img-circle profile-pic" src="">
 						</a>
 					</div>
 					<div class="media-body">
-						<h4 class="media-heading profile-name">
+						<a href="/profile">
+							<h4 class="media-heading profile-name" href="/profile">
 							
-						</h4>
+							</h4>
+						</a>
 						{{/if}}
 						{{#if food-image}}
 							<img class="food-image scaled-image" src="/images/{{food-image}}">
