@@ -40,6 +40,18 @@
 	<div class="results-container">
 	</div>
 
+	<div class="container portfolio-container cuisine">
+			<h3>Cuisines</h3>
+			<div id="cuisine-portfolio" class="portfolio">
+				{{#each cuisines}}
+					{{#if image}}
+			    	<img data-src="images/{{image}}" data-url="/cuisine/{{id}}" class="cuisine-image" />
+					{{/if}}
+		        {{/each}}
+		        <!-- <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/> -->
+			</div>
+	</div>
+
 	<div id="footer">
 	  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
 	  <div class="row bottom-nav" id="bottomNav">

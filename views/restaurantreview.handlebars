@@ -27,10 +27,21 @@
         toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
       }
     }
+
+    function hideChooseDish() {
+      var postpath = window.location.pathname;
+      var strArr = postpath.split("/");
+      var postId = strArr[strArr.length - 1];
+      if(postId != "noitem")
+      {
+        $('.review-dish').hide();
+        $('.review-rate-dish').show();
+      }
+    }
   </script>
 </head>
 
-<body>
+<body onload="hideChooseDish()">
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
@@ -39,13 +50,18 @@
 	</div>
 
 	<div class="container top-title">
-		<h4 class="center">Review {{name}}</h4>
+    {{#if item-name}}
+		<h4 class="center">Review {{item-name}}</h4>
+    {{else}}
+    <h4 class="center">Review a Menu Item</h4>
+    {{/if}}
     <div class="well review review-dish text-center">
       <label for="review-dish">What dish did you get?</label>
       <input type="text" class="form-control" placeholder="Dish" id="review-dish-input">
       <ul class="pager">
         <li class="next review-continue-button" data-continue="review-rate-dish"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
+      <label class="center">1 of 4 </label>
     </div>
 
     <div class="well review review-rate-dish text-center">
@@ -55,30 +71,35 @@
         <input id="star-rating" class="rating rating-loading" data-show-clear="false" data-show-caption="true" data-step="1">
         <ul class="pager">
           <li class="previous review-back-button" data-back="review-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
-          <li class="next review-continue-button" data-continue="review-ambiance"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
+          <li class="next review-continue-button" data-continue="review-return"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
       </div>
-    </div>
-
-    <div class="well review review-ambiance text-center">
-      <label for="review-ambiance">Restaurant Ambience</label>
-      <input type="text" class="form-control" placeholder="Ambience" id="review-ambience-input">
-      <ul class="pager">
-        <li class="previous review-back-button" data-back="review-rate-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
-         <li class="next review-continue-button" data-continue="review-return"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
-      </ul>
+      {{#if item-name}}
+        <label class="center">1 of 3 </label>
+      {{else}}
+        <label class="center">2 of 4 </label>
+      {{/if}}
     </div>
 
     <div class="well review review-return text-center">
-      <label for="review-return-input">Would you come back?</label>
+      {{#if item-name}}
+        <label for="review-return-input">Would you order {{item-name}} again?</label>
+      {{else}}
+        <label for="review-return-input">Would you order this item again?</label>
+      {{/if}}      
       <form id="review-return-input">
         <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
         <label class="radio-inline"><input type="radio" name="optradio">No</label>
         <ul class="pager">
-          <li class="previous review-back-button" data-back="review-ambiance"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
+          <li class="previous review-back-button" data-back="review-rate-dish"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
            <li class="next review-continue-button" data-continue="review-done"><a href="#">Continue <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
       </form>
+      {{#if item-name}}
+        <label class="center">2 of 3 </label>
+      {{else}}
+        <label class="center">3 of 4 </label>
+      {{/if}}
     </div>
 
     <div class="well review review-done text-center">
@@ -87,6 +108,11 @@
         <li class="previous review-back-button" data-back="review-return"><a href="#"><span aria-hidden="true">&larr;</span> Back</a></li>
          <li class="next review-done-button"><a href="#">Done <span aria-hidden="true">&rarr;</span></a></li>
       </ul>
+      {{#if item-name}}
+        <label class="center">3 of 3 </label>
+      {{else}}
+        <label class="center">4 of 4 </label>
+      {{/if}}
     </div>
 
 

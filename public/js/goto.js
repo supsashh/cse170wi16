@@ -176,7 +176,7 @@ $(document).ready(function() {
       event.stopPropagation();
       var pathname = window.location.pathname;
       var strArray = pathname.split("/");
-      var restaurantId = strArray[strArray.length - 1];
+      var restaurantId = strArray[strArray.length - 2];
       window.location.href = "/restaurant/" + restaurantId + "#review-done";
     });
 
@@ -236,6 +236,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
+      $('.cuisine').hide();
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
