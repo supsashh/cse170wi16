@@ -218,12 +218,16 @@ $(document).ready(function() {
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
         console.log(response.length);
-        if (jQuery.isEmptyObject(response)) {
-          $('.results-container').append("<p class='text-center'>No results found</p>");
+        var restLen = response.restaurants.length;
+        var menLen = response.menuItems.length;
+        var cuiLen = response.cuisines.length;
+        var totalLen = restLen + menLen + cuiLen;
+        if (jQuery.isEmptyObject(response) || totalLen < 1) {
+          $('.results-container').append("<h3 class='text-center'>No results found :(</h3>");
         }
         else {
           console.log(response);
-          if(response.restaurants.length > 0){
+          if(restLen > 0){
             var result = "<h3>Restaurants</h3>";
             for(var i = 0; i < response.restaurants.length; i++){
               result += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
@@ -234,7 +238,7 @@ $(document).ready(function() {
             $('.results-container').append(result);
           }
 
-          if(response.menuItems.length > 0){
+          if(menLen > 0){
             var result2 = "<h3>Menu Items</h3>";
             for(var j = 0; j < response.menuItems.length; j++){
               result2 += "<div class='panel media'><div class='media-left'><a href='#'><img class='media-object search-result-pic' src='";
@@ -245,7 +249,7 @@ $(document).ready(function() {
             $('.results-container').append(result2);
           }
 
-          if(response.cuisines.length > 0){
+          if(cuiLen > 0){
             var result3 = "<h3>Cuisines</h3>";
             for(var k = 0; k < response.cuisines.length; k++){
               if(response.cuisines[k].image.length > 0){
