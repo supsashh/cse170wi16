@@ -10,9 +10,9 @@ function sendGA(){
   var loginTime = parseInt(sessionStorage.timeVar);
   var duration = Math.floor(Date.now() / 1000) - loginTime;
   if(sessionStorage.altLogin === "true"){
-    ga('send', 'event', 'click', 'altLogin', duration);
+    ga('send', 'event','dur', 'altLogin', duration);
   }else{
-    ga('send', 'event', 'click', 'normLogin', duration);
+    ga('send', 'event','dur', 'normLogin', duration);
   }
 }
 $(document).ready(function() {
