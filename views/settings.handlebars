@@ -2,17 +2,17 @@
 
 <html>
 <head>
-	<title>GoTo</title>	
+	<title>GoTo</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
-    <script src="/js/jquery-1.11.0.js"></script> 
+    <script src="/js/jquery-1.11.0.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/goto.js"></script>      
+	<script src="/js/goto.js"></script>
 </head>
 
 <body onload="checkLoginState()">
@@ -50,13 +50,13 @@
   		window.fbAsyncInit = function() {
   			FB.init({
     			appId      : '1018516261547542',
-    			cookie     : true,  // enable cookies to allow the server to access 
+    			cookie     : true,  // enable cookies to allow the server to access
      	  	                 // the session
     			xfbml      : true,  // parse social plugins on this page
     			version    : 'v2.2' // use version 2.2
   			});
 
-  			// Now that we've initialized the JavaScript SDK, we call 
+  			// Now that we've initialized the JavaScript SDK, we call
   			// FB.getLoginStatus().  This function gets the state of the
   			// person visiting this page and can return one of three states to
   			// the callback you provide.  They can be:
@@ -130,7 +130,7 @@
       </div><!-- /.row -->
 
 			<div class="center">
-				<button type="button" class="btn btn-danger log-out-button" onclick="logout()">Log Out</button>
+				<button type="button" class="btn btn-danger log-out-button" onclick="logout();sendGA();">Log Out</button>
 			</div>
 		</div>
 	</div>
@@ -153,6 +153,7 @@
 
   {{> googleMaps}}
   <script src="/js/googleMaps.js"></script>
+	{{> googleAnalytics}}
 </body>
 
 </html>

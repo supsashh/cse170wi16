@@ -1,6 +1,28 @@
-
-
+function setNormalLogin(){
+  sessionStorage.altLogin = "false";
+  sessionStorage.timeVar = Math.floor(Date.now() / 1000);
+}
+function setAltLogin(){
+  sessionStorage.altLogin = "true";
+  sessionStorage.timeVar = Math.floor(Date.now() / 1000);
+}
+function sendGA(){
+  var loginTime = parseInt(sessionStorage.timeVar);
+  var duration = Math.floor(Date.now() / 1000) - loginTime;
+  if(sessionStorage.altLogin === "true"){
+    ga('send', 'event', 'click', 'altLogin', duration);
+  }else{
+    ga('send', 'event', 'click', 'normLogin', duration);
+  }
+}
 $(document).ready(function() {
+    if(window.location.pathname == "/"){
+      setNormalLogin();
+    }
+    if (window.location.pathname == "/altLogin") {
+      setAltLogin();
+    }
+
     $('.portfolio').each(function(index, obj) {
     	var p = $(this).portfolio({
         showArrows: false
