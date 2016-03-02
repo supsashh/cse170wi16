@@ -294,8 +294,8 @@
                   }
                 ]
               }
-          ]
-        },
+            ]
+          },
         {
           "name": "Tina Belcher",
           "profile-image": "tina_belcher.png",
@@ -630,12 +630,11 @@
                   }
                 ]
               }
-          ]
-
-        }
-      ]}
-    ]
-    },
+            ]
+          }
+        ]
+      }
+    ],
     "posts": [
         {
               "id": 27,
