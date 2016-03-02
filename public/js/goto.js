@@ -214,6 +214,7 @@ $(document).ready(function() {
       event.preventDefault();
       event.stopPropagation();
       var searchTerm = $('#search-input').val();
+      $('.cuisine').hide();
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
