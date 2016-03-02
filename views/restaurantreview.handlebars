@@ -27,10 +27,21 @@
         toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
       }
     }
+
+    function hideChooseDish() {
+      var postpath = window.location.pathname;
+      var strArr = postpath.split("/");
+      var postId = strArr[strArr.length - 1];
+      if(postId != "noitem")
+      {
+        $('.review-dish').hide();
+        $('.review-rate-dish').show();
+      }
+    }
   </script>
 </head>
 
-<body>
+<body onload="hideChooseDish()">
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
@@ -39,7 +50,11 @@
 	</div>
 
 	<div class="container top-title">
-		<h4 class="center">Review {{name}}</h4>
+    {{#if item-name}}
+		<h4 class="center">Review {{item-name}}</h4>
+    {{else}}
+    <h4 class="center">Review a Menu Item</h4>
+    {{/if}}
     <div class="well review review-dish text-center">
       <label for="review-dish">What dish did you get?</label>
       <input type="text" class="form-control" placeholder="Dish" id="review-dish-input">

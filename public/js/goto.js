@@ -154,7 +154,7 @@ $(document).ready(function() {
       event.stopPropagation();
       var pathname = window.location.pathname;
       var strArray = pathname.split("/");
-      var restaurantId = strArray[strArray.length - 1];
+      var restaurantId = strArray[strArray.length - 2];
       window.location.href = "/restaurant/" + restaurantId + "#review-done";
     });
 

@@ -82,7 +82,7 @@ server.get('/tastes', tastes.view);
 server.get('/alttastes',tastes.viewAlt);
 server.post('/tastes/addTastes', tastes.addTastes);
 server.get('/tutorial', tutorial.view);
-server.get('/review/:id', review.view);
+server.get('/review/:id/:item', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
 server.get('/newpost/r/r/r', newpost.restaurants);

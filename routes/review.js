@@ -7,8 +7,19 @@ exports.view = function(req, res) {
   for(var i = 0; i < restaurants.length; i++){
     if(restaurantId == restaurants[i].id){
       restaurant = restaurants[i];
+      var itemId = req.params.item;
+      var menu_items = restaurant["menu-items"];
+      var menu_item;
+      for(var j = 0; j < menu_items.length; j++)
+      {
+        if(itemId == menu_items[j]["item-id"])
+        {
+          menu_item = menu_items[j];
+          break;
+        }
+      }
       break;
     }
   }
-  res.render('restaurantreview', restaurant);
+  res.render('restaurantreview', menu_item);
 };
