@@ -39,13 +39,13 @@
                 		}
                 		else
                 		{
-                			$.('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile'><img class='media-object img-circle profile-pic' src=''></a></div><div class='media-body'><a href='/profile'><h4 class='media-heading profile-name' href='/profile'></h4></a>");
+                			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile'><img class='media-object img-circle profile-pic' src=''></a></div><div class='media-body'><a href='/profile'><h4 class='media-heading profile-name' href='/profile'></h4></a>");
                 		}
                 		if(value["food-image"])
                 		{
-                			$.('.newsfeed-container').append("<img class='food-image scaled-image' src='/images/" + value["food-image"] + "'><br>");
+                			$('.newsfeed-container').append("<img class='food-image scaled-image' src='/images/" + value["food-image"] + "'><br>");
                 		}
-                		$.('.newsfeed-container').append("<a href='#'><i class='glyphicon glyphicon-heart social-button'></i></a><a href='/comments/"+value.id+"'><i class='glyphicon glyphicon-comment social-button'></i></a><br><a href='/restaurant/"+value.restaurant+"'>@" + value.restaurant+"</a><br>" + value["restaurant-description"]+"</div></div></div>");
+                		$('.newsfeed-container').append("<a href='#'><i class='glyphicon glyphicon-heart social-button'></i></a><a href='/comments/"+value.id+"'><i class='glyphicon glyphicon-comment social-button'></i></a><br><a href='/restaurant/"+value.restaurant+"'>@" + value.restaurant+"</a><br>" + value["restaurant-description"]+"</div></div></div>");
                 	});
 
                 });
