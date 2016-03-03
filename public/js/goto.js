@@ -223,10 +223,8 @@ $(document).ready(function() {
       event.stopPropagation();
       var tastes = [];
       $('.mycuisine.highlight').each(function() {
-        console.log("Adding " + $(this).find('.taste-label').text());
         tastes.push($(this).find('.taste-label').text());
       });
-      console.log(tastes);
 
       $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
         window.location.href = "/index";
@@ -239,10 +237,8 @@ $(document).ready(function() {
       event.stopPropagation();
       var tastes = [];
       $('.mycuisine.highlight').each(function() {
-        console.log("Adding " + $(this).find('.taste-label').text());
         tastes.push($(this).find('.taste-label').text());
       });
-      console.log(tastes);
 
       $.post("/tastes/addTastes/", {"tastes": tastes}, function() {
         window.location.href = "/newsfeed";
@@ -258,7 +254,6 @@ $(document).ready(function() {
 
       $.get("/search/" + searchTerm, function(response) {
         $('.results-container').empty();
-        console.log(response.length);
         var restLen = response.restaurants.length;
         var menLen = response.menuItems.length;
         var cuiLen = response.cuisines.length;
@@ -267,7 +262,6 @@ $(document).ready(function() {
           $('.results-container').append("<h3 class='text-center'>No results found :(</h3>");
         }
         else {
-          console.log(response);
           if(restLen > 0){
             var result = "<h3>Restaurants</h3>";
             for(var i = 0; i < response.restaurants.length; i++){

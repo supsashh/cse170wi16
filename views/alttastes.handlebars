@@ -17,14 +17,11 @@
 	<script>
     	// This is called with the results from from FB.getLoginStatus().
   		function statusChangeCallback(response) {
-    		console.log('statusChangeCallback');
-    		console.log(response);
 
         if (response.status === 'connected' || response.status === 'not_authorized') {
           // Save the fb id in the session and create a new profile object
           FB.api('/me', function(response) {
               $.post('/login/profileId', {"id": response.id}, function() {
-                console.log("Current profile id is " + response.id);
               });
           });
         }

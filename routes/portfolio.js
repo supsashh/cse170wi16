@@ -7,7 +7,6 @@ exports.viewPortfolio = function(req, res) {
     for (var i = 0; i < portfolios.length; i++) {
     	if (portfolios[i].title === title) {
     		currentPortfolio = portfolios[i];
-    		console.log(currentPortfolio);
     	}
     }
 

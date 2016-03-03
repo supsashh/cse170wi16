@@ -12,7 +12,6 @@ exports.updateLocation = function(req, res) {
 		}
 	}
 	profileObj.location = req.body.location;
-	console.log(data.profileObjs);
 	res.send(200);
 };
 

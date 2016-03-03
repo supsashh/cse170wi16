@@ -23,6 +23,5 @@ exports.getGoToList = function(req, res) {
 	    }
 	}
 
-	console.log(profileObj.goToList);
 	res.json({"goToList": profileObj.goToList});
 };

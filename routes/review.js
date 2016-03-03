@@ -14,7 +14,7 @@ exports.menuItems = function(req,res){
   for(var j = 0; j < menuItems.length; j++){
     menuItemNames.push(menuItems[j]["item-name"]);
   }
-  console.log(menuItemNames);
+
   res.json(menuItemNames);
 };
 

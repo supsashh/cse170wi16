@@ -12,7 +12,7 @@ exports.addTastes = function(req, res) {
 		}
 	}
 	profileObj.myCuisines = req.body.tastes;
-	console.log(data.profileObjs);
+
 	res.send(200);
 };
 

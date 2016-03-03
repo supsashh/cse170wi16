@@ -12,7 +12,7 @@ exports.restaurants = function(req, res){
   for(var i = 0; i < restaurants.length; i++){
     restaurantNames.push(restaurants[i].id);
   }
-  console.log(restaurantNames);
+
   res.json(restaurantNames);
 };
 

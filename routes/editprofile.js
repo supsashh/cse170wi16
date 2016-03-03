@@ -12,7 +12,6 @@ exports.editBio = function(req, res) {
 		}
 	}
 	profileObj.bio = req.body.bio;
-	console.log(data.profileObjs);
 
 	res.send(200);
 };
@@ -50,7 +49,6 @@ exports.deleteTaste = function(req, res) {
 		tastes.splice(index, 1);
 	}
 
-	console.log(data.profileObjs);
 	res.send(200);
 };
 
@@ -69,6 +67,5 @@ exports.addTaste = function(req, res) {
 		profileObj.myCuisines.push(req.body.taste);
 	}	
 	
-	console.log(data.profileObjs);
 	res.send(200);
 };

@@ -28,7 +28,6 @@
           // Save the fb id in the session
           FB.api('/me', function(response) {
               $.post('/login/profileId', {"id": response.id}, function() {
-                console.log("Current profile id is " + response.id);
 
                 // Populate newsfeed
                 $.get('/newsfeed/getNewsfeed', function(response){
@@ -36,7 +35,6 @@
                 	var url = "/newpost/" + response.posts[0]["id"];
 					$('#new-post-button').attr('href', url);
 
-                	console.log(response);
                 	$('.newsfeed-container').empty();
                 	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
                 	$.each(response.posts, function(index, value){
@@ -57,7 +55,6 @@
                 	});
 
 					// Populate your posts with name and profile pic
-					console.log("populated newsfeed");
 					apiCall();
                 });
               });
@@ -66,7 +63,6 @@
 
 		if (response.status === 'connected') {
 				// Logged into your app and Facebook.
-				console.log("connected");
 				apiCall();
 		} else if (response.status === 'not_authorized') {
 				// The person is logged into Facebook, but not your app.
@@ -124,7 +120,6 @@
   		}(document, 'script', 'facebook-jssdk'));
 
   		function apiCall() {
-  				console.log("apiCall");
 				FB.getAuthResponse();
 				FB.api('/me', 'GET',  {"fields":"name,picture{url}"},  function(response) {
 					var pics = document.getElementsByClassName("profile-pic");

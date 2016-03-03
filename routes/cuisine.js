@@ -13,7 +13,6 @@ exports.viewCuisine = function(req, res) {
 	var cuisineRestaurants = [];
 	for (var j = 0; j < restaurants.length; j++) {
 		if (restaurants[j].cuisineId == id) {
-			console.log(restaurants[j]);
 			cuisineRestaurants.push(restaurants[j]);
 		}
 	}
