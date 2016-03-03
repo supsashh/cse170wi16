@@ -61,6 +61,7 @@ if ('development' == server.get('env')) {
 // Add routes here
 server.get('/', index.viewLogin);
 server.get('/index', index.view);
+server.get('/index/getGoToList', index.getGoToList);
 server.get('/altlogin', index.viewAltLogin);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);

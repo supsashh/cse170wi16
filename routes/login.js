@@ -21,6 +21,6 @@ exports.profileId = function(req, res) {
 		data.profileObjs.push(newObj);
 	}
 
-	console.log(data.profileObjs);
+	//console.log(data.profileObjs);
 	res.send(200);
 }

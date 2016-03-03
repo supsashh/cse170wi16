@@ -37,7 +37,34 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-      		  testAPI();
+      		  $.get('/index/getGoToList', function(response) {
+              $('#goto-list').empty();
+              $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.title + "'>" + response.goToList.title + "</a></h3>");
+              $('#goto-list').append("<div id='" + response.goToList.id + "' class='portfolio'>");
+              if (response.goToList.images.length) {            
+                $.each(response.goToList.images, function( index, value ) {
+                  $('#' + response.goToList.id).append("<img data-src='images/" + value.image + "' data-url='/restaurant/" + value["restaurant-id"] + "' class='restaurant-image' />");
+                });
+
+                // See more image
+                $('#' + response.goToList.id).append("<img data-src='images/see-more.png' data-url='/portfolio/" + response.goToList.title + "' class='restaurant-image'/>");
+              }
+              else {
+                // No restaurants in goto list
+                $('#' + response.goToList.id).append("<img data-src='images/no-goto-places.png'/>");
+              }
+              
+              // Initialize the portfolio
+              var p = $('#' + response.goToList.id).portfolio({
+                showArrows: false,
+                enableKeyboardNavigation: false
+              });
+              p.init();
+
+              $('.restaurant-image').on('tap vclick click', function() {
+                window.location.href = $(this).data("url");
+              });
+            });
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
       		  window.location.href= "/";
@@ -92,16 +119,6 @@
     		js.src = "//connect.facebook.net/en_US/sdk.js";
     		fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
-
-  		// Here we run a very simple test of the Graph API after login is
-  		// successful.  See statusChangeCallback() for when this call is made.
-  		function testAPI() {
-    		console.log('Welcome!  Fetching your information.... ');
-    		FB.api('/me', function(response) {
-      			console.log('Successful login for: ' + response.name);
-      			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-    		});
-  		}
 	</script>
 	<div class="container">
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -111,6 +128,8 @@
 		</nav>
 	</div>
 	<div class="container top-title portfolio-container">
+    <div id="goto-list">
+    </div>
 		{{#each portfolios}}
 			<h3><a href="portfolio/{{title}}">{{title}}</a></h3>
 			<div id="{{id}}" class="portfolio">
@@ -121,8 +140,7 @@
           <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
         {{else}}
           <img data-src="images/no-goto-places.png"/>
-        {{/if}}
-		    
+        {{/if}}	    
 			</div>
 		{{/each}}
 	</div>

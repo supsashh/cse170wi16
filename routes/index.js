@@ -14,3 +14,15 @@ exports.viewLogin = function(req, res){
 exports.viewAltLogin = function(req, res){
   res.render('altlogin');
 };
+
+exports.getGoToList = function(req, res) {
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+	    	profileObj = data.profileObjs[i];
+	    }
+	}
+
+	console.log(profileObj.goToList);
+	res.json({"goToList": profileObj.goToList});
+};

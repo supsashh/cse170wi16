@@ -1,9 +1,5 @@
 {
     "portfolios": [
-      { "title": "Your GoTo List",
-        "images": [],
-        "id": "goto"
-      },
       { "title": "Today is Thrifty Thursday",
         "images": [
           {
@@ -183,6 +179,11 @@
         "profile-image": "",
         "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
         "location": "San Diego",
+        "goToList": { 
+          "title": "Your GoTo List",
+          "images": [],
+          "id": "goto"
+        },
         "posts": [
         {
               "id": 27,
