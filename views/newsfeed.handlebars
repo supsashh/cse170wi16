@@ -33,7 +33,7 @@
                 	console.log(response);
                 	$('.newsfeed-container').empty();
                 	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
-                	$.each(response, function(index, value){
+                	$.each(response.posts, function(index, value){
                 		if(value["profile-image"]){
                 			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile/" + value.name + "'><img class='media-object img-circle scaled-pic' src='/images/"+value["profile-image"]+"'></a></div><div class='media-body'><a href='/profile/"+value.name+"'><h4 class='media-heading' href='/profile/"+value.name+"'>"+ value.name+"</h4></a>");
                 		}
