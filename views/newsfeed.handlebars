@@ -17,9 +17,6 @@
 
 <body onload="checkLoginState()">
 	<script>
-	$(document).ready(function() {
-		apiCall();
-	});
 
 	function statusChangeCallback(response) {
 		// The response object is returned with a status field that lets the
@@ -65,7 +62,6 @@
 
               });
           });
-			apiCall();
         }
 
 		if (response.status === 'connected') {
