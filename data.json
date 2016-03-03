@@ -182,8 +182,10 @@
         "profileId": "defaultProfileObj",
         "profile-image": "",
         "myCuisines": ["Mexican", "Italian", "Japanese", "American"],
-        "location": "San Diego",
-        "friends": [
+        "location": "San Diego"
+      }
+    ],
+    "friends": [
           {
             "name": "Smitty Werbenjagermanjensen",
             "profile-image": "Smitty.jpg",
@@ -632,9 +634,7 @@
               }
             ]
           }
-        ]
-      }
-    ],
+        ],
     "posts": [
         {
               "id": 27,

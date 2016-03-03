@@ -19,17 +19,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="/js/goto.js"></script>
   <script>
-    function reviewToast() {
-      console.log("i am here" + window.location.hash);
-      if (window.location.hash === "#review-done") {
-        toastr.options = {
-          "positionClass": "toast-top-full-width",
-          "timeOut": "2000"
-        }
-        toastr.success("Your review for " + $('#restaurant-name').text() + " has been submitted!");
-      }
-    }
-
     function hideChooseDish() {
       var postpath = window.location.pathname;
       var strArr = postpath.split("/");

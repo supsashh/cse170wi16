@@ -69,6 +69,8 @@ server.get('/restaurant/:id/menu#:item-id', menu.view);
 server.post('/restaurant/addFavorite', restaurant.addFavorite);
 server.post('/restaurant/removeFavorite', restaurant.removeFavorite);
 server.get('/profile', profile.view);
+server.get('/profile/getBio', profile.getBio);
+server.get('/profile/getTastes', profile.getTastes);
 server.get('/newsfeed', newsfeed.view);
 server.post('/newpost/addpost', newpost.addpost);
 server.get('/search', search.view);
