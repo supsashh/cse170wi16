@@ -22,52 +22,60 @@
     		console.log('statusChangeCallback');
     		console.log(response);
 
-        if (response.status === 'connected' || response.status === 'not_authorized') {
-          // Save the fb id in the session
-          FB.api('/me', function(response) {
-              $.post('/login/profileId', {"id": response.id}, function() {
-                console.log("Current profile id is " + response.id);
-              });
-          });
-        }
-
     		// The response object is returned with a status field that lets the
     		// app know the current login status of the person.
     		// Full docs on the response object can be found in the documentation
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
-      		  // Logged into your app and Facebook.
-      		  $.get('/index/getGoToList', function(response) {
-              $('#goto-list').empty();
-              $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.title + "'>" + response.goToList.title + "</a></h3>");
-              $('#goto-list').append("<div id='" + response.goToList.id + "' class='portfolio'>");
-              if (response.goToList.images.length) {            
-                $.each(response.goToList.images, function( index, value ) {
-                  $('#' + response.goToList.id).append("<img data-src='images/" + value.image + "' data-url='/restaurant/" + value["restaurant-id"] + "' class='restaurant-image' />");
+            // Save the fb id in the session and create a new profile object
+            FB.api('/me', function(response) {
+              $.post('/login/profileId', {"id": response.id}, function() {
+                console.log("Current profile id is " + response.id);
+
+                // Populate goto list
+                $.get('/index/getGoToList', function(response) {
+                  console.log("GET");
+                  $('#goto-list').empty();
+                  $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.title + "'>" + response.goToList.title + "</a></h3>");
+                  $('#goto-list').append("<div id='" + response.goToList.id + "' class='portfolio'>");
+                  if (response.goToList.images.length) {            
+                    $.each(response.goToList.images, function( index, value ) {
+                      $('#' + response.goToList.id).append("<img data-src='images/" + value.image + "' data-url='/restaurant/" + value["restaurant-id"] + "' class='restaurant-image' />");
+                    });
+
+                    // See more image
+                    $('#' + response.goToList.id).append("<img data-src='images/see-more.png' data-url='/portfolio/" + response.goToList.title + "' class='restaurant-image'/>");
+                  }
+                  else {
+                    // No restaurants in goto list
+                    $('#' + response.goToList.id).append("<img data-src='images/no-goto-places.png'/>");
+                  }
+                  
+                  // Initialize the portfolio
+                  var p = $('#' + response.goToList.id).portfolio({
+                    showArrows: false,
+                    enableKeyboardNavigation: false
+                  });
+                  p.init();
+
+                  $('.restaurant-image').on('tap vclick click', function() {
+                    window.location.href = $(this).data("url");
+                  });
                 });
-
-                // See more image
-                $('#' + response.goToList.id).append("<img data-src='images/see-more.png' data-url='/portfolio/" + response.goToList.title + "' class='restaurant-image'/>");
-              }
-              else {
-                // No restaurants in goto list
-                $('#' + response.goToList.id).append("<img data-src='images/no-goto-places.png'/>");
-              }
-              
-              // Initialize the portfolio
-              var p = $('#' + response.goToList.id).portfolio({
-                showArrows: false,
-                enableKeyboardNavigation: false
-              });
-              p.init();
-
-              $('.restaurant-image').on('tap vclick click', function() {
-                window.location.href = $(this).data("url");
               });
             });
+            console.log("Connected");
+      		  // Logged into your app and Facebook.
+      		  
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
-      		  window.location.href= "/";
+            // Save the fb id in the session
+            FB.api('/me', function(response) {
+                $.post('/login/profileId', {"id": response.id}, function() {
+                  console.log("Current profile id is " + response.id);
+                  window.location.href= "/";
+                });
+            }); 		  
     		} else {
       		  // The person is not logged into Facebook, so we're not sure if
       		  // they are logged into this app or not.
