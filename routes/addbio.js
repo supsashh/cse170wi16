@@ -5,6 +5,12 @@ exports.view = function(req, res) { 
 };
 
 exports.addbio = function(req, res) {
-	data.bio = req.body.bio;
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+			profileObj = data.profileObjs[i];
+		}
+	}
+	profileObj.bio = req.body.bio;
 	res.send(200);
 };

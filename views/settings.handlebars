@@ -13,9 +13,17 @@
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.get('/settings/getLocation', function(response) {
+        // Fill in the location from the profile obj
+        $('#location').text(response.location);
+      });
+    });
+  </script>
 </head>
 
-<body onload="checkLoginState()">
+<body>
 	<script>
     	// This is called with the results from from FB.getLoginStatus().
   		function statusChangeCallback(response) {
@@ -27,7 +35,7 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-      		  testAPI();
+            
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
       		  window.location.href= "/";
@@ -83,16 +91,6 @@
     		fjs.parentNode.insertBefore(js, fjs);
   		}(document, 'script', 'facebook-jssdk'));
 
-  		// Here we run a very simple test of the Graph API after login is
-  		// successful.  See statusChangeCallback() for when this call is made.
-  		function testAPI() {
-    		console.log('Welcome!  Fetching your information.... ');
-    		/*FB.api('/me', function(response) {
-      			console.log('Successful login for: ' + response.name);
-      			document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
-    		});*/
-  		}
-
   		function logout() {
   			FB.logout(function(response) {
 			  // user is now logged out
@@ -112,11 +110,7 @@
 		<h4 class="center">Settings</h4>
 		<div class="container">
 			<h4>Location</h4>
-			{{#if location}}
-				<p id="location">{{location}}</p>
-			{{else}}
-				<p id="location">Location has not been added.</p>
-			{{/if}}
+			<p id="location"></p>
       <div class="row add-location">
         <div class="col-lg-6">
           <div class="input-group">

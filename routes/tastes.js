@@ -5,8 +5,14 @@ exports.view = function(req, res) { 
 };
 
 exports.addTastes = function(req, res) {
-	console.log(req.body.tastes);
-	data.myCuisines = req.body.tastes;
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+			profileObj = data.profileObjs[i];
+		}
+	}
+	profileObj.myCuisines = req.body.tastes;
+	console.log(data.profileObjs);
 	res.send(200);
 };
 

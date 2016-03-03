@@ -6,7 +6,8 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
-var handlebars = require('express3-handlebars')
+var handlebars = require('express3-handlebars');
+var session = require('express-session');
 
 var index = require('./routes/index');
 var portfolio = require('./routes/portfolio');
@@ -45,6 +46,12 @@ server.use(express.cookieParser('GoTo Secret Key'));
 server.use(express.session());
 server.use(server.router);
 server.use(express.static(path.join(__dirname, 'public')));
+server.use(session({
+  secret: 'starfriends',
+  resave: false,
+  saveUninitialized: true
+}))
+
 
 // development only
 if ('development' == server.get('env')) {
@@ -70,14 +77,18 @@ server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/addbio', addbio.view);
 server.post('/addbio/addbio', addbio.addbio);
 server.get('/editprofile', editprofile.view);
+server.get('/editprofile/getBio', editprofile.getBio);
+server.get('/editprofile/getTastes', editprofile.getTastes);
 server.post('/editprofile/editBio', editprofile.editBio);
 server.post('/editprofile/deleteTaste', editprofile.deleteTaste);
 server.post('/editprofile/addTaste', editprofile.addTaste);
 server.get('/settings', settings.view);
 server.post('/settings/updateLocation', settings.updateLocation);
+server.get('/settings/getLocation', settings.getLocation);
 server.get('/friendslist', friendslist.view);
 server.get('/comments/:id', comments.view);
 server.get('/login', login.view);
+server.post('/login/profileId', login.profileId);
 server.get('/tastes', tastes.view);
 server.get('/alttastes',tastes.viewAlt);
 server.post('/tastes/addTastes', tastes.addTastes);

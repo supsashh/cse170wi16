@@ -13,6 +13,19 @@
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>      
+	<script>
+		$(document).ready(function() {
+			$.get('/editprofile/getBio', function(response) {
+				$('#edit-bio').text(response.bio);
+			});
+
+			$.get('/editprofile/getTastes', function(response) {
+				$.each(response.tastes, function( index, value ) {
+					$('.tastes').append("<div class='taste'><span class='label taste-label'>" + value + "</span><a class='taste-delete' href='#''>×</a></div>");
+				});
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -27,7 +40,7 @@
 		<h4 class="center">Edit Profile</h4>
 		<div class="form-group">
 		  <label for="edit-bio">Edit Bio:</label>
-		  <textarea class="form-control" rows="5" id="edit-bio">{{bio}}</textarea>
+		  <textarea class="form-control" rows="5" id="edit-bio"></textarea>
 		  <div class="text-center">
 	        <button class="btn btn-default edit-bio-button" type="button">Save</button>
 	      </div>
@@ -35,9 +48,6 @@
 
 		<label>Edit Tastes:</label>
 		<div class="tastes">
-			{{#each myCuisines}}
-		  		<div class="taste"><span class="label taste-label">{{this}}</span><a class="taste-delete" href="#">×</a></div>
-		  	{{/each}}
 		</div>
 
         <div class="row add-taste">
