@@ -1,18 +1,41 @@
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
 function setNormalLogin(){
-  sessionStorage.altLogin = "false";
-  sessionStorage.timeVar = Math.floor(Date.now() / 1000);
+  alert("normalLogin");
+  document.cookie = "altLogin = false";
+  alert(getCookie("altLogin"));
+  var time = Math.floor(Date.now() / 1000);
+  document.cookie = "time = "+time;
+  alert(getCookie("time"));
 }
 function setAltLogin(){
-  sessionStorage.altLogin = "true";
-  sessionStorage.timeVar = Math.floor(Date.now() / 1000);
+  alert("altLogin");
+  document.cookie = "altLogin = true";
+  alert(getCookie("altLogin"));
+  var time = Math.floor(Date.now() / 1000);
+  document.cookie = "time = "+time;
+  alert(getCookie("time"));
 }
 function sendGA(){
-  var loginTime = parseInt(sessionStorage.timeVar);
+  var loginTime = parseInt(getCookie("time"));
+  alert("loginTime "+loginTime);
   var duration = Math.floor(Date.now() / 1000) - loginTime;
-  if(sessionStorage.altLogin === "true"){
+  var altLogin = getCookie("altLogin")
+  alert("duration " + duration + " flag " + altLogin);
+  if(altLogin === "true"){
     ga('send', 'event','dur', 'altLogin', duration);
-  }else{
+  }else if(altLogin === "false"){
     ga('send', 'event','dur', 'normLogin', duration);
+  }else{
+    alert("oops");
   }
 }
 $(document).ready(function() {
@@ -355,7 +378,7 @@ $(document).ready(function() {
       var strArr = pathname.split("/");
       var restId = strArr[2];
       var getPath = "/review/r/r/r/"+restId;
-      
+
       $.get(getPath, function(response){
         $("#review-dish-input").autocomplete({
           source: response
