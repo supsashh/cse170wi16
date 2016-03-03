@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
 
     if(window.location.pathname == "/newsfeed"){
-      window.location.reload();
+      window.location.reload(true);
     }
 
     $('.portfolio').each(function(index, obj) {
