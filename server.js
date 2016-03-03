@@ -77,6 +77,8 @@ server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/addbio', addbio.view);
 server.post('/addbio/addbio', addbio.addbio);
 server.get('/editprofile', editprofile.view);
+server.get('/editprofile/getBio', editprofile.getBio);
+server.get('/editprofile/getTastes', editprofile.getTastes);
 server.post('/editprofile/editBio', editprofile.editBio);
 server.post('/editprofile/deleteTaste', editprofile.deleteTaste);
 server.post('/editprofile/addTaste', editprofile.addTaste);
