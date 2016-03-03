@@ -29,17 +29,24 @@
               $.post('/login/profileId', {"id": response.id}, function() {
                 console.log("Current profile id is " + response.id);
 
+                // Populate newsfeed
                 $.get('/newsfeed/getNewsfeed', function(response){
+                	// Update the new post button href
+                	var url = "/newpost/" + response.posts[0]["id"];
+					$('#new-post-button').attr('href', url);
+
                 	console.log(response);
                 	$('.newsfeed-container').empty();
                 	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
                 	$.each(response.posts, function(index, value){
+                		value.id = parseInt(value.id);
+                		console.log(value["restaurant-description"]);
                 		if(value["profile-image"]){
                 			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile/" + value.name + "'><img class='media-object img-circle scaled-pic' src='/images/"+value["profile-image"]+"'></a></div><div class='media-body' id='" + value.id +"'><a href='/profile/"+value.name+"'><h4 class='media-heading' href='/profile/"+value.name+"'>"+ value.name+"</h4></a>");
                 		}
                 		else
                 		{
-                			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile'><img class='media-object img-circle profile-pic' src=''></a></div><div class='media-body'><a href='/profile'><h4 class='media-heading profile-name' href='/profile'></h4></a>");
+                			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile'><img class='media-object img-circle profile-pic' src=''></a></div><div class='media-body' id='" + value.id +"'><a href='/profile'><h4 class='media-heading profile-name' href='/profile'></h4></a>");
                 		}
                 		if(value["food-image"])
                 		{
@@ -47,8 +54,10 @@
                 		}
                 		$('#' + value.id).append("<a href='#'><i class='glyphicon glyphicon-heart social-button'></i></a><a href='/comments/"+value.id+"'><i class='glyphicon glyphicon-comment social-button'></i></a><br><a href='/restaurant/"+value.restaurant+"'>@" + value.restaurant+"</a><br>" + value["restaurant-description"]+"</div></div></div>");
                 	});
-
                 });
+
+				// Populate your posts with name and profile pic
+				apiCall();
 
               });
           });
@@ -119,7 +128,7 @@
 					var names = document.getElementsByClassName("profile-name");
 					var i;
 					for (i = 0; i < pics.length; i++) {
-    				pics[i].src = response.picture.data.url;
+    					pics[i].src = response.picture.data.url;
 						names[i].innerHTML = response.name;
 					}
   			}
@@ -130,7 +139,7 @@
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<a class="navbar-brand glyphicon glyphicon-search" aria-hidden="true" href="/search"></a>
 			<a href="/index" class="navbar-brand"><img src="/images/gotologo.png" id="logo"/></a>
-			<a class="navbar-brand glyphicon glyphicon-pencil" aria-hidden="true" href="/newpost/{{posts.0.id}}"></a>
+			<a class="navbar-brand glyphicon glyphicon-pencil" id="new-post-button" aria-hidden="true" ></a>
 		</nav>
 	</div>
 
