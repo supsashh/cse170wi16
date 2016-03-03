@@ -9,7 +9,14 @@ exports.viewCuisine = function(req, res) {
 			cuisine = cuisines[i];
 		}
 	}
-	var restaurants = data.restaurants;
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+	    	profileObj = data.profileObjs[i];
+	    }
+	}
+
+	var restaurants = profileObj.restaurants;
 	var cuisineRestaurants = [];
 	for (var j = 0; j < restaurants.length; j++) {
 		if (restaurants[j].cuisineId == id) {
