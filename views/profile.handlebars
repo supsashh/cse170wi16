@@ -13,6 +13,24 @@
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.get('/profile/getBio', function(response) {
+				if (response.bio) {
+					$('#bio').append("<p>" + response.bio + "</p>");
+				}
+				else {
+					$('#bio').append("<a href='/addbio' class='btn btn-default btn-xs' role='button'>Add Bio</a>");
+				}
+			});
+
+			$.get('/profile/getTastes', function(response) {
+				$.each(response.tastes, function( index, value ) {
+					$('#tastes').append("<a href='/cuisine/{{this}}' class='label label-info tags'>" + value + "</a>");
+				});
+			});
+		});
+	</script>
 </head>
 
 <body onload="apiCall()">
@@ -129,16 +147,12 @@
 		</div>
 		<div class="Bio">
 		    <p><strong>Bio</strong></p>
-		    {{#if bio}}
-		    	<p>{{bio}}</p>
-		    {{else}}
-		    	<a href="/addbio" class="btn btn-default btn-xs" role="button">Add Bio
-		        </a>
-		    {{/if}}
+		    <div id="bio">
+		    </div>
+
 		    <p><strong>Food Taste: </strong> <br>
-		    	{{#each myCuisines}}
-                	<a href="/cuisine/{{this}}" class="label label-info tags">{{this}}</a>
-                {{/each}}
+		    <div id="tastes">
+		    </div>
             </p>
         </div>
 	</div>
