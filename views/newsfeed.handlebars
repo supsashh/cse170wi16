@@ -22,6 +22,16 @@
 		// app know the current login status of the person.
 		// Full docs on the response object can be found in the documentation
 		// for FB.getLoginStatus().
+
+		if (response.status === 'connected' || response.status === 'not_authorized') {
+          // Save the fb id in the session
+          FB.api('/me', function(response) {
+              $.post('/login/profileId', {"id": response.id}, function() {
+                console.log("Current profile id is " + response.id);
+              });
+          });
+        }
+
 		if (response.status === 'connected') {
 				// Logged into your app and Facebook.
 				apiCall();
