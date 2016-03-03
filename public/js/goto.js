@@ -349,6 +349,19 @@ $(document).ready(function() {
       });
     });
 
+    $("#review-dish-input").focus(function(){
+      var pathname = window.location.pathname;
+      var strArr = pathname.split("/");
+      var restId = strArr[2];
+      var getPath = "/review/r/r/r/"+restId;
+      
+      $.get(getPath, function(response){
+        $("#review-dish-input").autocomplete({
+          source: response
+        });
+      });
+    });
+
     $('#restaurant-handle').on("tap vclick click", function() {
       event.preventDefault();
       event.stopPropagation();
