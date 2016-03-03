@@ -25,7 +25,8 @@ $(document).ready(function() {
 
     $('.portfolio').each(function(index, obj) {
     	var p = $(this).portfolio({
-        showArrows: false
+        showArrows: false,
+        enableKeyboardNavigation: false
       });
     	p.init();
     });
