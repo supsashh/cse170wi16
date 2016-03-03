@@ -26,7 +26,7 @@
 
 			$.get('/profile/getTastes', function(response) {
 				$.each(response.tastes, function( index, value ) {
-					$('#tastes').append("<a href='/cuisine/{{this}}' class='label label-info tags'>" + value + "</a>");
+					$('#tastes').append("<a href='/cuisine/" + value + "' class='label label-info tags'>" + value + "</a>");
 				});
 			});
 		});
