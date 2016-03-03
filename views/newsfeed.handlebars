@@ -30,7 +30,7 @@
                 console.log("Current profile id is " + response.id);
 
                 $.get('/newsfeed', function(response){
-                	console.log("GET");
+                	console.log(response);
                 	$('.newsfeed-container').empty();
                 	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
                 	$.each(response.posts, function(index, value){
