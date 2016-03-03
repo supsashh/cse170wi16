@@ -69,6 +69,8 @@ server.get('/restaurant/:id/menu#:item-id', menu.view);
 server.post('/restaurant/addFavorite', restaurant.addFavorite);
 server.post('/restaurant/removeFavorite', restaurant.removeFavorite);
 server.get('/profile', profile.view);
+server.get('/profile/getBio', profile.getBio);
+server.get('/profile/getTastes', profile.getTastes);
 server.get('/newsfeed', newsfeed.view);
 server.post('/newpost/addpost', newpost.addpost);
 server.get('/search', search.view);
@@ -77,11 +79,14 @@ server.get('/cuisine/:id', cuisine.viewCuisine);
 server.get('/addbio', addbio.view);
 server.post('/addbio/addbio', addbio.addbio);
 server.get('/editprofile', editprofile.view);
+server.get('/editprofile/getBio', editprofile.getBio);
+server.get('/editprofile/getTastes', editprofile.getTastes);
 server.post('/editprofile/editBio', editprofile.editBio);
 server.post('/editprofile/deleteTaste', editprofile.deleteTaste);
 server.post('/editprofile/addTaste', editprofile.addTaste);
 server.get('/settings', settings.view);
 server.post('/settings/updateLocation', settings.updateLocation);
+server.get('/settings/getLocation', settings.getLocation);
 server.get('/friendslist', friendslist.view);
 server.get('/comments/:id', comments.view);
 server.get('/login', login.view);
@@ -94,7 +99,8 @@ server.get('/review/:id/:item', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
 server.get('/newpost/r/r/r', newpost.restaurants);
-server.post('/comments/newcomment/:id', comments.newcomment)
+server.post('/comments/newcomment/:id', comments.newcomment);
+server.get('/review/r/r/r/:id', review.menuItems);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

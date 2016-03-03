@@ -5,6 +5,31 @@ exports.view = function(req, res) { 
 };
 
 exports.updateLocation = function(req, res) {
-	data.location = req.body.location;
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+			profileObj = data.profileObjs[i];
+		}
+	}
+	profileObj.location = req.body.location;
+	console.log(data.profileObjs);
 	res.send(200);
 };
+
+exports.getLocation = function(req, res) {
+	var profileObj;
+	for (var i = 0; i < data.profileObjs.length; i++) {
+		if (data.profileObjs[i].profileId == req.session.profileId) {
+			profileObj = data.profileObjs[i];
+		}
+	}
+	
+	var location;
+	if (profileObj.location) {
+		location = profileObj.location;
+	}
+	else {
+		location = "Location has not been added yet.";
+	}
+	res.json({"location": location});
+}
