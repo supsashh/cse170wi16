@@ -18,4 +18,4 @@ export.getNewsfeed = function(req, res) {
     }
   }
   res.json({"profileObj": profileObj});
-}
+};
