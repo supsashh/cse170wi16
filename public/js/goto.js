@@ -46,9 +46,6 @@ $(document).ready(function() {
       setAltLogin();
     }
 
-    if(window.location.pathname == "/newsfeed"){
-      window.location.reload(true);
-    }
 
     $('.portfolio').each(function(index, obj) {
     	var p = $(this).portfolio({
