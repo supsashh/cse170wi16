@@ -9,33 +9,27 @@ function getCookie(cname) {
     return "";
 }
 function setNormalLogin(){
-  alert("normalLogin");
   document.cookie = "altLogin = false";
-  alert(getCookie("altLogin"));
   var time = Math.floor(Date.now() / 1000);
   document.cookie = "time = "+time;
-  alert(getCookie("time"));
 }
 function setAltLogin(){
-  alert("altLogin");
   document.cookie = "altLogin = true";
-  alert(getCookie("altLogin"));
   var time = Math.floor(Date.now() / 1000);
   document.cookie = "time = "+time;
-  alert(getCookie("time"));
 }
 function sendGA(){
   var loginTime = parseInt(getCookie("time"));
-  alert("loginTime "+loginTime);
   var duration = Math.floor(Date.now() / 1000) - loginTime;
   var altLogin = getCookie("altLogin")
-  alert("duration " + duration + " flag " + altLogin);
+  //alert("duration " + duration + " flag " + altLogin);
   if(altLogin === "true"){
     ga('send', 'event','dur', 'altLogin', duration);
   }else if(altLogin === "false"){
     ga('send', 'event','dur', 'normLogin', duration);
   }else{
-    alert("oops");
+    // something has REALLY goofed up.
+    //alert("oops");
   }
 }
 $(document).ready(function() {
