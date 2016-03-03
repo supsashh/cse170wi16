@@ -41,7 +41,7 @@
                 	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
                 	$.each(response.posts, function(index, value){
                 		value.id = parseInt(value.id);
-                		console.log(value["restaurant-description"]);
+
                 		if(value["profile-image"]){
                 			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile/" + value.name + "'><img class='media-object img-circle scaled-pic' src='/images/"+value["profile-image"]+"'></a></div><div class='media-body' id='" + value.id +"'><a href='/profile/"+value.name+"'><h4 class='media-heading' href='/profile/"+value.name+"'>"+ value.name+"</h4></a>");
                 		}
@@ -55,17 +55,18 @@
                 		}
                 		$('#' + value.id).append("<a href='#'><i class='glyphicon glyphicon-heart social-button'></i></a><a href='/comments/"+value.id+"'><i class='glyphicon glyphicon-comment social-button'></i></a><br><a href='/restaurant/"+value.restaurant+"'>@" + value.restaurant+"</a><br>" + value["restaurant-description"]+"</div></div></div>");
                 	});
+
+					// Populate your posts with name and profile pic
+					console.log("populated newsfeed");
+					apiCall();
                 });
-
-				// Populate your posts with name and profile pic
-				apiCall();
-
               });
           });
         }
 
 		if (response.status === 'connected') {
 				// Logged into your app and Facebook.
+				console.log("connected");
 				apiCall();
 		} else if (response.status === 'not_authorized') {
 				// The person is logged into Facebook, but not your app.
@@ -123,6 +124,7 @@
   		}(document, 'script', 'facebook-jssdk'));
 
   		function apiCall() {
+  				console.log("apiCall");
 				FB.getAuthResponse();
 				FB.api('/me', 'GET',  {"fields":"name,picture{url}"},  function(response) {
 					var pics = document.getElementsByClassName("profile-pic");
