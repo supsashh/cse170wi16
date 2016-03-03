@@ -99,7 +99,8 @@ server.get('/review/:id/:item', review.view);
 server.get('/profile/:id', friendProfile.view);
 server.get('/newpost/:id', newpost.view);
 server.get('/newpost/r/r/r', newpost.restaurants);
-server.post('/comments/newcomment/:id', comments.newcomment)
+server.post('/comments/newcomment/:id', comments.newcomment);
+server.get('/review/r/r/r/:id', review.menuItems);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
