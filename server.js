@@ -63,6 +63,7 @@ server.get('/', index.viewLogin);
 server.get('/index', index.view);
 server.get('/index/getGoToList', index.getGoToList);
 server.get('/altlogin', index.viewAltLogin);
+server.get('/portfolio/goto', portfolio.viewGoTo);
 server.get('/portfolio/:title', portfolio.viewPortfolio);
 server.get('/restaurant/:id', restaurant.view);
 server.get('/restaurant/:id/menu', menu.view);

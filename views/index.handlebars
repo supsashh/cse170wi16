@@ -36,7 +36,7 @@
                 $.get('/index/getGoToList', function(response) {
                   console.log("GET");
                   $('#goto-list').empty();
-                  $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.title + "'>" + response.goToList.title + "</a></h3>");
+                  $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.id + "'>" + response.goToList.title + "</a></h3>");
                   $('#goto-list').append("<div id='" + response.goToList.id + "' class='portfolio'>");
                   if (response.goToList.images.length) {            
                     $.each(response.goToList.images, function( index, value ) {
@@ -44,7 +44,7 @@
                     });
 
                     // See more image
-                    $('#' + response.goToList.id).append("<img data-src='images/see-more.png' data-url='/portfolio/" + response.goToList.title + "' class='restaurant-image'/>");
+                    $('#' + response.goToList.id).append("<img data-src='images/see-more.png' data-url='/portfolio/" + response.goToList.id + "' class='restaurant-image'/>");
                   }
                   else {
                     // No restaurants in goto list

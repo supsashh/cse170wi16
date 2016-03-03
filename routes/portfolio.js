@@ -16,3 +16,17 @@ exports.viewPortfolio = function(req, res) {
 		'portfolio': currentPortfolio
 	});
 };
+
+exports.viewGoTo = function(req, res) {
+    var profileObj;
+    for (var i = 0; i < data.profileObjs.length; i++) {
+        if (data.profileObjs[i].profileId == req.session.profileId) {
+            profileObj = data.profileObjs[i];
+        }
+    }
+
+    res.render('portfolio', {
+        'portfolioTitle': profileObj.goToList.title,
+        'portfolio': profileObj.goToList
+    });
+};
