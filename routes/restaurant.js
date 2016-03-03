@@ -1,8 +1,14 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
   var restaurantId = req.params.id; 
-  var restaurants = data.restaurants;
+  var restaurants = profileObj.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
     if(restaurantId == restaurants[i].id){
@@ -43,8 +49,14 @@ exports.view = function(req, res){
 
 
 exports.addFavorite = function(req, res) {
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
   var restaurantId = req.body.restaurantId;
-  var restaurants = data.restaurants;
+  var restaurants = profileObj.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
     if(restaurantId == restaurants[i].id){
@@ -87,8 +99,14 @@ exports.addFavorite = function(req, res) {
 
 
 exports.removeFavorite = function(req, res) {
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
   var restaurantId = req.body.restaurantId;
-  var restaurants = data.restaurants;
+  var restaurants = profileObj.restaurants;
   var restaurant;
   for(var i = 0; i < restaurants.length; i++){
     if(restaurantId == restaurants[i].id){

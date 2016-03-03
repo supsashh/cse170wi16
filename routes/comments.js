@@ -1,8 +1,14 @@
 var data = require('../data.json');
 
 exports.view = function(req, res) { 
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
   var postId = req.params.id; 
-  var posts = data.posts;
+  var posts = profileObj.posts;
   var post;
   for(var i = 0; i < posts.length; i++){
     if(postId == posts[i].id){
@@ -14,12 +20,18 @@ exports.view = function(req, res) { 
 };
 
 exports.newcomment = function(req, res) {
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
   var postId = req.params.id; 
-  var posts = data.posts;
+  var posts = profileObj.posts;
   var post;
   for(var i = 0; i < posts.length; i++){
     if(postId == posts[i].id){
-      data.posts[i].comments.push(req.body);
+      profileObj.posts[i].comments.push(req.body);
       break;
     }
   }

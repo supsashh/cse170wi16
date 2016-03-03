@@ -1,7 +1,13 @@
 var data = require('../data.json');
 
 exports.restaurants = function(req, res){
-  var restaurants = data.restaurants;
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
+  var restaurants = profileObj.restaurants;
   var restaurantNames = [];
   for(var i = 0; i < restaurants.length; i++){
     restaurantNames.push(restaurants[i].id);
@@ -15,18 +21,24 @@ exports.view = function(req, res) { 
 };
 
 exports.addpost = function(req, res) {
-	data.posts.unshift(req.body);
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
+	profileObj.posts.unshift(req.body);
 
-	if (data["profile-posts"]) {
-		data["profile-posts"].push(req.body);
+	if (profileObj["profile-posts"]) {
+		profileObj["profile-posts"].push(req.body);
 	}
 	else {
-		data["profile-posts"] = [];
-		data["profile-posts"].push(req.body);
+		profileObj["profile-posts"] = [];
+		profileObj["profile-posts"].push(req.body);
 	}
 
 	var restaurantId = req.body.restaurant; 
-    var restaurants = data.restaurants;
+    var restaurants = profileObj.restaurants;
     var restaurant;
     for(var i = 0; i < restaurants.length; i++){
       if(restaurantId == restaurants[i].id){

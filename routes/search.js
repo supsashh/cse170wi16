@@ -5,7 +5,13 @@ exports.view = function(req, res) { 
 };
 
 exports.search = function(req, res) {
-	var restaurants = data.restaurants;
+  var profileObj;
+  for (var i = 0; i < data.profileObjs.length; i++) {
+    if (data.profileObjs[i].profileId == req.session.profileId) {
+      profileObj = data.profileObjs[i];
+    }
+  }
+	var restaurants = profileObj.restaurants;
   var cuisines = data.cuisines;
 	var searchTerm = req.params.term;
   var foundMenuItems = [];
