@@ -13,6 +13,14 @@
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
 	<script src="/js/goto.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.get('/settings/getLocation', function(response) {
+        // Fill in the location from the profile obj
+        $('#location').text(response.location);
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -27,10 +35,7 @@
     		// for FB.getLoginStatus().
     		if (response.status === 'connected') {
       		  // Logged into your app and Facebook.
-            $.get('/settings/getLocation', function(response) {
-              // Fill in the location from the profile obj
-              $('#location').text(response.location);
-            });
+            
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
       		  window.location.href= "/";
