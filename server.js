@@ -82,6 +82,7 @@ server.post('/editprofile/deleteTaste', editprofile.deleteTaste);
 server.post('/editprofile/addTaste', editprofile.addTaste);
 server.get('/settings', settings.view);
 server.post('/settings/updateLocation', settings.updateLocation);
+server.get('/settings/getLocation', settings.getLocation);
 server.get('/friendslist', friendslist.view);
 server.get('/comments/:id', comments.view);
 server.get('/login', login.view);
