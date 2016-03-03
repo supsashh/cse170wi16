@@ -46,7 +46,6 @@ $(document).ready(function() {
       setAltLogin();
     }
 
-
     $('.portfolio').each(function(index, obj) {
     	var p = $(this).portfolio({
         showArrows: false,
