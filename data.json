@@ -4,12 +4,12 @@
         "images": [],
         "id": "goto"
       },
-      { "title": "Today is Taco Tuesday",
+      { "title": "Today is Thrifty Thursday",
         "images": [
           {
-            "image": "lucha-libre-flaco_taco.jpg",
+            "image": "lucha-libre-sweet_potato_tacos.jpg",
             "restaurant-id": "lucha-libre",
-            "dish-name": "Flaco Taco",
+            "dish-name": "Sweet Potato Tacos",
             "restaurant-name": "Lucha Libre Gourmet Taco Shop"
           },
           {
@@ -19,16 +19,16 @@
             "restaurant-name": "Oscar's Mexican Seafood"
           },
           {
+            "image": "lucha-libre-flaco_taco.jpg",
+            "restaurant-id": "lucha-libre",
+            "dish-name": "Flaco Taco",
+            "restaurant-name": "Lucha Libre Gourmet Taco Shop"
+          },
+          {
             "image": "lolitas-rolled_taco.jpg",
             "restaurant-id": "lolitas",
             "dish-name": "Rolled Taco",
             "restaurant-name": "Lolita's Taco Shop"
-          },
-          {
-            "image": "lucha-libre-sweet_potato_tacos.jpg",
-            "restaurant-id": "lucha-libre",
-            "dish-name": "Sweet Potato Tacos",
-            "restaurant-name": "Lucha Libre Gourmet Taco Shop"
           },
           {
             "image": "oscars-battered_fish_tacos.jpg",
@@ -999,7 +999,7 @@
               "item-id":"sweet_potato_tacos",
               "item-name":"Sweet Potato Tacos",
               "item-image":"lucha-libre-sweet_potato_tacos.jpg",
-              "price": "$6.00",
+              "price": "$4.00",
               "rating": "5"
             }
           ],
