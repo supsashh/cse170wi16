@@ -1,18 +1,24 @@
 function setNormalLogin(){
+  alert("normalLogin");
   sessionStorage.altLogin = "false";
   sessionStorage.timeVar = Math.floor(Date.now() / 1000);
 }
 function setAltLogin(){
+  alert("normalLogin");
   sessionStorage.altLogin = "true";
   sessionStorage.timeVar = Math.floor(Date.now() / 1000);
 }
 function sendGA(){
   var loginTime = parseInt(sessionStorage.timeVar);
+  alert("loginTime "+loginTime);
   var duration = Math.floor(Date.now() / 1000) - loginTime;
+  alert("duration " + duration + " flag " + sessionStorage.altLogin);
   if(sessionStorage.altLogin === "true"){
     ga('send', 'event','dur', 'altLogin', duration);
-  }else{
+  }else if(sessionStorage.altLogin === "false"){
     ga('send', 'event','dur', 'normLogin', duration);
+  }else{
+    alert("oops");
   }
 }
 $(document).ready(function() {
@@ -355,7 +361,7 @@ $(document).ready(function() {
       var strArr = pathname.split("/");
       var restId = strArr[2];
       var getPath = "/review/r/r/r/"+restId;
-      
+
       $.get(getPath, function(response){
         $("#review-dish-input").autocomplete({
           source: response
