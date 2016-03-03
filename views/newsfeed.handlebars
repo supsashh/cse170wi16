@@ -28,27 +28,6 @@
           FB.api('/me', function(response) {
               $.post('/login/profileId', {"id": response.id}, function() {
                 console.log("Current profile id is " + response.id);
-
-                $.get('/newsfeed', function(response){
-                	$('.newsfeed-container').empty();
-                	$('.newsfeed-container').append("<h4 class='center'>Newsfeed</h4><hr>");
-                	$.each(response.posts, function(index, value){
-                		if(value["profile-image"]){
-                			$('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile/" + value.name + "'><img class='media-object img-circle scaled-pic' src='/images/"+value["profile-image"]+"'></a></div><div class='media-body'><a href='/profile/"+value.name+"'><h4 class='media-heading' href='/profile/"+value.name+"'>"+ value.name+"</h4></a>");
-                		}
-                		else
-                		{
-                			$.('.newsfeed-container').append("<div class='panel post'><div class='media profile-top'><div class='media-left'><a href='/profile'><img class='media-object img-circle profile-pic' src=''></a></div><div class='media-body'><a href='/profile'><h4 class='media-heading profile-name' href='/profile'></h4></a>");
-                		}
-                		if(value["food-image"])
-                		{
-                			$.('.newsfeed-container').append("<img class='food-image scaled-image' src='/images/" + value["food-image"] + "'><br>");
-                		}
-                		$.('.newsfeed-container').append("<a href='#'><i class='glyphicon glyphicon-heart social-button'></i></a><a href='/comments/"+value.id+"'><i class='glyphicon glyphicon-comment social-button'></i></a><br><a href='/restaurant/"+value.restaurant+"'>@" + value.restaurant+"</a><br>" + value["restaurant-description"]+"</div></div></div>");
-                	});
-
-                });
-
               });
           });
         }
@@ -133,7 +112,51 @@
 		</nav>
 	</div>
 
-	<div class="container newsfeed-container">		
+	<div class="container newsfeed-container">
+		<h4 class="center">Newsfeed</h4>
+		<hr>
+		{{#each posts}}
+			{{#if profile-image}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+						<a href="/profile/{{name}}">
+					  		<img class="media-object img-circle scaled-pic" src="/images/{{profile-image}}">
+						</a>
+					</div>
+					<div class="media-body">
+						<a href="/profile/{{name}}">
+							<h4 class="media-heading" href="/profile/{{name}}">{{name}}</h4>
+						</a>
+			{{else}}
+			<div class="panel post">
+				<div class="media profile-top">
+					<div class="media-left">
+						<a href="/profile">
+					  		<img class="media-object img-circle profile-pic" src="">
+						</a>
+					</div>
+					<div class="media-body">
+						<a href="/profile">
+							<h4 class="media-heading profile-name" href="/profile">
+							
+							</h4>
+						</a>
+						{{/if}}
+						{{#if food-image}}
+							<img class="food-image scaled-image" src="/images/{{food-image}}">
+							<br>
+						{{/if}}
+						<a href="#"><i class="glyphicon glyphicon-heart social-button"></i></a>
+						<a href="/comments/{{id}}"><i class="glyphicon glyphicon-comment social-button"></i></a>
+						<br>
+						<a href="/restaurant/{{restaurant}}">@{{restaurant}}</a>
+						<br>
+						{{restaurant-description}}
+					</div>
+				</div>
+			</div>
+		{{/each}}
 	</div>
 	
 	<div id="footer">
