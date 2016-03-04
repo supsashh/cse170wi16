@@ -53,7 +53,7 @@ $(document).ready(function() {
         "positionClass": "toast-top-full-width",
         "timeOut": "2000"
       }
-      toastr.success("Your review for has been submitted!");
+      toastr.success("Your review has been submitted!");
     }
 
     $('.restaurant-image').on('tap vclick click', function() {
