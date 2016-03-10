@@ -361,6 +361,14 @@ $(document).ready(function() {
       });
     });
 
+    $("#add-taste-input").focus(function(){
+      $.get("/cuisine/r/r/r", function(response){
+        $("#add-taste-input").autocomplete({
+          source: response
+        });
+      });
+    });
+
     $("#review-dish-input").focus(function(){
       var pathname = window.location.pathname;
       var strArr = pathname.split("/");

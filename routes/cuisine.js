@@ -25,3 +25,12 @@ exports.viewCuisine = function(req, res) {
 	}
   res.render('cuisine', {"cuisine":cuisine, "cuisineRestaurants":cuisineRestaurants});
 };
+
+exports.cuisineIds = function(req, res){
+	var cuisines = data.cuisines;
+	var cuisineIds = [];
+	for(var i = 0; i < cuisines.length; i++){
+		cuisineIds.push(cuisines[i].id);
+	}
+	res.json(cuisineIds);
+};

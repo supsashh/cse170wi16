@@ -104,6 +104,7 @@ server.get('/newpost/:id', newpost.view);
 server.get('/newpost/r/r/r', newpost.restaurants);
 server.post('/comments/newcomment/:id', comments.newcomment);
 server.get('/review/r/r/r/:id', review.menuItems);
+server.get('/cuisine/r/r/r', cuisine.cuisineIds);
 
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));
