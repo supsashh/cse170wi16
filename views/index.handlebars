@@ -35,7 +35,7 @@
                   $('#goto-list').empty();
                   $('#goto-list').append("<h3><a href='portfolio/" + response.goToList.id + "'>" + response.goToList.title + "</a></h3>");
                   $('#goto-list').append("<div id='" + response.goToList.id + "' class='portfolio'>");
-                  if (response.goToList.images.length) {            
+                  if (response.goToList.images.length) {
                     $.each(response.goToList.images, function( index, value ) {
                       $('#' + response.goToList.id).append("<img data-src='images/" + value.image + "' data-url='/restaurant/" + value["restaurant-id"] + "' class='restaurant-image' />");
                     });
@@ -47,7 +47,7 @@
                     // No restaurants in goto list
                     $('#' + response.goToList.id).append("<img data-src='images/no-goto-places.png'/>");
                   }
-                  
+
                   // Initialize the portfolio
                   var p = $('#' + response.goToList.id).portfolio({
                     showArrows: false,
@@ -63,7 +63,7 @@
             });
 
       		  // Logged into your app and Facebook.
-      		  
+
     		} else if (response.status === 'not_authorized') {
       		  // The person is logged into Facebook, but not your app.
             // Save the fb id in the session
@@ -71,7 +71,7 @@
                 $.post('/login/profileId', {"id": response.id}, function() {
                   window.location.href= "/";
                 });
-            }); 		  
+            });
     		} else {
       		  // The person is not logged into Facebook, so we're not sure if
       		  // they are logged into this app or not.
@@ -144,9 +144,20 @@
           <img data-src="images/see-more.png" data-url="/portfolio/{{title}}" class="restaurant-image"/>
         {{else}}
           <img data-src="images/no-goto-places.png"/>
-        {{/if}}	    
+        {{/if}}
 			</div>
 		{{/each}}
+	</div>
+
+	<div class="container portfolio-container">
+			<h3>Cuisines</h3>
+			<div id="cuisine-portfolio" class="portfolio">
+				{{#each cuisines}}
+					{{#if image}}
+			    	<img data-src="images/{{image}}" data-url="/cuisine/{{id}}" class="cuisine-image" />
+					{{/if}}
+        {{/each}}
+			</div>
 	</div>
 
 	<div id="footer">
