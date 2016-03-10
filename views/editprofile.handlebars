@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<link href="/css/goto.css" rel="stylesheet">
 
 	<script src="/js/jquery-1.11.0.js"></script>
@@ -13,7 +14,7 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/portfolio.pack.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/goto.js"></script>    
+	<script src="/js/goto.js"></script>
 	<script>
 		$(document).ready(function() {
 			$.get('/editprofile/getBio', function(response) {
@@ -54,6 +55,7 @@
         <div class="row add-taste">
 		  <div class="col-lg-6">
 		    <div class="input-group">
+					<label for="add-taste-input"></label>
 		      <input type="text" class="form-control" placeholder="Add Taste" id="add-taste-input">
 		      <span class="input-group-btn">
 		        <button class="btn btn-default add-taste-button" type="button">Add</button>
